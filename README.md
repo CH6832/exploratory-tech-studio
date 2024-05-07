@@ -1,4 +1,4 @@
-# TechIntersect Hub
+# Tech Intersect Hub
 
 ## :newspaper: About the project
 
