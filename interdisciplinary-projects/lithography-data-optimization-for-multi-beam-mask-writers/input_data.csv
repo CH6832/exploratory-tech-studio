@@ -3,3 +3,9 @@ FeatureID,Width (nm),Height (nm),Material,Conductivity
 2,150,150,Polysilicon,0.002
 3,100,200,Silicon Dioxide,0.0001
 4,250,250,Silicon Nitride,0.00005
+5,180,90,Polysilicon,0.0022
+6,120,220,Silicon Dioxide,0.00015
+7,270,300,Silicon Nitride,0.00006
+8,190,180,Silicon,0.0012
+9,210,130,Polysilicon,0.0025
+10,140,160,Silicon Dioxide,0.00018

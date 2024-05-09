@@ -1,21 +1,20 @@
 /*
-Messung von Temperatur und Luftfeuchtigkeit
+Measurement of Temperature and Humidity
 */
 
 #include <Adafruit_Sensor.h>
 #include <LiquidCrystal.h>
 #include <DHT.h>
 
-DHT dht(2, DHT11); //Das Objekt dht vom Typ DHT
+DHT dht(2, DHT11);
 
-int pin4 = 4; //blau
-int pin5 = 5; //grün
-
-int pin6 = 6; //rot
+int pin4 = 4; // blue
+int pin5 = 5; // green
+int pin6 = 6; // red
 
 void setup() 
 {
-   dht.begin(); //Start der Kommunikation mit DHT11
+   dht.begin(); // start communication with DHT11
    pinMode(4,OUTPUT);
    pinMode(5,OUTPUT);
    pinMode(6,OUTPUT);
@@ -24,7 +23,7 @@ void setup()
 void loop()
 {
     delay(2000);                            
-    int t = dht.readTemperature(); //Temperatur messen
+    int t = dht.readTemperature(); // measure temperature
     if(t>=21)
     {
       digitalWrite(pin6, HIGH);

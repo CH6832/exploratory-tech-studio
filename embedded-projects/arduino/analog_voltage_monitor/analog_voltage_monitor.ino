@@ -17,7 +17,7 @@ What the code does:
 
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12); 
  
-float analogWert; //Variable für den Analogwert
+float analogWert; // variable for the analog value
 float voltAnzeige;
 
 const int buzzer = 9;

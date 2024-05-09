@@ -18,6 +18,7 @@ The Tech Intersect Hub is an interdisciplinary repository for collaborative proj
 To get started with TechIntersect Hub, you can:
 
 * Explore the [physics_projects](./physics-projects/) directory for physics-related experiments and simulations.
+* Have a look into [interdisciplinary-projects](./interdisciplinary-projects) for interdisciplinary projects.
 * Check out the [embedded_projects](./embedded-projects/) directory for embedded systems projects using platforms like Arduino and Raspberry Pi.
 
 ## :books: Resources used to create this project
