@@ -10,6 +10,8 @@ The Tech Intersect Hub is an interdisciplinary repository for collaborative proj
     ├── embedded-projects/ - projects related to diverse hardware
     ├── interdisciplinary-projects/ - projects applied to various fields
     ├── physics-projects/ - projects related to the field of physics
+    ├── CODE_OF_CONDUCT.md - project code of conduct
+    ├── COPYRIGHT - project copyright
     ├── LICENSE - project license
     └── README.md - project information
 
@@ -49,3 +51,11 @@ To get started with TechIntersect Hub, you can:
 ## :bookmark: License
 
 This project is licensed under the terms of the [MIT License](LICENSE).
+
+## :copyright: Copyright
+
+See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+
+## :straight_ruler: Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.
