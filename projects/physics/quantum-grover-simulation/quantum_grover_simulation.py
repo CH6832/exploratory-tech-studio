@@ -22,7 +22,6 @@ Return Counts: The counts of measurement outcomes are returned from the function
 
 def main():
     """Main function."""
-    """Main function."""
     n_qubits = 4  # Number of qubits
 
     counts = grovers_algorithm(n_qubits)

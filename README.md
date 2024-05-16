@@ -7,9 +7,16 @@ The Tech Intersect Hub is an interdisciplinary repository for collaborative proj
 ## :notebook: Content overview
 
     .
-    ├── embedded-projects/ - projects related to diverse hardware
-    ├── interdisciplinary-projects/ - projects applied to various fields
-    ├── physics-projects/ - projects related to the field of physics
+    ├── projects/ - projects overview
+        ├── arduino/ - projects realized with the arduino uno board
+            ├── analog-voltage-monitor/ - reads an analog voltage from pin A0, converts it to a voltage value
+            ├── digital-clock/ - a digital clock showing seconds, minuites and hours
+            ├── frequency-measurement/ - measure frequency in Hz and KHz
+            └── measure-temperature-and-humidity/ - measure temperature and humidity
+        ├── physics/ - projects related to the field of physics
+        └── raspberry-pi/ - projects relaized with the raspberry pi 4b model
+            └── motor-control/ - control a dc or servo motor
+    ├── .gitignore - list of files not tracked by github
     ├── CODE_OF_CONDUCT.md - project code of conduct
     ├── COPYRIGHT - project copyright
     ├── LICENSE - project license
