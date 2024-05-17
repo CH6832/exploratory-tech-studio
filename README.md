@@ -10,6 +10,7 @@ The Tech Intersect Hub is an interdisciplinary repository for collaborative proj
     ├── projects/ - projects overview
         ├── arduino/ - projects realized with the arduino uno board
             ├── analog_voltage_monitor/ - reads an analog voltage from pin A0, converts it to a voltage value
+            ├── cw_to_hp/ - convert kilowatt to horsepower
             ├── digital_clock/ - a digital clock showing seconds, minuites and hours
             ├── frequency_measurement/ - measure frequency in Hz and KHz
             ├── measure_temperature_and_humidity/ - measure temperature and humidity
