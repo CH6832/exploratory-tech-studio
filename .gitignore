@@ -102,7 +102,7 @@ ENV/
 .pyre/
 
 # VSCode settings
-# .vscode/
+.vscode/
 
 # Sublime Text settings
 *.sublime-workspace
