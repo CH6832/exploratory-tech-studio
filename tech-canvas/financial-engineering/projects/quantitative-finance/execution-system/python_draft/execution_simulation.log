@@ -1,0 +1,8 @@
+2024-05-15 08:10:56,469 - INFO - Execution simulation started
+2024-05-15 08:11:15,445 - INFO - Execution simulation started
+2024-05-15 08:11:28,118 - INFO - User trade decision: BUY
+2024-05-15 08:11:28,119 - INFO - Executing trade: BUY
+2024-05-15 08:11:29,120 - INFO - Trade execution completed
+2024-05-15 08:11:48,973 - INFO - User trade decision: SELL
+2024-05-15 08:11:48,973 - INFO - Executing trade: SELL
+2024-05-15 08:11:49,975 - INFO - Trade execution completed

@@ -1,0 +1,6 @@
+﻿  execution_simulation.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 169 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  execution_simluation.vcxproj -> C:\Users\c.hartleb\Desktop\financial-engineering-lab\projects\execution_system\cplusplus\x64\Release\execution_simluation.exe
