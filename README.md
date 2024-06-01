@@ -1,8 +1,8 @@
-# Tech Canvas - Experimenters Hub
+# Exploratory Tech Studio
 
 ## :newspaper: About the project
 
-The Tech Canvas Experimenters Hub is an interdisciplinary repository for collaborative projects spanning various fields, such as hardware like Arduino UNO, financial engineering, machine learning, natural language processing, and the corresponding mathematical foundations for all fields. This repository serves as a platform for sharing and developing projects that integrate principles from these diverse disciplines, fostering innovation and collaboration at the intersection of technology and science.
+This project is an interdisciplinary repository for collaborative projects spanning various fields, such as hardware (like Arduino UNO), financial engineering, machine learning, natural language processing, and the corresponding mathematical foundations for all these fields. This repository serves as a platform for sharing and developing projects that integrate principles from these diverse disciplines, fostering innovation and collaboration at the intersection of technology and science.
 
 ## :notebook: Content overview
 
