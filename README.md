@@ -90,6 +90,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [guestbook](/tech-studio-projects/web-applications/guestbook/)
     * [text-analyzation](/tech-studio-projects/web-applications/text-analyzation/)
     * [travel-agency](/tech-studio-projects/web-applications/travel-agency/)
+    * [weather-prediction-app](/tech-studio-projects/web-applications/weather-prediction-app/)
 
 * [.gitignore](/.gitignore) - list of files not tracked by github
 
