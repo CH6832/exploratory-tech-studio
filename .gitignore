@@ -285,3 +285,30 @@ ipython_config.py
 
 # pyenv
 .python-version
+
+# C/C++ specific
+*.d
+*.dSYM/
+*.elf
+*.lst
+*.map
+*.lst
+*.sym
+*.lib
+
+# C# specific
+*.csproj
+*.sln
+*.user
+*.suo
+*.pdb
+*.csproj.user
+*.csproj.DotSettings
+*.csproj.DotSettings.user
+.vscode/
+bin/
+obj/
+
+# Zig specific
+zig-cache/
+zig-out/

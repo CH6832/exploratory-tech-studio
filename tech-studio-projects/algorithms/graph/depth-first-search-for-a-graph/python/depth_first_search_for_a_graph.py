@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""breadth_first_search.py
+
+Breadth First Search (BFS) is a fundamental graph traversal algorithm. It involves visiting
+all the connected nodes of a graph in a level-by-level manner.
+
+Breadth First Search (BFS) is a graph traversal algorithm that explores all the vertices in a
+graph at the current depth before moving on to the vertices at the next depth level. It starts
+at a specified vertex and visits all its neighbors before moving on to the next level of neighbors.
+BFS is commonly used in algorithms for pathfinding, connected components, and shortest path
+problems in graphs.
+
+Let's discuss the algorithm for the BFS:
+
+1. Initialization: Enqueue the starting node into a queue and mark it as visited.
+2. Exploration: While the queue is not empty:
+  - Dequeue a node from the queue and visit it (e.g., print its value).
+  - For each unvisited neighbor of the dequeued node:
+    - Enqueue the neighbor into the queue.
+    - Mark the neighbor as visited.
+3. Termination: Repeat step 2 until the queue is empty.
+"""
+
+def main():
+    # Driver code
+    # Create a graph given in the above diagram
+    g = Graph()
+    g.addEdge(0, 1)
+    g.addEdge(0, 2)
+    g.addEdge(1, 2)
+    g.addEdge(2, 0)
+    g.addEdge(2, 3)
+    g.addEdge(3, 3)
+    print("Following is Depth First Traversal")
+    g.DFS()
+    # This code is contributed by Neelam Yadav
+
+
+# Python program to print DFS traversal for complete graph
+from collections import defaultdict
+# This class represents a directed graph using adjacency
+# list representation
+class Graph:
+ 
+    # Constructor
+    def __init__(self):
+ 
+        # default dictionary to store graph
+        self.graph = defaultdict(list)
+ 
+    # function to add an edge to graph
+    def addEdge(self,u,v):
+        self.graph[u].append(v)
+ 
+    # A function used by DFS
+    def DFSUtil(self, v, visited):
+ 
+        # Mark the current node as visited and print it
+        visited[v]= True
+        print(v)
+ 
+        # Recur for all the vertices adjacent to
+        # this vertex
+        for i in self.graph[v]:
+            if visited[i] == False:
+                self.DFSUtil(i, visited)
+  
+    # The function to do DFS traversal. It uses
+    # recursive DFSUtil()
+    def DFS(self):
+        V = len(self.graph)  #total vertices
+ 
+        # Mark all the vertices as not visited
+        visited =[False]*(V)
+ 
+        # Call the recursive helper function to print
+        # DFS traversal starting from all vertices one
+        # by one
+        for i in range(V):
+            if visited[i] == False:
+                self.DFSUtil(i, visited)
+
+
+if __name__ == '__main__':
+    main()

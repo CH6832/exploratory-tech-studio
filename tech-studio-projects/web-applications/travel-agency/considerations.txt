@@ -1,0 +1,46 @@
+A.
+Several relevant websites were analyzed in terms of design and content.
+and any suggestions were taken away. These sites are the following:
+
+  * https://www.meinschiff.com/leinen-los/
+  * https://www.wolters-rundreisen.de/reisearten.html
+  * https://www.checkfelix.com/
+  * https://www.tui.at/service-kontakt/onlinekataloge/
+  * https://www.its.de/service/online-kataloge.html
+
+The Wolters Rundreisen design in particular was thought of as a basis. The ITS online travel catalog
+was also considered for the basic structure of the site.
+
+B.
+The README.txt file contains an overview of the project itself. The LICENSE.txt file 
+contains the CC BY-SA 4.0 License by Creative Commons downloaded from:
+
+https://creativecommons.org/2014/01/07/plaintext-versions-of-creative-commons-4-0-licenses/
+
+The CHANGELOG.md file should provide information concerning the releases, but in
+this case only one draft release will be shown in the file. The rest of the folder
+structure is modeled at this structure here:
+
+https://github.com/php-pds/skeleton
+
+C.
+The database is to be called 'reisebuero'. The table is to be called 'reisen'. The table contains the following entries:
+
+id (int)                   = automatically incremented integer type
+gesamtpreis (decimal)      = total price of the journey
+ablughafen (varchar)       = name of departure airport
+anreise (varchar)          = date of arrival
+abreise (varchar)          = date of departure
+Zielort (varchar)          = name of destination
+Übernachtungsort (varchar) = name of desstination city
+hotelname (varchar)        = name of accomodation
+
+The offers are randomly compiled and do not correspond to actual offers.
+
+D.
+The division of the X for the page should look like this. All operations, which have to do
+with the database, come into a class. Header, footer come in separate include files. index.php is
+the entry point of the program and travels.php is responsible for the display of the database entries.
+
+
+
