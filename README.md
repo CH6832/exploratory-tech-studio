@@ -114,8 +114,6 @@ To get started with the projects, please explore the folders in the [Content ove
 * C++
     * [C++ reference](https://en.cppreference.com/w/)
     * [C++ Programming Language](https://devdocs.io/cpp/)
-* C#
-    * [C# language documentation](https://learn.microsoft.com/en-us/dotnet/csharp/)
 * Python
     * [Python 3.12 documentation](https://docs.python.org/3/)
     * [Built-in Functions](https://docs.python.org/3/library/functions.html)
