@@ -1,0 +1,30 @@
+﻿@page
+@model GAAPCalcPro.Pages.DeferredRevenueModel
+@{
+    ViewData["Title"] = "Deferred Revenue Calculation";
+}
+
+<h2>Deferred Revenue Calculation</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="TotalContractValue">Total Contract Value</label>
+        <input type="number" class="form-control" id="TotalContractValue" name="TotalContractValue" value="@Model.DeferredRevenueData.TotalContractValue" />
+    </div>
+    <div class="form-group">
+        <label for="NumberOfPeriods">Number of Periods</label>
+        <input type="number" class="form-control" id="NumberOfPeriods" name="NumberOfPeriods" value="@Model.DeferredRevenueData.NumberOfPeriods" />
+    </div>
+    <div class="form-group">
+        <label for="PeriodsElapsed">Periods Elapsed</label>
+        <input type="number" class="form-control" id="PeriodsElapsed" name="PeriodsElapsed" value="@Model.DeferredRevenueData.PeriodsElapsed" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.DeferredRevenueData.DeferredRevenue != 0)
+{
+    <div class="alert alert-info mt-3">
+        <strong>Deferred Revenue:</strong> @Model.DeferredRevenueData.DeferredRevenue
+    </div>
+}

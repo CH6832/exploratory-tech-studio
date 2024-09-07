@@ -1,0 +1,30 @@
+﻿@page
+@model GAAPCalcPro.Pages.AROModel
+@{
+    ViewData["Title"] = "ARO Calculation";
+}
+
+<h2>ARO Calculation</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="FutureRetirementCost">Future Retirement Cost</label>
+        <input type="number" class="form-control" id="FutureRetirementCost" name="FutureRetirementCost" value="@Model.AROData.FutureRetirementCost" />
+    </div>
+    <div class="form-group">
+        <label for="DiscountRate">Discount Rate</label>
+        <input type="number" step="0.01" class="form-control" id="DiscountRate" name="DiscountRate" value="@Model.AROData.DiscountRate" />
+    </div>
+    <div class="form-group">
+        <label for="YearsUntilRetirement">Years Until Retirement</label>
+        <input type="number" class="form-control" id="YearsUntilRetirement" name="YearsUntilRetirement" value="@Model.AROData.YearsUntilRetirement" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.AROData.AROValue != 0)
+{
+    <div class="alert alert-info mt-3">
+        <strong>ARO Value:</strong> @Model.AROData.AROValue
+    </div>
+}

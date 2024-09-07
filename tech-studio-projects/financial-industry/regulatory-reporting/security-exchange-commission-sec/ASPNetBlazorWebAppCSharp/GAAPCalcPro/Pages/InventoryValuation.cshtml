@@ -1,0 +1,26 @@
+﻿@page
+@model GAAPCalcPro.Pages.InventoryValuationModel
+@{
+    ViewData["Title"] = "Inventory Valuation";
+}
+
+<h2>Inventory Valuation</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="CostOfGoodsSold">Cost of Goods Sold</label>
+        <input type="number" class="form-control" id="CostOfGoodsSold" name="CostOfGoodsSold" value="@Model.InventoryValuationData.CostOfGoodsSold" />
+    </div>
+    <div class="form-group">
+        <label for="EndingInventory">Ending Inventory</label>
+        <input type="number" class="form-control" id="EndingInventory" name="EndingInventory" value="@Model.InventoryValuationData.EndingInventory" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.InventoryValuationData.InventoryValue != 0)
+{
+    <div class="alert alert-info mt-3">
+        <strong>Inventory Value:</strong> @Model.InventoryValuationData.InventoryValue
+    </div>
+}

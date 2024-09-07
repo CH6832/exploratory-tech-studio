@@ -1,0 +1,30 @@
+﻿@page
+@model GAAPCalcPro.Pages.LeaseClassificationModel
+@{
+    ViewData["Title"] = "Lease Classification Calculation";
+}
+
+<h2>Lease Classification Calculation</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="LeaseTerm">Lease Term (years)</label>
+        <input type="number" class="form-control" id="LeaseTerm" name="LeaseTerm" value="@Model.LeaseClassificationData.LeaseTerm" />
+    </div>
+    <div class="form-group">
+        <label for="PresentValueOfPayments">Present Value of Payments</label>
+        <input type="number" class="form-control" id="PresentValueOfPayments" name="PresentValueOfPayments" value="@Model.LeaseClassificationData.PresentValueOfPayments" />
+    </div>
+    <div class="form-group">
+        <label for="DiscountRate">Discount Rate</label>
+        <input type="number" step="0.01" class="form-control" id="DiscountRate" name="DiscountRate" value="@Model.LeaseClassificationData.DiscountRate" />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model.LeaseClassificationData.LeaseClassification != null)
+{
+    <div class="alert alert-info mt-3">
+        <strong>Lease Classification:</strong> @Model.LeaseClassificationData.LeaseClassification
+    </div>
+}

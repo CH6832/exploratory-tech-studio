@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "name": "algo-trading-platform.exe (algo-trading-platform\\algo-trading-platform.exe)",
+      "project": "CMakeLists.txt",
+      "projectTarget": "algo-trading-platform.exe (algo-trading-platform\\algo-trading-platform.exe)",
+      "type": "default"
+    }
+  ]
+}
