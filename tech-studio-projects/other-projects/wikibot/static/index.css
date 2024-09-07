@@ -1,0 +1,35 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    margin-top: 90px;
+}
+.chat-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+.chat-bubble {
+    margin-bottom: 10px;
+}
+
+.user-bubble {
+    background-color: #cce5ff;
+}
+
+.bot-bubble {
+    background-color: #d4edda;
+}

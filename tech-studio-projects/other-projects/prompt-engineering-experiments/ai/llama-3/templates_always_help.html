@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="../../favicon.ico" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/3.4/examples/navbar-fixed-top/"
+    />
+
+    <!-- Website title -->
+    <title>Experimental PE-Project</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="navbar-fixed-top.css" rel="stylesheet"> -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9
+      ]><script src="../../assets/js/ie8-responsive-file-warning.js"></script
+    ><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar">
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+      <div class="container-fluid">
+        <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">PROMPT ENGINEERING</a>
+        </div>
+
+        <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../../index.html#jumbotron"
+                >HOME <span class="sr-only">(aktuell)</span></a
+              >
+            </li>
+            <li><a href="../../index.html#mehrInfo">AI TOOLS</a></li>
+            <!-- <li><a href="#footer">AI TOOLS</a></li> -->
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <!-- <input type="email" class="form-control" placeholder="email" />
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="passwort"
+                /> -->
+                <a href="https://www.linkedin.com/in/christoph-hartleb/">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-linkedin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                      />
+                    </svg>
+                    <span class="visually-hidden">Christoph Hartleb</span>
+                  </button></a
+                >
+              </div>
+              <!-- <button type="submit" class="btn btn-success">Login</button> -->
+            </form>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- /NAVBAR -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- HOME -->
+    <div class="jumbotron" id="jumbotron">
+        <div class="container">
+
+                            <br>
+                            <br>
+
+                            <md-block>
+                                ### USER INPUT:
+                                </md-block>
+                    
+                                <div style="background-color:white;border:15px solid white;">
+                                    <md-block >I'm applying to [JOB TITLE] at [COMPANY]. What skills traits, or previous experience are useful to mention in my interview?
+                                    </md-block>
+                                </div>
+                                
+                                <br>
+                                <br>
+
+                                <md-block>
+                                  ### USER INPUT:
+                                  </md-block>
+                      
+                                  <div style="background-color:white;border:15px solid white;">
+                                      <md-block >Her is my CV: [TEXT]. What should I bring up in an interview for the position of [JOB TITLE] at [COMPANY]?
+                                      </md-block>
+                                  </div>
+                                  
+                                  <br>
+                                  <br>
+
+                                  <md-block>
+                                    ### USER INPUT:
+                                    </md-block>
+                        
+                                    <div style="background-color:white;border:15px solid white;">
+                                        <md-block >Her is my cover letter: [TEXT]. What should I bring up in an interview for the position of [JOB TITLE] at [COMPANY]?
+                                        </md-block>
+                                    </div>
+                                    
+                                    <br>
+                                    <br>
+
+                                    <md-block>
+                                      ### USER INPUT:
+                                      </md-block>
+                          
+                                      <div style="background-color:white;border:15px solid white;">
+                                          <md-block >You are the interviewer for this role: [JOB DESCRIPTION]. Can they ask 3-5interview questions based on the job description?
+                                          </md-block>
+                                      </div>
+                                      
+                                      <br>
+                                      <br>
+                                      
+                                      <md-block>
+                                        ### USER INPUT:
+                                        </md-block>
+                            
+                                        <div style="background-color:white;border:15px solid white;">
+                                            <md-block >You are the interviewer for this role: [JOB DESCRIPTION]. What do you expect from a candidate when you interview them?
+                                            </md-block>
+                                        </div>
+                                        
+                                        <br>
+                                        <br>
+                                        <md-block>
+                                          ### USER INPUT:
+                                          </md-block>
+                              
+                                          <div style="background-color:white;border:15px solid white;">
+                                              <md-block >You are the interviewer for this role: [JOB DESCRIPTION]. Conduct a simulated interview with me.
+                                              </md-block>
+                                          </div>
+                                          
+                                          <br>
+                                          <br>
+                                          
+                                          <md-block>
+                                            ### USER INPUT:
+                                            </md-block>
+                                
+                                            <div style="background-color:white;border:15px solid white;">
+                                                <md-block >I'm applying to [JOB TITLE] at [COMPANY], and this is part of the job description: [PART OF JOB DESCRIPTION] . What tasks are part of this area of responsibility? How do I show this skill in a job interview?
+                                                </md-block>
+                                            </div>
+                                            
+                                            <br>
+                                            <br>
+                                            
+                                            <md-block>
+                                              ### USER INPUT:
+                                              </md-block>
+                                  
+                                              <div style="background-color:white;border:15px solid white;">
+                                                  <md-block >Ask me [INTERVIEW QUESTION YOU WANT TO PREPARE FOR] and I'll give you an answer. Give me feedback on my answer pretendening to be the hiring manager: What elements of my story have to come fore? What parts are missing? What did I do well according to the interview best pracices and what could I do differently?
+                                                  </md-block>
+                                              </div>
+                                              
+                                              <br>
+                                              <br>
+                                              
+                                              <md-block>
+                                                ### USER INPUT:
+                                                </md-block>
+                                    
+                                                <div style="background-color:white;border:15px solid white;">
+                                                    <md-block >I am applying for [JOB TITLE] and expect the recruiter to ask me for [QUESTION YOU THINK RECRUITER WILL ASK]. What is the best way to answer the question?
+                                                    </md-block>
+                                                </div>
+                                                
+                                                <br>
+                                                <br>                                              
+
+                                                <md-block>
+                                                  ### USER INPUT:
+                                                  </md-block>
+                                      
+                                                  <div style="background-color:white;border:15px solid white;">
+                                                      <md-block >What is the best way to answer [GENERAL INTERVIEW QUESTION] when applying for the role of [JOB TITLE] at [COMPANY]?
+                                                      </md-block>
+                                                  </div>
+                                                  
+                                                  <br>
+                                                  <br>     
+
+                                                  <md-block>
+                                                    ### USER INPUT:
+                                                    </md-block>
+                                        
+                                                    <div style="background-color:white;border:15px solid white;">
+                                                        <md-block >I am applying to a compny that resembles [BIG, WELL KNOWN COMPANY]. What kind of questions could they ask me?
+                                                        </md-block>
+                                                    </div>
+                                                    
+                                                    <br>
+                                                    <br>
+                                                    
+                                                    <md-block>
+                                                      ### USER INPUT:
+                                                      </md-block>
+                                          
+                                                      <div style="background-color:white;border:15px solid white;">
+                                                          <md-block >What are some frequently asked interview questions that a hiring manager migh ask at a company that [EXPLAINS WHAT THE COMPANY IS/DOES]?
+                                                          </md-block>
+                                                      </div>
+                                                      
+                                                      <br>
+                                                      <br>
+                                                      
+                                                      <md-block>
+                                                        ### USER INPUT:
+                                                        </md-block>
+                                            
+                                                        <div style="background-color:white;border:15px solid white;">
+                                                            <md-block >I'm applying to [JOB TITLE] at [COMPANY]. What kin dof questions will be asked, and how should I answer?
+                                                            </md-block>
+                                                        </div>
+                                                        
+                                                        <br>
+                                                        <br>                                              
+        
+                                                        <md-block>
+                                                          ### USER INPUT:
+                                                          </md-block>
+                                              
+                                                          <div style="background-color:white;border:15px solid white;">
+                                                              <md-block >What are the best questions I can ask a hiring manager in an interview for [JOB TITLE] at [COMPANY]?
+                                                              </md-block>
+                                                          </div>
+                                                          
+                                                          <br>
+                                                          <br>     
+
+                                                          <md-block>
+                                                            ### USER INPUT:
+                                                            </md-block>
+                                                
+                                                            <div style="background-color:white;border:15px solid white;">
+                                                                <md-block >I'm applying to [JOB TITLE] at [COMPANY] and I do not know the copany at all. What do I need to know about them to prepare for the interview?
+                            
+                                                                </md-block>
+                                                            </div>
+                                                            
+                                                            <br>
+                                                            <br>     
+
+                                                            <md-block>
+                                                              ### USER INPUT:
+                                                              </md-block>
+                                                  
+                                                              <div style="background-color:white;border:15px solid white;">
+                                                                  <md-block >I am applying to [JOB TITLE] of [COMPANY]. What [processing test/case studies/behavioral question] should I expect in the interview?
+                                                                  </md-block>
+                                                              </div>
+                                                               
+                                                                <br>
+                                                                <br>     
+
+        </div>
+    </div>
+      <!-- /HOME -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+        <p>
+            This site is goverend by the <a href="../../legal/terms_of_use.html">Terms of Use</a> and
+            <a href="../../legal/privacy_policy.html">Privacy Policy</a>. Copyright 2024 Christoph Hartleb. All
+            Rights reserved.
+        </p>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+</body>

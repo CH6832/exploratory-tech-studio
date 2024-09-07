@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Profile Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        img{width:100%;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="userForm">
+            <div class="form-group">
+                <label>Search Github Users:</label>
+                <input type="text" id="searchQuery" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div id="profiles"></div>
+    </div>
+    <script>
+        function searchProfiles(e){
+            e.preventDefault();
+            console.log('Searching...');
+
+            var searchQuery = document.getElementById('searchQuery').value.trim();
+            if(!searchQuery){
+                console.log('Please enter a search query.');
+                return;
+            }
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                    var users = JSON.parse(xhttp.responseText);
+                    displayProfiles(users);
+                }
+            }
+            xhttp.open('GET', 'https://api.github.com/search/users?q=' + searchQuery, true);
+            xhttp.send();
+        }
+
+        function displayProfiles(users){
+            var profilesContainer = document.getElementById('profiles');
+            profilesContainer.innerHTML = '';
+
+            users.items.forEach(function(user){
+                var profileHTML = `<div class="panel panel-default">
+                        <div class="panel-heading">
+                        <h3 class="panel-title">${user.login}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                            <div class="col-md-3">
+                            <img src="${user.avatar_url}">
+                            </div>
+                            <div class="col-md-9">
+                                <span class="label label-primary">Public Repos ${user.public_repos}</span>
+                                <span class="label label-danger">Public Gists ${user.public_gists}</span>
+                                <br><br>
+                                <a class="btn btn-default" target="_blank" href="${user.html_url}">Visit Github</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>`;
+                profilesContainer.innerHTML += profileHTML;
+            });
+        }
+
+        document.getElementById('userForm').addEventListener('submit', searchProfiles, false);
+    </script>
+</body>
+</html>

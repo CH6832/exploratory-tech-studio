@@ -1,0 +1,50 @@
+ItemID: 001, ItemName: Apple iPhone 14, Category: Electronics, Quantity: 25, Price: $999.00, Supplier: Tech Distributors Inc.
+ItemID: 002, ItemName: Samsung Galaxy S22, Category: Electronics, Quantity: 30, Price: $899.00, Supplier: Global Mobile Supplies
+ItemID: 003, ItemName: Dell XPS 13, Category: Electronics, Quantity: 15, Price: $1,299.00, Supplier: Computer World
+ItemID: 004, ItemName: Sony WH-1000XM5, Category: Electronics, Quantity: 40, Price: $349.00, Supplier: Sound & Vision Co.
+ItemID: 005, ItemName: Apple MacBook Pro 14", Category: Electronics, Quantity: 20, Price: $2,499.00, Supplier: Apple Distributors
+ItemID: 006, ItemName: Nike Air Max 270, Category: Footwear, Quantity: 50, Price: $150.00, Supplier: Sportswear Supplies Ltd.
+ItemID: 007, ItemName: Adidas Ultraboost, Category: Footwear, Quantity: 45, Price: $180.00, Supplier: Active Gear Inc.
+ItemID: 008, ItemName: Samsung 55" QLED TV, Category: Electronics, Quantity: 10, Price: $1,199.00, Supplier: HomeTech Supplies
+ItemID: 009, ItemName: Apple Watch Series 8, Category: Electronics, Quantity: 35, Price: $399.00, Supplier: Smart Devices Ltd.
+ItemID: 010, ItemName: KitchenAid Stand Mixer, Category: Home Appliances, Quantity: 25, Price: $399.00, Supplier: Home Essentials Co.
+ItemID: 011, ItemName: Sony PlayStation 5, Category: Electronics, Quantity: 10, Price: $499.00, Supplier: Gaming World
+ItemID: 012, ItemName: Microsoft Xbox Series X, Category: Electronics, Quantity: 12, Price: $499.00, Supplier: Gaming World
+ItemID: 013, ItemName: Canon EOS R5 Camera, Category: Electronics, Quantity: 8, Price: $3,899.00, Supplier: ProPhoto Supplies
+ItemID: 014, ItemName: Samsung Galaxy Tab S8, Category: Electronics, Quantity: 20, Price: $699.00, Supplier: Global Mobile Supplies
+ItemID: 015, ItemName: LG Refrigerator 28 cu ft, Category: Home Appliances, Quantity: 5, Price: $2,499.00, Supplier: HomeTech Supplies
+ItemID: 016, ItemName: Dyson V11 Vacuum Cleaner, Category: Home Appliances, Quantity: 30, Price: $599.00, Supplier: CleanHome Distributors
+ItemID: 017, ItemName: Bose QuietComfort Earbuds, Category: Electronics, Quantity: 50, Price: $279.00, Supplier: Sound & Vision Co.
+ItemID: 018, ItemName: Samsung 75" UHD TV, Category: Electronics, Quantity: 8, Price: $1,699.00, Supplier: HomeTech Supplies
+ItemID: 019, ItemName: Apple iPad Air 10.9", Category: Electronics, Quantity: 25, Price: $599.00, Supplier: Tech Distributors Inc.
+ItemID: 020, ItemName: HP Spectre x360 14", Category: Electronics, Quantity: 15, Price: $1,599.00, Supplier: Computer World
+ItemID: 021, ItemName: Apple AirPods Pro, Category: Electronics, Quantity: 60, Price: $249.00, Supplier: Tech Distributors Inc.
+ItemID: 022, ItemName: Adidas NMD R1, Category: Footwear, Quantity: 40, Price: $140.00, Supplier: Active Gear Inc.
+ItemID: 023, ItemName: Nike Air Force 1, Category: Footwear, Quantity: 55, Price: $90.00, Supplier: Sportswear Supplies Ltd.
+ItemID: 024, ItemName: Instant Pot Duo 7-in-1, Category: Home Appliances, Quantity: 35, Price: $99.00, Supplier: Home Essentials Co.
+ItemID: 025, ItemName: Sony A7 III Camera, Category: Electronics, Quantity: 10, Price: $1,999.00, Supplier: ProPhoto Supplies
+ItemID: 026, ItemName: Google Pixel 7, Category: Electronics, Quantity: 20, Price: $699.00, Supplier: Global Mobile Supplies
+ItemID: 027, ItemName: Lenovo ThinkPad X1 Carbon, Category: Electronics, Quantity: 10, Price: $1,799.00, Supplier: Computer World
+ItemID: 028, ItemName: Samsung Galaxy Watch 5, Category: Electronics, Quantity: 40, Price: $279.00, Supplier: Smart Devices Ltd.
+ItemID: 029, ItemName: Apple Mac Mini M2, Category: Electronics, Quantity: 15, Price: $699.00, Supplier: Apple Distributors
+ItemID: 030, ItemName: LG OLED 65" TV, Category: Electronics, Quantity: 10, Price: $2,299.00, Supplier: HomeTech Supplies
+ItemID: 031, ItemName: Breville Espresso Machine, Category: Home Appliances, Quantity: 15, Price: $699.00, Supplier: Home Essentials Co.
+ItemID: 032, ItemName: JBL Charge 5 Speaker, Category: Electronics, Quantity: 50, Price: $179.00, Supplier: Sound & Vision Co.
+ItemID: 033, ItemName: Nike ZoomX Vaporfly, Category: Footwear, Quantity: 25, Price: $250.00, Supplier: Sportswear Supplies Ltd.
+ItemID: 034, ItemName: Apple MacBook Air 13", Category: Electronics, Quantity: 20, Price: $999.00, Supplier: Apple Distributors
+ItemID: 035, ItemName: Sony 4K Ultra HD Blu-ray Player, Category: Electronics, Quantity: 30, Price: $199.00, Supplier: Sound & Vision Co.
+ItemID: 036, ItemName: Samsung SmartThings Hub, Category: Electronics, Quantity: 40, Price: $99.00, Supplier: Smart Devices Ltd.
+ItemID: 037, ItemName: Fitbit Charge 5, Category: Electronics, Quantity: 50, Price: $179.00, Supplier: Smart Devices Ltd.
+ItemID: 038, ItemName: Logitech MX Master 3 Mouse, Category: Electronics, Quantity: 45, Price: $99.00, Supplier: Computer World
+ItemID: 039, ItemName: Brother MFC-L2710DW Printer, Category: Electronics, Quantity: 35, Price: $199.00, Supplier: Office Supplies Co.
+ItemID: 040, ItemName: Nintendo Switch, Category: Electronics, Quantity: 20, Price: $299.00, Supplier: Gaming World
+ItemID: 041, ItemName: GoPro HERO11 Black, Category: Electronics, Quantity: 25, Price: $399.00, Supplier: ProPhoto Supplies
+ItemID: 042, ItemName: Samsung Galaxy Buds Pro, Category: Electronics, Quantity: 40, Price: $199.00, Supplier: Global Mobile Supplies
+ItemID: 043, ItemName: KitchenAid Food Processor, Category: Home Appliances, Quantity: 20, Price: $199.00, Supplier: Home Essentials Co.
+ItemID: 044, ItemName: Dyson Air Purifier TP04, Category: Home Appliances, Quantity: 15, Price: $599.00, Supplier: CleanHome Distributors
+ItemID: 045, ItemName: Apple TV 4K, Category: Electronics, Quantity: 30, Price: $179.00, Supplier: Apple Distributors
+ItemID: 046, ItemName: Anker PowerCore 26800mAh, Category: Electronics, Quantity: 60, Price: $79.00, Supplier: Tech Distributors Inc.
+ItemID: 047, ItemName: Philips Hue Smart Bulbs, Category: Electronics, Quantity: 50, Price: $199.00, Supplier: Smart Devices Ltd.
+ItemID: 048, ItemName: Cuisinart Air Fryer Toaster Oven, Category: Home Appliances, Quantity: 25, Price: $229.00, Supplier: Home Essentials Co.
+ItemID: 049, ItemName: Asus ROG Gaming Laptop, Category: Electronics, Quantity: 10, Price: $2,199.00, Supplier: Computer World
+ItemID: 050, ItemName: Bose Home Speaker 500, Category: Electronics, Quantity: 40, Price: $399.00, Supplier: Sound & Vision Co.

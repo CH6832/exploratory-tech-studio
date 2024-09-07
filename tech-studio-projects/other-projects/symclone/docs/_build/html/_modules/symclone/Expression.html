@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="y" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>symclone.Expression &#8212; Symclone 2024 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=27f46a8d"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for symclone.Expression</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;Expression.py</span>
+
+<span class="sd">Expressions for the SymClone library.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># https://docs.pylint.org/</span>
+<span class="c1"># pylint: disable=line-too-long, trailing-whitespace, multiple-statements, fixme, locally-disabled</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">symclone.Symbol</span> <span class="kn">import</span> <span class="n">Symbol</span>
+
+<div class="viewcode-block" id="Expression">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression">[docs]</a>
+<span class="k">class</span> <span class="nc">Expression</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class to represent mathematical expressions and perform various operations on them.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;Expression&#39;</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an Expression instance with the given expression.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        expr -- The expression, which can be a string, another Expression, a Symbol, or a number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert the Expression instance to a string representation.&quot;&quot;&quot;</span>
+        
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the string representation of the expression.&quot;&quot;&quot;</span>
+        
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Expression(&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+
+<div class="viewcode-block" id="Expression.substitute">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.substitute">[docs]</a>
+    <span class="k">def</span> <span class="nf">substitute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol_values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Expression&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Substitute symbolic variables with a numerical one.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol_values -- Dictionary mapping symbols to numerical values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># get original expressions</span>
+        <span class="n">expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span>
+        <span class="k">for</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">symbol_values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        
+        <span class="c1"># return new expression object with substituted values</span>
+        <span class="k">return</span> <span class="n">Expression</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Expression.evaluate">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.evaluate">[docs]</a>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol_values</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate the expression numerically.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol_values -- Optional dictionary mapping symbols to numerical values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">symbol_values</span><span class="p">:</span>
+            <span class="c1"># substitute symbols with their values and get the resulting expression</span>
+            <span class="n">substituted_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">symbol_values</span><span class="p">)</span><span class="o">.</span><span class="n">expr</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if no symbol_values provided, use the original expression</span>
+            <span class="n">substituted_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span>
+        
+        <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">substituted_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Expression.pow">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.pow">[docs]</a>
+    <span class="k">def</span> <span class="nf">pow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Custom implementation of exponentiation.&quot;&quot;&quot;</span>
+        
+        <span class="k">return</span> <span class="n">base</span> <span class="o">**</span> <span class="n">exponent</span></div>
+
+
+<div class="viewcode-block" id="Expression.derivative">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.derivative">[docs]</a>
+    <span class="k">def</span> <span class="nf">derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Expression&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the derivative of the expression with respect to the given symbol.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol -- Symbol with respect to which the derivative is computed.</span>
+<span class="sd">        h -- Small step size for numerical differentiation.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># substitute symbol with (symbol + h) in the expression</span>
+        <span class="n">expr_at_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="p">),</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="c1"># compute the difference quotient expression using forward difference formula</span>
+        <span class="n">diff_expr</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;((</span><span class="si">{</span><span class="n">expr_at_x</span><span class="si">}</span><span class="s1">) - (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="si">}</span><span class="s1">)) / </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s1">&#39;</span>
+        
+        <span class="k">return</span> <span class="n">Expression</span><span class="p">(</span><span class="n">diff_expr</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Expression.integral">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.integral">[docs]</a>
+    <span class="k">def</span> <span class="nf">integral</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">limits</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the integral of the expression with respect to the given symbol.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol -- Symbol with respect to which the integral is computed.</span>
+<span class="sd">        limits -- Optional integration limits as a tuple (lower_limit, upper_limit).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">limits</span><span class="p">:</span>
+            <span class="c1"># unpack lower and upper limits</span>
+            <span class="n">lower_limit</span><span class="p">,</span> <span class="n">upper_limit</span> <span class="o">=</span> <span class="n">limits</span>
+            <span class="c1"># perform numerical integration using the specified limits</span>
+            <span class="n">integral_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numerical_integration</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># raise an error if integration limits are not provided</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Integration limits must be provided.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># return the numerical value of the definite integral</span>
+        <span class="k">return</span> <span class="n">integral_value</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_numerical_integration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_intervals</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Helper function to compute numerical integration.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol (Symbol) -- The variable of integration.</span>
+<span class="sd">        lower_limit -- The lower bound of the integration interval.</span>
+<span class="sd">        upper_limit -- The upper bound of the integration interval.</span>
+<span class="sd">        num_intervals -- The number of sub-intervals for the integration. Default is 1000.      </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># calculate the width of each interval</span>
+        <span class="n">interval_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">upper_limit</span> <span class="o">-</span> <span class="n">lower_limit</span><span class="p">)</span> <span class="o">/</span> <span class="n">num_intervals</span>
+        <span class="c1"># initialize the total area</span>
+        <span class="n">total_area</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_intervals</span><span class="p">):</span>
+            <span class="c1"># calculate the x-value of the midpoint of the current interval</span>
+            <span class="n">x_value</span> <span class="o">=</span> <span class="n">lower_limit</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">interval_width</span>
+            <span class="c1"># evaluate the function at the midpoint to get the height</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({</span><span class="n">symbol</span><span class="p">:</span> <span class="n">x_value</span><span class="p">})</span>
+            <span class="c1"># add the area of the rectangle (width * height) to the total area</span>
+            <span class="n">total_area</span> <span class="o">+=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">interval_width</span>
+
+        <span class="c1"># return the total area, which approximates the integral</span>
+        <span class="k">return</span> <span class="n">total_area</span>
+    
+<div class="viewcode-block" id="Expression.limit_of_expression">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.limit_of_expression">[docs]</a>
+    <span class="k">def</span> <span class="nf">limit_of_expression</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-7</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the limit of the expression as the given symbol approaches the specified value.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol -- Symbol whose limit is computed.</span>
+<span class="sd">        value -- Value toward which the symbol approaches.</span>
+<span class="sd">        epsilon -- Small step size to check the limit from both sides.</span>
+<span class="sd">        tolerance -- Tolerance range to consider the limit as existing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># evaluate the expression at value - epsilon and value + epsilon</span>
+            <span class="n">left_limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({</span><span class="n">symbol</span><span class="p">:</span> <span class="n">value</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">})</span>
+            <span class="n">right_limit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({</span><span class="n">symbol</span><span class="p">:</span> <span class="n">value</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">})</span>
+            <span class="c1"># check if the difference between left and right limits is within tolerance</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">left_limit</span> <span class="o">-</span> <span class="n">right_limit</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+                <span class="c1"># if so, return the average of left and right limits as the limit</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">left_limit</span> <span class="o">+</span> <span class="n">right_limit</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># if not, raise an error indicating that the limit does not exist</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Limit does not exist.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># catch any errors that occur during limit calculation and raise a ValueError with an informative message</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error in limit calculation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Expression.series_expansion_of_expression">
+<a class="viewcode-back" href="../../Expression.html#symclone.Expression.Expression.series_expansion_of_expression">[docs]</a>
+    <span class="k">def</span> <span class="nf">series_expansion_of_expression</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the series expansion of the expression around the specified point up to the given order.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        symbol -- Symbol around which the series expansion is computed.</span>
+<span class="sd">        point -- Point around which the series expansion is computed.</span>
+<span class="sd">        order -- Order of the series expansion.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># initialize the list to store the series coefficients with the value of the function at the center</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({</span><span class="n">symbol</span><span class="p">:</span> <span class="n">point</span><span class="p">})]</span>
+        <span class="c1"># initialize the factorial value for computing coefficients</span>
+        <span class="n">factorial</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">order</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># update the factorial value for the current order</span>
+            <span class="n">factorial</span> <span class="o">*=</span> <span class="n">i</span>
+            <span class="c1"># compute the i-th order derivative</span>
+            <span class="n">derivative_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+            <span class="c1"># evaluate the derivative expression at the center point and divide by factorial to get the coefficient</span>
+            <span class="n">coefficient</span> <span class="o">=</span> <span class="n">derivative_expr</span><span class="o">.</span><span class="n">evaluate</span><span class="p">({</span><span class="n">symbol</span><span class="p">:</span> <span class="n">point</span><span class="p">})</span> <span class="o">/</span> <span class="n">factorial</span>
+            <span class="c1"># append the coefficient to the series list</span>
+            <span class="n">series</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coefficient</span><span class="p">)</span>
+        
+        <span class="c1"># return the list of series coefficients</span>
+        <span class="k">return</span> <span class="n">series</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Symclone</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">SymClone Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Expression.html">Expression Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FuzzyBoolean.html">FuzzyBoolean Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../MathOperations.html">MathOperations Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Symbol.html">Symbol Module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Christoph Hartleb.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

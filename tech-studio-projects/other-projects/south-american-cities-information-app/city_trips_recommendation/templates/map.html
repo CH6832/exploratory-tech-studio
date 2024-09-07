@@ -1,0 +1,10 @@
+<!-- map.html -->
+{% extends 'base.html' %}
+
+{% block title %}Map of South America{% endblock %}
+
+{% block content %}
+    <!-- Your map content goes here -->
+    <div id="map" style="height: 600px;"></div>
+    {{ map_html | safe }}
+{% endblock %}

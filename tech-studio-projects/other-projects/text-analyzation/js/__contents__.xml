@@ -1,0 +1,27 @@
+<exist:collection xmlns="http://exist.sourceforge.net/NS/exist" xmlns:exist="http://exist.sourceforge.net/NS/exist" name="/db/dta/js" owner="admin" group="dba" mode="755" created="2018-05-24T10:45:29+02:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="bootstrap.bundle.min.js" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.bundle.min.js" mimetype="application/javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.bundle.min.js.map" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.bundle.min.js.map" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.js" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.js" mimetype="application/javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.js.map" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.js.map" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.min.js" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.min.js" mimetype="application/javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.min.js.map" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.min.js.map" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.bundle.js" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.bundle.js" mimetype="application/javascript">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="bootstrap.bundle.js.map" owner="admin" group="dba" mode="644" created="2018-05-24T10:46:23+02:00" modified="2018-05-24T10:46:23+02:00" filename="bootstrap.bundle.js.map" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</exist:collection>
