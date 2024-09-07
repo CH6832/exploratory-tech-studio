@@ -1,18 +1,3 @@
-/*
-
-This Arduino code reads an analog voltage from pin A0, converts it to a voltage value, and then displays
-it on an LCD screen and sends it to the serial monitor. Additionally, it controls multiple LEDs based
-on the voltage level and triggers a buzzer if the voltage falls within a specific range.
-
-What the code does:
-* It initializes a LiquidCrystal object for controlling an LCD display.
-* In the setup function, it sets up the serial communication, initializes the LCD display, and sets the pins 2 to 6 as output pins.
-* In the loop function, it reads the analog value from pin A0, converts it to a voltage value, and displays it on the LCD screen and sends it to the serial monitor.
-* It also controls LEDs connected to pins 2 to 6 based on the voltage level: each LED turns on if the voltage is higher than a certain threshold.
-* Finally, it triggers a buzzer connected to pin 9 if the voltage falls within a specific range (between 3.25V and 3.35V).
-
-*/
-
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(7, 8, 9, 10, 11, 12); 

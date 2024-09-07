@@ -1,0 +1,156 @@
+
+  +-----------------------+
+  |     Collect data      |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |   Preprocess data     |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |     Design model      |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |    Tain model         |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |     Evaluate model    |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |     Optimize model    |
+  +-----------------------+
+              | +---------------------------------
+              | | 
+              | |
+              | |
+              | |
+              | |
+              | |
+              | |
+              |
+              v 
+
+  +-----------------------+
+  |     Deploy model      |
+  +-----------------------+
+                +---------------------------------
+                | 
+                |
+                |
+                |
+                |
+                |
+                |
+
+
+
+
+
+
+
+
+
+1. Collect Data
+
+    What is Done: Collect raw data that will be used for training and evaluating the machine learning model.
+    Scripts Involved:
+        data/raw/versions.csv: This file contains the raw version data collected from various sources.
+
+2. Preprocess Data
+
+    What is Done: Process and clean the raw data to make it suitable for training. This includes handling missing values, normalization, and splitting the data into training, validation, and test sets.
+    Scripts Involved:
+        src/preprocessing/data_preprocessing.py: This script performs data cleaning, normalization, and splitting into training, validation, and test datasets. It outputs the processed data to the processed/ directory.
+
+3. Design Model
+
+    What is Done: Define the architecture of the machine learning model, including the number of layers, units in each layer, activation functions, etc.
+    Scripts Involved:
+        This step is typically done within the model training script but is conceptually part of the overall design process.
+
+4. Train Model
+
+    What is Done: Train the machine learning model using the preprocessed data. This includes fitting the model to the training data and validating it using the validation set.
+    Scripts Involved:
+        src/training/train_model.py: This script trains the model using the processed data. It includes model compilation, training, and saving the trained model in .h5 format.
+
+5. Evaluate Model
+
+    What is Done: Evaluate the trained model’s performance using metrics such as accuracy, loss, etc., on the test dataset to ensure it meets the desired performance criteria.
+    Scripts Involved:
+        Evaluation might be embedded within the train_model.py script or could be done in a separate script, but it is an essential step to ensure model performance.
+
+6. Optimize Model
+
+    What is Done: Apply optimization techniques such as quantization and pruning to make the model more efficient for deployment on resource-constrained devices.
+    Scripts Involved:
+        src/deployment/model_conversion.py: This script converts the trained model into TensorFlow Lite format and applies post-training optimizations like quantization to prepare it for deployment on the Arduino.
+
+7. Deploy Model
+
+    What is Done: Deploy the optimized model to the target hardware (Arduino) and integrate it with the inference code to perform predictions.
+    Scripts Involved:
+        src/deployment/arduino_inference_code.ino: This Arduino sketch file contains the code to load the TensorFlow Lite model, perform inference, and handle results. It is uploaded to the Arduino board using the Arduino IDE or CLI.
+
+Summary
+
+    Data Collection: Done manually or through external data collection methods.
+    Data Preprocessing: Automated using data_preprocessing.py.
+    Model Design: Typically done in the model training phase.
+    Model Training: Automated using train_model.py.
+    Model Evaluation: Embedded in or separate from the training script.
+    Model Optimization: Automated using model_conversion.py.
+    Model Deployment: Handled by arduino_inference_code.ino and involves uploading the code to the Arduino board.

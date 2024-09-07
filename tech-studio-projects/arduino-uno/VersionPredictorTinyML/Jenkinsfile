@@ -1,0 +1,103 @@
+pipeline {
+    agent any
+
+    environment {
+        ARDUINO_CLI_VERSION = '0.20.0'
+        PYTHON_VERSION = '3.12'
+        SKETCH_PATH = 'path/to/your/sketch'
+        BOARD = 'arduino:avr:uno'
+        SERIAL_PORT = '/dev/ttyUSB0'
+        GIT_COMMIT_MESSAGE = 'updates'
+        TEST_SKETCH_PATH = 'path/to/your/tests'
+    }
+
+    stages {
+        stage('Setup Python Environment') {
+            steps {
+                // Upgrade pip to the latest version
+                sh 'pip install --upgrade pip'
+                // Install the required Python packages globally
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Python Model Conversion Tests') {
+            steps {
+                sh '. venv/bin/activate && python model_conversion_test.py'
+            }
+        }
+
+        stage('Install Arduino CLI') {
+            steps {
+                sh """
+                curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+                arduino-cli core update-index
+                arduino-cli core install ${BOARD}
+                """
+            }
+        }
+
+        stage('Compile and Run Deployment Test') {
+            steps {
+                // Compile the deployment test sketch
+                sh "arduino-cli compile --fqbn ${BOARD} ${TEST_SKETCH_PATH}/deployment_test.ino"
+                // Run the deployment test sketch (if applicable)
+                sh "arduino-cli upload -p ${SERIAL_PORT} --fqbn ${BOARD} ${TEST_SKETCH_PATH}/deployment_test.ino"
+                // Include any commands to run tests if needed
+            }
+        }
+
+        stage('Compile and Run Boundary and Edge Case Tests') {
+            steps {
+                // Compile the boundary and edge case test sketch
+                sh "arduino-cli compile --fqbn ${BOARD} ${TEST_SKETCH_PATH}/boundary_and_edge_case_tests.ino"
+                // Run the boundary and edge case test sketch (if applicable)
+                sh "arduino-cli upload -p ${SERIAL_PORT} --fqbn ${BOARD} ${TEST_SKETCH_PATH}/boundary_and_edge_case_tests.ino"
+                // Include any commands to run tests if needed
+            }
+        }
+
+        stage('Compile Arduino Sketch') {
+            steps {
+                sh "arduino-cli compile --fqbn ${BOARD} ${SKETCH_PATH}"
+            }
+        }
+
+        stage('Upload to Arduino') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh "arduino-cli upload -p ${SERIAL_PORT} --fqbn ${BOARD} ${SKETCH_PATH}"
+            }
+        }
+        
+        stage('Git Operations') {
+            steps {
+                // Configure Git
+                sh 'git config --global user.email "you@example.com"'
+                sh 'git config --global user.name "Your Name"'
+                
+                // Add changes, commit, and push
+                sh 'git add .'
+                sh "git commit -m '${GIT_COMMIT_MESSAGE}' || echo 'No changes to commit'"
+                sh 'git push origin main'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Archive artifacts, if applicable
+            archiveArtifacts artifacts: '**/*.tflite', allowEmptyArchive: true
+            // Clean up workspace
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
