@@ -1,0 +1,7 @@
+gym
+pandas
+numpy
+tensorflow
+keras
+stable-baselines3
+jupyter
