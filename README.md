@@ -7,15 +7,18 @@ This project is an interdisciplinary repository for collaborative projects spann
 ## Content overview
 
 * [tech-studio-projects](/tech-studio-projects/)
-  
+
   * [algorithms](/tech-studio-projects/algorithms/)
+    * [backtracking](/tech-studio-projects/algorithms/backtracking/) - rat-in-a-maze, travelling-salesman-problem
     * [cryptography](/tech-studio-projects/algorithms/cryptography/) - rsa-encryption, sha256-hashing
-    * [divide-and-conquer](/tech-studio-projects/algorithms/divide-and-conquer/) - lowest-common-ancestor
-    * [dynamic-programming](/tech-studio-projects/algorithms/dynamic-programming/) - knapsack-problem, depth-first-search-for-a-graph, shortest-path-problem-with-dijkstra
-    * [graph](/tech-studio-projects/algorithms/graph/) - breadth-first-search, 
+    * [divide-and-conquer](/tech-studio-projects/algorithms/divide-and-conquer/) - lowest-common-ancestor, fast-fourier-transformation
+    * [dynamic-programming](/tech-studio-projects/algorithms/dynamic-programming/) - knapsack-problem, levenshtein-distance
+    * [graph](/tech-studio-projects/algorithms/graph/) - a-star-search, bellman-ford, breadth-first-search, depth-first-search-for-a-graph, shortest-path-problem-with-dijkstra
     * [linear-algebra](/tech-studio-projects/algorithms/linear-algebra/) - gaussian-elimination, jacobi-iteration, least-squares-method
       * [eigenvalue-algorithms](/tech-studio-projects/algorithms/linear-algebra/eigenvalue-algorithms/) - lanczos-algorithm, power-iteration, qr-algorithm
-    * [machine-learning](/tech-studio-projects/algorithms/machine-learning/) - linear-regression
+    * [machine-learning](/tech-studio-projects/algorithms/machine-learning/)
+      * [supervised](/tech-studio-projects/algorithms/machine-learning/supervised/) - linear-regression
+      * [unsupervised](/tech-studio-projects/algorithms/machine-learning/unsupervised/) - k-means
     * [numerical-optimization-algorithms](/tech-studio-projects/algorithms/numerical-optimization-algorithms/) - classical-genetic-algorithms, conjugate-gradient, gradient-descent, simulated-annealing
     * [root-finding-optimization](/tech-studio-projects/algorithms/root-finding-optimization/) - lanczos-algorithm, power-iteration, qr-algorithm
     * [searching](/tech-studio-projects/algorithms/searching/) - binary-search, boyer-moore, informed-search, knutt-morris-pratt, linear-search, rabin-karp, uninformed-search
@@ -24,73 +27,87 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [trees](/tech-studio-projects/algorithms/trees/) - avl, binary-search-tree, fenwick-tree, kd-tree, minimum-spanning-tree-with-kruskal, nearset-neighbour-with-kd-tree, breadth-first-search, prefix-tree, radix-tree, segment-tree, splay-tree, suffix-tree, tree-map
 
   * [arduino-uno](/tech-studio-projects/arduino-uno/) - projects realized with the arduino uno board
-    * [analog-to-voltage-monitor](/tech-studio-projects/arduino-uno/analog-to-voltage-monitor/) - reads an analog voltage from pin A0, converts it to a voltage value
-    * [cw-to-hp](/tech-studio-projects/arduino-uno/cw-to-hp/) - convert kilowatt to horsepower
-    * [digital-clock](/tech-studio-projects/arduino-uno/digital-clock/) - a digital clock showing seconds, minuites and hours
-    * [frequency-measurement](/tech-studio-projects/arduino-uno/frequency-measurement/) - measure frequency in Hz and KHz
-    * [measure-temperature-and-humidity](/tech-studio-projects/arduino-uno/measure-temperature-and-humidity/) - measure temperature and humidity
-    * [traffic-light-system](/tech-studio-projects/arduino-uno/traffic-light-system/) - fully working traffic light system 
-
-  * [command-line-tools](/tech-studio-projects/command-line-tools/)
-    * [directory-tree-generator](/tech-studio-projects/command-line-tools/directory-tree-generator/)
-    * [license-file-creator](/tech-studio-projects/command-line-tools/license-file-creator/)
+    * [DigitalClock](/tech-studio-projects/arduino-uno/DigitalClock/) - a digital clock showing seconds, minuites and hours
+    * [FrequencyMeasurement](/tech-studio-projects/arduino-uno/FrequencyMeasurement/) - measure frequency in Hz and KHz
+    * [TemperatureHumidityMeasurement](/tech-studio-projects/arduino-uno/TemperatureHumidityMeasurement/) - measure temperature and humidity
+    * [TrafficLightSystem](/tech-studio-projects/arduino-uno/TrafficLightSystem/) - fully working traffic light system
+    * [VersionPredictorTinyML](/tech-studio-projects/arduino-uno/VersionPredictorTinyML/) - predicts software version numbers using TensorFlow Lite for Microcontrollers, designed for deployment on embedded systems
+    * [VoltageReaderWithLCDAndBuzzer](/tech-studio-projects/arduino-uno/VoltageReaderWithLCDAndBuzzer/) - reads an analog voltage from pin A0, converts it to a voltage value
 
   * [data-structures](/tech-studio-projects/data-structures/)
     * [disjoint-set](/tech-studio-projects/data-structures/disjoint-set/)
-    * [double-linked-list](/tech-studio-projects/data-structures/double-linked-list/)    
+    * [double-linked-list](/tech-studio-projects/data-structures/double-linked-list/)
     * [dynamic-array](/tech-studio-projects/data-structures/dynamic-array/)
     * [hash-map](/tech-studio-projects/data-structures/hash-map/)
     * [heap](/tech-studio-projects/data-structures/heap/)
-    * [lock-free-linked-list](/tech-studio-projects/data-structures/lock-free-linked-list/)    
+    * [lock-free-linked-list](/tech-studio-projects/data-structures/lock-free-linked-list/)
     * [object-oriented-programming](/tech-studio-projects/data-structures/object-oriented-programming/)
-    * [single_linked-list](/tech-studio-projects/data-structures/single_linked-list/)           
+    * [single_linked-list](/tech-studio-projects/data-structures/single_linked-list/)
     * [skip-list](/tech-studio-projects/data-structures/skip-list/)
     * [suffix-array](/tech-studio-projects/data-structures/suffix-array/)
     * [user-defined-data-structures-in-python](/tech-studio-projects/data-structures/suffix-array/)
 
   * [design-patterns](/tech-studio-projects/design-patterns/)
     * [abstract-factory-pattern](/tech-studio-projects/design-patterns/abstract-factory-pattern/)
-    * [adapter-pattern](/tech-studio-projects/design-patterns/adapter-pattern/)    
+    * [adapter-pattern](/tech-studio-projects/design-patterns/adapter-pattern/)
     * [builder-pattern](/tech-studio-projects/design-patterns/builder-pattern/)
     * [command-pattern](/tech-studio-projects/design-patterns/command-pattern/)
     * [composite-pattern](/tech-studio-projects/design-patterns/composite-pattern/)
-    * [decorator-pattern](/tech-studio-projects/design-patterns/decorator-pattern/)   
+    * [decorator-pattern](/tech-studio-projects/design-patterns/decorator-pattern/)
     * [factory-method-pattern](/tech-studio-projects/design-patterns/factory-method-pattern/)
-    * [flyweight-pattern](/tech-studio-projects/design-patterns/flyweight-pattern/)           
-    * [oberserver-pattern](/tech-studio-projects/design-patterns/oberserver-pattern/)    
+    * [flyweight-pattern](/tech-studio-projects/design-patterns/flyweight-pattern/)
+    * [oberserver-pattern](/tech-studio-projects/design-patterns/oberserver-pattern/)
     * [prototype-pattern](/tech-studio-projects/design-patterns/prototype-pattern/)
     * [proxy-pattern](/tech-studio-projects/design-patterns/proxy-pattern/)  
     * [singleton-pattern](/tech-studio-projects/design-patterns/singleton-pattern/)
     * [strategy-pattern](/tech-studio-projects/design-patterns/strategy-pattern/)
     * [template-method-pattern](/tech-studio-projects/design-patterns/template-method-pattern/)
 
-  * [financial-industry](/tech-studio-projects/financial-industry//)
-    * [quantitative-trading](/tech-studio-projects/financial-industry/quantitative-trading/)
-      * [execution-system](/tech-studio-projects/financial-industry/quantitative-trading/execution-system/)
-      * [market-sentiment-analysis](/tech-studio-projects/financial-industry/quantitative-trading/market-sentiment-analysis/)
-      * [portfolio-optimization-tool](/tech-studio-projects/financial-industry/quantitative-trading/portfolio-optimization-tool/)
-      * [stock-price-analysis-dashboard](/tech-studio-projects/financial-industry/quantitative-trading/stock-price-analysis-dashboard/)
-      * [trading-strategies](/tech-studio-projects/financial-industry/quantitative-trading/trading-strategies/)
+  * [financial-industry](/tech-studio-projects/financial-industry/)
+    * [algo-trading-platform](/tech-studio-projects/financial-industry/algo-trading-platform/)
+    * [black-scholes-option-pricer](/tech-studio-projects/financial-industry/black-scholes-option-pricer/)  
+    * [blockchain-and-cryptocurrency-simulation](/tech-studio-projects/financial-industry/blockchain-and-cryptocurrency-simulation/)
+    * [credit-scoring-algorithm](/tech-studio-projects/financial-industry/credit-scoring-algorithms/)
+    * [financial_data_prediciton](/tech-studio-projects/financial-industry/financial_data_prediction/)
+    * [financial-management-app](/tech-studio-projects/financial-industry/financial-management-app/)
+    * [online-banking-system-simulation](/tech-studio-projects/financial-industry/online-banking-system-simulation/)
+    * [raft-consensus-algorithm](/tech-studio-projects/financial-industry/raft-consensus-algorithm/)
     * [regulatory-reporting](/tech-studio-projects/financial-industry/regulatory-reporting/)
-      * [us-gaap](/tech-studio-projects/financial-industry/regulatory-reporting/us-gaap/)
+    * [simple-token-erc-20-dapp](/tech-studio-projects/financial-industry/simple-token-erc-20-dapp/)
+    * [stock-price-ticker](/tech-studio-projects/financial-industry/stock-price-ticker/)
+    * [stock-price-visualization](/tech-studio-projects/financial-industry/stock-price-visualization/)
 
   * [machine-learning](/tech-studio-projects/machine-learning/)
-    * [detecting-credit-card-fraud](/tech-studio-projects/machine-learning/detecting-credit-card-fraud/)
-    * [image-classification](/tech-studio-projects/machine-learning/image-classification/)
-    * [image-creation](/tech-studio-projects/machine-learning/image-creation/)
-    * [movie-recommendation-system](/tech-studio-projects/machine-learning/movie-recommendation-system/)
+    * [natural-language-processing](/tech-studio-projects/machine-learning/natural-language-processing/)
+    * [reinforcement-learning](/tech-studio-projects/machine-learning/reinforcement-learning/)
+    * [responsible-ai](/tech-studio-projects/machine-learning/responsible-ai/)
+    * [supervised-learning](/tech-studio-projects/machine-learning/supervised-learning/)
+    * [unsupervised-learning](/tech-studio-projects/machine-learning/unsupervised-learning/)
 
-  * [natural-language-processing](/tech-studio-projects/natural-language-processing/)
-
-  * [prompt-engineering-experiments](/tech-studio-projects/prompt-engineering-experiments/)
-
-  * [web-applications](/tech-studio-projects/web-applications/)
-    * [diy-store](/tech-studio-projects/web-applications/diy-store/)
-    * [github-user-finder](/tech-studio-projects/web-applications/github-user-finder/)
-    * [guestbook](/tech-studio-projects/web-applications/guestbook/)
-    * [text-analyzation](/tech-studio-projects/web-applications/text-analyzation/)
-    * [travel-agency](/tech-studio-projects/web-applications/travel-agency/)
-    * [weather-prediction-app](/tech-studio-projects/web-applications/weather-prediction-app/)
+  * [other-projects](/tech-studio-projects/other-projects/)
+    * [amazon-web-shop-clone](/tech-studio-projects/other-projects/amazon-web-shop-clone/)
+    * [birthdays-management-app](/tech-studio-projects/other-projects/birthdays-management-app/)
+    * [directory-tree-generator](/tech-studio-projects/other-projects/directory-tree-generator/)
+    * [diy-store](/tech-studio-projects/other-projects/diy-store/)
+    * [document-management-system](/tech-studio-projects/other-projects/document-management-system/)
+    * [github-user-finder](/tech-studio-projects/other-projects/github-user-finder/)
+    * [guestbook](/tech-studio-projects/other-projects/guestbook/)
+    * [license-file-creator](/tech-studio-projects/other-projects/license-file-creator/)
+    * [multithreaded-webserver](/tech-studio-projects/other-projects/multithreaded-webserver/)
+    * [package-management-system](/tech-studio-projects/other-projects/package-management-system/)
+    * [prompt-engineering-experiments](/tech-studio-projects/other-projects/prompt-engineering-experiments/)
+    * [python-pep8-syle-checker](/tech-studio-projects/other-projects/python-pep8-syle-checker/)
+    * [quantum-computing-simulation](/tech-studio-projects/other-projects/quantum-computing-simulation/)
+    * [retail-sales-analysis](/tech-studio-projects/other-projects/retail-sales-analysis/)
+    * [south-american-cities-information-app](/tech-studio-projects/other-projects/south-american-cities-information-app/)
+    * [symclone](/tech-studio-projects/other-projects/symclone/)
+    * [system-administration-scripts](/tech-studio-projects/other-projects/system-administration-scripts/)
+    * [task-management-system](/tech-studio-projects/other-projects/task-management-system/)
+    * [text-analyzation](/tech-studio-projects/other-projects/text-analyzation/)
+    * [text-editor](/tech-studio-projects/other-projects/text-editor/)
+    * [travel-agency](/tech-studio-projects/other-projects/travel-agency/)
+    * [webbrowser](/tech-studio-projects/other-projects/webbrowser/)
+    * [wikibot](/tech-studio-projects/other-projects/wikibot/)
 
 * [.gitignore](/.gitignore) - list of files not tracked by github
 
@@ -139,7 +156,7 @@ To get started with the projects, please explore the folders in the [Content ove
     * [Basic syntax](https://www.markdownguide.org/basic-syntax/)
     * [Complete list of github markdown emofis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
     * [Awesome template](http://github.com/Human-Activity-Recognition/blob/main/README.md)
-    * [.gitignore file](https://git-scm.com/docs/gitignore) 
+    * [.gitignore file](https://git-scm.com/docs/gitignore)
 
 ## License
 
