@@ -84,6 +84,9 @@ Cargo.lock
 zig-out/
 *.zw
 
+# R
+.Rproj.user/
+
 # Ruby
 *.gem
 *.rbc
@@ -107,3 +110,4 @@ coverage/
 *.env
 .ruby-version
 .ruby-gemset
+.Rproj.user
