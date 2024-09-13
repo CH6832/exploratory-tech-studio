@@ -2,21 +2,25 @@
 
 South America City Explorer is a web application built with Django that provides information and images for various cities in South America. It offers features such as displaying city details, weather information, tourist attractions, and images related to each city.
 
+## Table of Contents
+- [Features](#features)
+- [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Usage](#usage)
+- [External APIs](#external-apis)
+
+
 ## Features
 
-* Display detailed information for each city, including population, area, and more.
-* Show current weather information for each city.
+* Display detailed information for each city:
+    * Official name, population, country, timezone, official languages, etc.   
+* Show important tourist information for each city.
 * Present tourist attractions and points of interest in each city.
-* Showcase high-quality images of each city obtained from the Unsplash API.
+* A map that displays the climate for the entire continent.
 
 ## Getting Started
 
 ### Prerequisites
-
-- [Python 3.x](https://www.python.org/downloads/)
-- [Django](https://www.djangoproject.com/)
-
-### Prerequisites and run the app
 
 1. Clone the repository:
 
@@ -42,24 +46,33 @@ Start the development server:
 py manage.py runserver
 ```
 
-## :pencil2: Getting Started
-
 ### Usage
 
 Navigate to the homepage to explore the list of cities. Click on a city to view detailed information, weather data, tourist attractions, and images.
 
-### External APIs
+## External APIs
 
-The application uses the following external APIs:
+The application uses the following external API:
 
-* [OpenWeatherMap API](https://openweathermap.org/api) for weather data.
-* [OpenTripMap API](https://dev.opentripmap.org/product) for tourist information.
-* [Unsplash API](https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines) for city images.
+* [OpenWeatherMap API](https://www.openstreetmap.org) for city data.
 
-## :bookmark: License
+## Other resources used to create this project
 
-This project is licensed under the terms of the [MIT License](LICENSE).
-
-## :copyright: Copyright
-
-See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+* Python
+  * [Python 3.12 documentation](https://docs.python.org/3/)
+  * [Built-in Functions](https://docs.python.org/3/library/functions.html)
+  * [Python Module Index](https://docs.python.org/3/py-modindex.html)
+  * [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+* Flask
+  * [Django documentation](https://docs.djangoproject.com/en/5.1/)
+* HTML
+  * [HTML: HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* CSS
+  * [CSS: Cascading Style Sheets - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=de)
+* Markdwon
+  * [Basic syntax](https://www.markdownguide.org/basic-syntax/)
+  * [Complete list of github markdown emofis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
+  * [Awesome template](http://github.com/Human-Activity-Recognition/blob/main/README.md)
+  * [.gitignore file](https://git-scm.com/docs/gitignore)
+* Editor
+  * [Visual Studio Code](https://code.visualstudio.com/)
