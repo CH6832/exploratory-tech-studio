@@ -16,7 +16,7 @@ South America City Explorer is a web application built with Django that provides
 - [Python 3.x](https://www.python.org/downloads/)
 - [Django](https://www.djangoproject.com/)
 
-### Installation
+### Prerequisites and run the app
 
 1. Clone the repository:
 
@@ -33,13 +33,13 @@ pip install -r requirements.txt
 Run migrations:
 
 ```sh
-python manage.py migrate
+py manage.py migrate
 ```
 
 Start the development server:
 
 ```sh
-python manage.py runserver
+py manage.py runserver
 ```
 
 ## :pencil2: Getting Started
