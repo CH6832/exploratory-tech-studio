@@ -45,7 +45,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [single_linked-list](/tech-studio-projects/data-structures/single_linked-list/)
     * [skip-list](/tech-studio-projects/data-structures/skip-list/)
     * [suffix-array](/tech-studio-projects/data-structures/suffix-array/)
-    * [user-defined-data-structures-in-python](/tech-studio-projects/data-structures/suffix-array/)
+    * [user-defined-data-structures-in-python](/tech-studio-projects/data-structures/user-defined-data-structures-in-python/)
 
   * [design-patterns](/tech-studio-projects/design-patterns/)
     * [abstract-factory-pattern](/tech-studio-projects/design-patterns/abstract-factory-pattern/)
