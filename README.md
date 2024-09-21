@@ -45,7 +45,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [single_linked-list](/tech-studio-projects/data-structures/single_linked-list/)
     * [skip-list](/tech-studio-projects/data-structures/skip-list/)
     * [suffix-array](/tech-studio-projects/data-structures/suffix-array/)
-    * [user-defined-data-structures-in-python](/tech-studio-projects/data-structures/suffix-array/)
+    * [user-defined-data-structures-in-python](/tech-studio-projects/data-structures/user-defined-data-structures-in-python/)
 
   * [design-patterns](/tech-studio-projects/design-patterns/)
     * [abstract-factory-pattern](/tech-studio-projects/design-patterns/abstract-factory-pattern/)
@@ -85,12 +85,12 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [unsupervised-learning](/tech-studio-projects/machine-learning/unsupervised-learning/)
 
   * [other-projects](/tech-studio-projects/other-projects/)
-    * [amazon-web-shop-clone](/tech-studio-projects/other-projects/amazon-web-shop-clone/)
     * [birthdays-management-app](/tech-studio-projects/other-projects/birthdays-management-app/)
     * [directory-tree-generator](/tech-studio-projects/other-projects/directory-tree-generator/)
     * [diy-store](/tech-studio-projects/other-projects/diy-store/)
     * [document-management-system](/tech-studio-projects/other-projects/document-management-system/)
     * [github-user-finder](/tech-studio-projects/other-projects/github-user-finder/)
+    * [guestbook](/tech-studio-projects/other-projects/guestbook/)
     * [multithreaded-webserver](/tech-studio-projects/other-projects/multithreaded-webserver/)
     * [package-management-system](/tech-studio-projects/other-projects/package-management-system/)
     * [prompt-engineering-experiments](/tech-studio-projects/other-projects/prompt-engineering-experiments/)
@@ -163,3 +163,4 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 ## Copyright
 
 See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+>>>>>>> 174b3838796e82cef0ce4226f460acf7143882c4
