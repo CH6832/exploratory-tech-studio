@@ -163,4 +163,3 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 ## Copyright
 
 See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
->>>>>>> 174b3838796e82cef0ce4226f460acf7143882c4
