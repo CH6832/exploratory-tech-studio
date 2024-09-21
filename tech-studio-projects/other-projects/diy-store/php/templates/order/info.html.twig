@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Information</title>
+</head>
+<body>
+    <h1>Order Information</h1>
+    <p>Order Number: {{ orderInfo.bestell_nr }}</p>
+    <p>Order Date: {{ orderInfo.bestell_date }}</p>
+    <h2>Items</h2>
+    <ul>
+        {% for item in itemInfo %}
+            <li>
+                Catalog Number: {{ item.katalog_nr }}<br>
+                Name: {{ item.name }}<br>
+                Quantity: {{ item.menge }}<br>
+                Price: {{ item.preis }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

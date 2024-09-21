@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "X7Mb4pyE5jk=",
+  "success": true,
+  "projectFilePath": "F:\\usb_drive_sandisk\\progress\\exploratory-tech-studio\\tech-studio-projects\\other-projects\\document-management-system\\csharp\\csharp\\csharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+  ],
+  "logs": []
+}

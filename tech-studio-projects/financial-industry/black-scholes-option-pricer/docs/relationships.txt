@@ -1,0 +1,29 @@
+2. Relationships:
+
+    Frontend <--> Backend via REST API
+    Backend <--> Database via SQL
+
+Here’s how it would look in a UML Component Diagram:
+
++------------------+                +-----------------+                +-------------------+
+|   Frontend       |   <----->      |     Backend      |   <----->      |      Database      |
+|   (React)        |   REST API     |   (Python/Flask) |   SQL          |   (MySQL)          |
+|                  |                |                 |                |                   |
+|  +------------+  |                |  +------------+ |                |  +-------------+  |
+|  | Interactive |  |                |  | User Inputs | |                |  | Historical  |  |
+|  | UI          |  |                |  | & Heatmap   | |                |  | Inputs      |  |
+|  +------------+  |                |  +------------+ |                |  +-------------+  |
+|      ^           |                |       ^        |                |                   |
+|      |           |                |       |        |                |                   |
+|  +------------+  |                |  +------------+ |                |                   |
+|  | Input Form  |  |                |  | Black-Scholes| |                |                   |
+|  +------------+  |                |  | Calculations | |                |                   |
+|                  |                |  +------------+ |                |                   |
++------------------+                +-----------------+                +-------------------+
+
+Explanation:
+
+    Frontend contains UI components like Input Form and Heatmap, which interact with the Backend via REST API.
+    Backend handles calculations and data processing, interacting with the Frontend and Database.
+    Database stores historical inputs and is accessed by the Backend via SQL.
+

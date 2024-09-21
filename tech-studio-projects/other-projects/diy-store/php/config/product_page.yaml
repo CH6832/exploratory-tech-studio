@@ -1,0 +1,11 @@
+# config/product_page.yaml
+product_page:
+    title: 'The DIY Store - Catalog'
+    top: 'The DIY Store - Catalog'
+    bottom: 'If you have any questions or problems, please contact admin@baumarkt.de'
+    table_heads:
+        katalog_nr: 'Art.Nr.'
+        name: 'Name'
+        pr_beschr: 'Description'
+        preis: 'Price'
+        menge: 'Quantity'

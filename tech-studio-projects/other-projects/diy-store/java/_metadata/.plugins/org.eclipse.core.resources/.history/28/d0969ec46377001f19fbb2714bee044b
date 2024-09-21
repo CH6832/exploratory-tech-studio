@@ -1,0 +1,48 @@
+<%@ page import="java.util.*, model.ShoppingCart" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+    Map<Integer, Double> productPrices = new HashMap<>(); // Store product prices
+    productPrices.put(1, 19.99); // Replace with actual prices
+    productPrices.put(2, 9.99);
+
+    double totalPrice = cart.getTotalPrice(productPrices);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/shop.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Your Shopping Cart</h1>
+    </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Catalog Nr.</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <%
+                for (Map.Entry<Integer, Integer> entry : cart.getItems().entrySet()) {
+                    int productId = entry.getKey();
+                    int quantity = entry.getValue();
+                    double price = productPrices.get(productId);
+            %>
+                    <tr>
+                        <td><%= productId %></td>
+                        <td><!-- Fetch product name from database --></td>
+                        <td><%= quantity %></td>
+                        <td><%= price * quantity %> Euro</td>
+                    </tr>
+            <%
+                }
+            %>
+        </table>
+        <h3>Total: <%= totalPrice %> Euro</h3>
+    </div>
+</body>
+</html>

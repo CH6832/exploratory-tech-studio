@@ -1,0 +1,28 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- Common CSS files, meta tags, etc. -->
+</head>
+<body>
+    <!-- Common header, navbar, etc. -->
+    <header>
+        <!-- Your navbar code here -->
+    </header>
+
+    <!-- Content block -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Common footer, contact info, etc. -->
+    <footer>
+        <!-- Your footer code here -->
+    </footer>
+
+    <!-- Common JavaScript files, scripts, etc. -->
+</body>
+</html>

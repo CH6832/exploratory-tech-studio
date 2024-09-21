@@ -1,0 +1,47 @@
+
+2. Deployment Diagram
+
+Purpose: To illustrate the physical deployment of your system’s components.
+
+    Nodes:
+        Web Server (hosts Frontend)
+        Application Server (hosts Backend)
+        Database Server (hosts MySQL)
+
+    Artifacts:
+        React Application (deployed on Web Server)
+        Flask Application (deployed on Application Server)
+        MySQL Database (deployed on Database Server)
+
+    Connections:
+        Web Server connects to Application Server.
+        Application Server connects to Database Server.
+
+Diagram Example:
+
++------------------+
+|  Web Server      |
+|  (Frontend)      |
+|  +------------+  |
+|  | React App  |  |
+|  +------------+  |
++--------|---------+
+         |
+         v
++------------------+
+|  Application     |
+|  Server          |
+|  (Backend)       |
+|  +------------+  |
+|  | Flask App  |  |
+|  +------------+  |
++--------|---------+
+         |
+         v
++------------------+
+|  Database Server |
+|  (MySQL)         |
+|  +-------------+ |
+|  | MySQL DB    | |
+|  +-------------+ |
++------------------+

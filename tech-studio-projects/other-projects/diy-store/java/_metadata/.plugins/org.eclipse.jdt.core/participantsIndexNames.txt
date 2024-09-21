@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+C:\Users\chris\Desktop\diy-store-java-test\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1290203382.index
+\diy-store-test\src\main\java

@@ -1,0 +1,68 @@
+{# templates/cart/table.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1 style="text-align:center">{{ page.top }}</h1>
+    <h2 style="text-align:center">{{ page.top2 }}</h2>
+
+    <p style="font-weight:bold">{{ message|default('') }}<hr></p>
+    
+    <form action="{{ path('cart_page') }}" method="POST">
+        <table border="0" style="width:100%">
+            {% if items|length > 0 %}
+                <tr>
+                    {% for header in table_headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                <tr><td colspan="6"><hr></td></tr>
+                
+                {% for item in items %}
+                    <tr>
+                        <td width="5%" align="center">{{ loop.index }}</td>
+                        <td width="5%" align="center">{{ item.catalog_number }}</td>
+                        <td align="center">{{ item.name }}</td>
+                        <td width="20%" style="text-align:center">
+                            <input size="4" type="text" name="item{{ item.catalog_number }}" value="{{ item.quantity }}"> Stück
+                        </td>
+                        <td width="15%" align="right">{{ item.price|number_format(2) }} Euro</td>
+                        <td align="right" width="10%">
+                            {{ (item.quantity * item.price)|number_format(2) }} Euro
+                        </td>
+                    </tr>
+                    {% set order_total = order_total + (item.quantity * item.price) %}
+                {% endfor %}
+                
+                <tr><td colspan="6"><hr></tr>
+                <tr>
+                    <td colspan="5" style="text-align:right; font-weight:bold">Gesamt</td>
+                    <td style="text-align:right;line-height:200%">{{ order_total }} Euro</td>
+                </tr>
+                <tr><td colspan="6"><hr></tr>
+                <tr>
+                    <td colspan="2" style="text-align:left">
+                        <input type="submit" value="Einkauf fortsetzen">
+                    </td>
+                    <td colspan="2" style="text-align:center">
+                        <input type="submit" name="Ship" value="Bestellung aufgeben">
+                    </td>
+                    <td colspan="2" style="text-align:right">
+                        <input type="submit" name="Cart" value="Warenkorb aktualisieren">
+                    </td>
+                </tr>
+            {% else %}
+                <hr>
+                <tr>
+                    <td colspan="5" style="text-align:left">
+                        <input type="submit" value="Einkaufen fortsetzen">
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </form>
+</body>
+</html>

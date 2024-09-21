@@ -1,0 +1,25 @@
+{# templates/shipping.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping Information</title>
+</head>
+<body>
+    <h1>Shipping Information</h1>
+
+    <form action="#" method="post">
+        <!-- Other form fields -->
+
+        <label for="state">State:</label>
+        <select name="state" id="state">
+            {% for code, name in state_codes %}
+                <option value="{{ code }}">{{ name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Other form fields -->
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

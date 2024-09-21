@@ -1,0 +1,102 @@
+<%@ page import="java.sql.*, java.util.*" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    // Sample variables; replace with actual data retrieval logic
+    String title = "DIY Store Products"; // Title of the page
+    String topHeader = "Welcome to the DIY Store"; // Top header
+    String bottomText = "Thank you for visiting our store."; // Bottom text
+
+    // Simulated product data
+    List<Product> all = new ArrayList<>(); // This should be fetched from the database
+    int n_products = all.size(); // Total number of products
+    int n_start = 0; // Starting index for pagination
+    int n_end = Math.min(n_products - 1, n_start + 10); // End index for pagination
+    int n_per_page = 10; // Number of products per page
+
+    // Example Product class
+    class Product {
+        int katalog_nr;
+        String name;
+        String pr_beschr;
+        double preis;
+
+        Product(int katalog_nr, String name, String pr_beschr, double preis) {
+            this.katalog_nr = katalog_nr;
+            this.name = name;
+            this.pr_beschr = pr_beschr;
+            this.preis = preis;
+        }
+    }
+
+    // Sample data for demonstration
+    all.add(new Product(1, "Hammer", "High-quality hammer", 19.99));
+    all.add(new Product(2, "Screwdriver", "Versatile screwdriver", 9.99));
+    // Add more products as needed...
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <form action="<%= request.getContextPath() %>/shop.jsp" method="POST">
+        <p style="text-align:right">
+            <input type="submit" name="Cart" value="View Cart">
+        </p>
+    </form>
+    
+    <div style="margin-left:.1in;margin-right:.1in">
+        <h1 align="center"><%= topHeader %></h1>
+        <p style="font-size:150%"><b><%= request.getParameter("interest") != null ? request.getParameter("interest") : "" %></b></p>
+        <p align="right"><%= n_products %> Product(s) found</p>
+        
+        <table border="0" cellpadding="5" width="100%">
+            <tr>
+                <th>Katalog Nr</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <form action="<%= request.getContextPath() %>/shop.jsp" method="POST">
+                <%
+                    for (int i = n_start; i <= n_end; i++) {
+                        if (i < n_products) {
+                %>
+                            <tr>
+                                <td align="center" width="10%"><%= all.get(i).katalog_nr %></td>
+                                <td align="center"><%= all.get(i).name %></td>
+                                <td align="center"><%= all.get(i).pr_beschr %></td>
+                                <td align="right" width="12%"><%= all.get(i).preis %> Euro</td>
+                                <td align="center" width="12%"><input type="text" name="item<%= all.get(i).katalog_nr %>" value="0" size="4"></td>
+                            </tr>
+                <%
+                        }
+                    }
+                %>
+                <input type="hidden" name="n_end" value="<%= n_end %>">
+                <input type="hidden" name="interest" value="<%= request.getParameter("interest") != null ? request.getParameter("interest") : "" %>">
+                <tr>
+                    <td colspan="2"><input type="submit" value="Other Category"></td>
+                    <td colspan="2"><input type="submit" name="Cart" value="Add to Cart"></td>
+                    <td colspan="2" align="right">
+                        <%
+                            if (n_end > n_per_page - 1) {
+                        %>
+                            <input type="submit" name="Products" value="Previous">
+                        <%
+                            }
+                            if (n_end < n_products - 1) {
+                        %>
+                            <input type="submit" name="Products" value="Next <%= n_per_page %>">
+                        <%
+                            }
+                        %>
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <p style="text-align:center;"><font size="-1"><%= bottomText %></font></p>
+    </div>
+</body>
+</html>

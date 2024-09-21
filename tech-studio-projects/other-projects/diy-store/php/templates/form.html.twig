@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping Form</title>
+</head>
+<body>
+    {{ form|raw }}
+    {% if message is defined %}
+        <p>{{ message|raw }}</p>
+    {% endif %}
+</body>
+</html>

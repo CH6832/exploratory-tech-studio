@@ -1,0 +1,26 @@
+{# templates/login/index.html.twig #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Store Login</title>
+</head>
+<body>
+<div id="wrapper">
+    <form method="post" action="{{ path('login') }}">
+        <label for="email">E-Mail:</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+        <input type="submit" name="send" value="Login">
+    </form>
+
+    {# Display error messages if login fails #}
+    {% for message in app.flashes('error') %}
+        <div class="error">{{ message }}</div>
+    {% endfor %}
+</div>
+</body>
+</html>

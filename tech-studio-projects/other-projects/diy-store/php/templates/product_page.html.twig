@@ -1,0 +1,30 @@
+{# templates/product_page.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.top }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                {% for key, label in page.table_heads %}
+                    <th>{{ label }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for key, label in page.table_heads %}
+                    <td>{{ product[key] }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <p style="text-align:center; font-size:-1">{{ page.bottom }}</p>
+</body>
+</html>

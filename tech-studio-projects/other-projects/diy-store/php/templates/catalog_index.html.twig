@@ -1,0 +1,37 @@
+{# templates/catalog_index.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.top }}</h1>
+    <h2>{{ page.top2 }}</h2>
+
+    <form action="{{ path('shopping_cart') }}" method="POST">
+        <p style="text-align:right">
+            <input type="submit" name="Cart" value="Show shopping cart">
+        </p>
+    </form>
+
+    <div style="margin-left:.1in">
+        {% for category, types in food_categories %}
+            <h3>{{ category }}</h3>
+            <ul>
+                {% for type in types %}
+                    <li>
+                        <input type="radio" name="interest" value="{{ type }}">
+                        <b>{{ type }}</b>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <form action="{{ path('catalog_index') }}" method="POST">
+            <input type="submit" name="Products" value="Choose a category">
+        </form>
+    </div>
+
+    <hr>
+    <p style="text-align:center; font-size:-1">{{ page.bottom }}</p>
+</body>
+</html>

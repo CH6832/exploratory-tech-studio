@@ -1,0 +1,60 @@
+
+3. Class Diagram
+
+Purpose: To show the static structure of the system with detailed classes and relationships.
+
+    Classes:
+        User: Attributes like userId, methods like login().
+        Heatmap: Attributes like data, methods like generateHeatmap().
+        InputForm: Attributes like formData, methods like submit().
+        Database: Attributes like historicalInputs, methods for CRUD operations.
+
+Diagram Example:
+
+lua
+
++----------------+
+|     User       |
++----------------+
+| - userId: int  |
+| - name: string |
++----------------+
+| + login(): void|
+| + logout(): void|
++----------------+
+         |
+         | 1
+         |
+         v
++----------------+
+|   InputForm    |
++----------------+
+| - formData: data |
++----------------+
+| + submit(): void|
++----------------+
+         |
+         | 1
+         |
+         v
++----------------+
+|   Heatmap      |
++----------------+
+| - data: data   |
++----------------+
+| + generate(): void |
++----------------+
+         |
+         | 1
+         |
+         v
++----------------+
+|  Database      |
++----------------+
+| - historicalInputs: data |
++----------------+
+| + save(): void|
+| + load(): data|
++----------------+
+
+

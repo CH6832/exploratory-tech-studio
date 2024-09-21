@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document Quality Dashboard</title>
+        <!-- Bootstrap CSS link -->
+    </head>
+    <body>
+        <h1>Document Quality Dashboard</h1>
+        <p>Total Templates: <span th:text="${totalTemplates}"></span></p>
+        <p>Issues Found: <span th:text="${issuesFound}"></span></p>
+        <p>Performance Metrics: <span th:text="${performanceMetrics}"></span></p>
+        <!-- Dashboard content here -->
+    </body>
+</html>

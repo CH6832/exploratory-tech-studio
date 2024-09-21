@@ -1,0 +1,36 @@
+{# templates/catalog_index_page.html.twig #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <form action="{{ path('show_cart') }}" method="POST">
+            <p style="text-align:right">
+                <input type="submit" name="Cart" value="Show shopping cart">
+            </p>
+        </form>
+        <div style="margin-left:.1in">
+            <h1 style="text-align:center">{{ page.top }}</h1>
+            <p style="font-style:italic">{{ page.top2 }}</p>
+            <hr>
+            <form action="{{ path('choose_category') }}" method="POST">
+                {% for key, subarray in food_categories %}
+                    <h3>{{ key }}</h3>
+                    <ul>
+                        {% for type in subarray %}
+                            <li>
+                                <input type="radio" name="interest" value="{{ type }}">
+                                <b>{{ type }}</b>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+                <input type="submit" name="Products" value="Choose a category">
+            </form>
+        </div>
+        <hr>
+        <p style="text-align:center;font-size:-1">{{ page.bottom }}</p>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+{# templates/order_summary.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.top }}</h1>
+    <h2>{{ page.top2 }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                {% for header in page.table_headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {# Example data rendering; adapt to your actual data structure #}
+            {% for item in order.items %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.catalog_number }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Order Number: {{ order_number }}</p>
+    <p>Shipping Rate: {{ shipping_rate }}</p>
+
+    <p>{{ page.bottom }}</p>
+</body>
+</html>

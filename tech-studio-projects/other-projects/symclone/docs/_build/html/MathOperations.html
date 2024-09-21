@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="y" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MathOperations Module &#8212; Symclone 2024 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=27f46a8d"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Symbol Module" href="Symbol.html" />
+    <link rel="prev" title="FuzzyBoolean Module" href="FuzzyBoolean.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-symclone.MathOperations">
+<span id="mathoperations-module"></span><h1>MathOperations Module<a class="headerlink" href="#module-symclone.MathOperations" title="Link to this heading">¶</a></h1>
+<p>MathOperations.py</p>
+<p>Mathematical operations for the SymClone library.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="symclone.MathOperations.MathOperations">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">symclone.MathOperations.</span></span><span class="sig-name descname"><span class="pre">MathOperations</span></span><a class="reference internal" href="_modules/symclone/MathOperations.html#MathOperations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#symclone.MathOperations.MathOperations" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class providing various mathematical operations on expressions.</p>
+<p>This class contains static methods to perform mathematical operations such as derivative calculation,
+numerical integration, limit computation, and Taylor series expansion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="symclone.MathOperations.MathOperations.derivative">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/symclone/MathOperations.html#MathOperations.derivative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#symclone.MathOperations.MathOperations.derivative" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the derivative of an expression with respect to a given symbol numerically.</p>
+<p>Parameters:
+expression (Callable[[float], float]): The expression to differentiate.
+value (float): The point at which to compute the derivative.
+h (float): Step size for numerical differentiation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="symclone.MathOperations.MathOperations.integral">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_intervals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/symclone/MathOperations.html#MathOperations.integral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#symclone.MathOperations.MathOperations.integral" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the definite integral of an expression over a specified range numerically.</p>
+<p>Parameters:
+expression (Callable[[float], float]): The expression to integrate.
+lower_limit (float) -- The lower limit of integration.
+upper_limit (float) -- The upper limit of integration.
+num_intervals (int) -- Number of intervals for numerical integration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="symclone.MathOperations.MathOperations.limit">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/symclone/MathOperations.html#MathOperations.limit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#symclone.MathOperations.MathOperations.limit" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the limit of an expression as a value approaches a specified point numerically.</p>
+<p>Parameters:
+expression (Callable[[float], float]): The expression to evaluate.
+value (float): The value toward which the limit is computed.
+h (float): A small step size to approach the limit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="symclone.MathOperations.MathOperations.series_expansion">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">series_expansion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/symclone/MathOperations.html#MathOperations.series_expansion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#symclone.MathOperations.MathOperations.series_expansion" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the Taylor series expansion of an expression around a specified point up to a given order.</p>
+<p>Parameters:
+expression (Callable[[float], float]): The expression to expand.
+point (float) -- The point around which the series expansion is computed.
+order (int) -- The order of the series expansion.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Symclone</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SymClone Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Expression.html">Expression Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FuzzyBoolean.html">FuzzyBoolean Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MathOperations Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Symbol.html">Symbol Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Expression.html">Expression Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FuzzyBoolean.html">FuzzyBoolean Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MathOperations Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#symclone.MathOperations.MathOperations"><code class="docutils literal notranslate"><span class="pre">MathOperations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Symbol.html">Symbol Module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">SymClone Modules</a><ul>
+      <li>Previous: <a href="FuzzyBoolean.html" title="previous chapter">FuzzyBoolean Module</a></li>
+      <li>Next: <a href="Symbol.html" title="next chapter">Symbol Module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Christoph Hartleb.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/MathOperations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{# templates/shopping_cart.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <h1>{{ page.top }}</h1>
+    <h2>{{ page.top2 }}</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                {% for header in page.table_headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cartItems %}
+                <tr>
+                    {% for key, value in item %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>
+        <p>{{ page.bottom }}</p>
+    </footer>
+</body>
+</html>

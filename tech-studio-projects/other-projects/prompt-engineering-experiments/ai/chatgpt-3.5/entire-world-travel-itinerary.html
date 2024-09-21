@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="../../favicon.ico" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/3.4/examples/navbar-fixed-top/"
+    />
+
+    <!-- Website title -->
+    <title>Experimental PE-Project</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="navbar-fixed-top.css" rel="stylesheet"> -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9
+      ]><script src="../../assets/js/ie8-responsive-file-warning.js"></script
+    ><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar">
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+      <div class="container-fluid">
+        <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html">PROMPT ENGINEERING</a>
+        </div>
+
+        <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../../index.html#jumbotron"
+                >HOME <span class="sr-only">(aktuell)</span></a
+              >
+            </li>
+            <li><a href="../../index.html#mehrInfo">AI TOOLS</a></li>
+            <!-- <li><a href="#footer">AI TOOLS</a></li> -->
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <!-- <input type="email" class="form-control" placeholder="email" />
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="passwort"
+                /> -->
+                <a href="https://www.linkedin.com/in/christoph-hartleb/">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-linkedin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                      />
+                    </svg>
+                    <span class="visually-hidden">Christoph Hartleb</span>
+                  </button></a
+                >
+              </div>
+              <!-- <button type="submit" class="btn btn-success">Login</button> -->
+            </form>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- /NAVBAR -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- HOME -->
+    <div class="jumbotron" id="jumbotron">
+        <div class="container">
+
+          <br>  
+          <br>
+          
+          <h2 style="color:seagreen;">Travel the entire world</h2>
+          
+          <br>
+
+          <p>
+            An entire travel itinerary for the entire globe.
+          </p>
+
+          <br>
+          <br>
+
+          <h2 style="color:seagreen;">Prompt history:</h2>
+
+                            <br>
+                            <br>
+
+                            <md-block>
+                                ### USER INPUT:
+                                </md-block>
+                    
+                                <div style="background-color:white;border:15px solid white;">
+                                    <md-block >
+                                        
+                                        You are a decorated travel expert. You travelled all over the globe and visited almost every major city on the entire planet. Please plan an entire world trip for me and cosider the following: Everything must be low-cost because I have a ver limited budget. I want to visit capitals only such as Lissaboa, Madrid, Barceloona, Paris London, Vienna, Budapest, Bratislave, Athens, Istanbul, Kario, Jerusalem, Bagdad, Katar, Dubai, New Dheli, Kadmandu, Moscow, Hongkong, Shanghai, Tokayo, San Francisco,  San Diego, Los Angelos, Houston, Austin, New Orleans, Atlanta Orlando, New York City, Boston. I leave the rest up to you.
+
+                                    </md-block>
+                                </div>
+                                
+                                <br>
+                                <br>
+
+                                <md-block>
+                                    ### OUTPUT:
+                                    </md-block>
+                        
+                                    <div style="background-color:white;border:15px solid white;">
+                                        <md-block>
+
+                                            
+                                            Planning a low-cost world trip covering all these capitals requires some strategic thinking and prioritizing budget-friendly options. Let's craft an itinerary that maximizes affordability while still providing a diverse and memorable experience:
+
+                                            ### Europe:
+                                            1. **Lisbon, Portugal:**
+                                               - Stay in budget hostels or consider Airbnb for affordable accommodation options.
+                                               - Explore the historic neighborhoods such as Alfama and Bairro Alto.
+                                            2. **Madrid, Spain:**
+                                               - Opt for budget accommodations in the city center or near public transportation.
+                                               - Visit the Prado Museum during free hours or enjoy free walking tours.
+                                            3. **Barcelona, Spain:**
+                                               - Stay in hostels in areas like Gràcia or El Raval.
+                                               - Enjoy free attractions like Park Güell, Gothic Quarter, and La Barceloneta Beach.
+                                            4. **Paris, France:**
+                                               - Look for budget hotels or hostels in Montmartre or Belleville.
+                                               - Enjoy free attractions like Notre Dame Cathedral, Sacré-Cœur Basilica, and the Luxembourg Gardens.
+                                            5. **London, United Kingdom:**
+                                               - Stay in budget accommodations in areas like King's Cross or Camden.
+                                               - Explore free museums like the British Museum, Tate Modern, and the National Gallery.
+                                            
+                                            ### Eastern Europe:
+                                            6. **Vienna, Austria:**
+                                               - Stay in budget accommodations in areas like Favoriten or Leopoldstadt.
+                                               - Visit free attractions like St. Stephen's Cathedral and the Naschmarkt.
+                                            7. **Budapest, Hungary:**
+                                               - Stay in affordable hostels in the Jewish Quarter or District VII.
+                                               - Enjoy free attractions like Buda Castle, Fisherman's Bastion, and the Chain Bridge.
+                                            8. **Bratislava, Slovakia:**
+                                               - Look for budget accommodations in the Old Town area.
+                                               - Explore attractions like Bratislava Castle and St. Martin's Cathedral.
+                                            
+                                            ### Middle East:
+                                            9. **Athens, Greece:**
+                                               - Stay in budget accommodations in areas like Plaka or Psiri.
+                                               - Visit free attractions like the Acropolis and the Ancient Agora.
+                                            10. **Istanbul, Turkey:**
+                                                - Stay in budget accommodations in areas like Sultanahmet or Beyoglu.
+                                                - Explore attractions like the Hagia Sophia, Blue Mosque, and Grand Bazaar.
+                                            11. **Cairo, Egypt:**
+                                                - Look for budget accommodations in Downtown Cairo.
+                                                - Visit attractions like the Giza Pyramids and the Egyptian Museum.
+                                            
+                                            ### Asia:
+                                            12. **Jerusalem, Israel:**
+                                                - Stay in budget accommodations in the Old City or West Jerusalem.
+                                                - Explore attractions like the Western Wall and the Church of the Holy Sepulchre.
+                                            13. **Baghdad, Iraq:**
+                                                - Due to safety concerns, consider a day trip from a nearby city like Amman, Jordan.
+                                            14. **Doha, Qatar:**
+                                                - Stay in budget accommodations in areas like Al Sadd or Al Najada.
+                                                - Explore attractions like the Souq Waqif and the Corniche.
+                                            15. **Dubai, United Arab Emirates:**
+                                                - Look for budget accommodations in areas like Deira or Bur Dubai.
+                                                - Visit attractions like Jumeirah Beach and the Dubai Fountain.
+                                            
+                                            ### South Asia:
+                                            16. **New Delhi, India:**
+                                                - Stay in budget accommodations in areas like Paharganj or Karol Bagh.
+                                                - Explore attractions like the Red Fort, India Gate, and Jama Masjid.
+                                            17. **Kathmandu, Nepal:**
+                                                - Look for budget accommodations in Thamel or Boudhanath.
+                                                - Visit attractions like Swayambhunath (Monkey Temple) and Boudhanath Stupa.
+                                            
+                                            ### East Asia:
+                                            18. **Moscow, Russia:**
+                                                - Stay in budget accommodations in areas like Arbat or Zamoskvorechye.
+                                                - Explore attractions like Red Square and the Kremlin.
+                                            19. **Hong Kong, China:**
+                                                - Consider staying in budget hostels in areas like Tsim Sha Tsui or Mong Kok.
+                                                - Visit attractions like Victoria Peak and the Star Ferry.
+                                            20. **Shanghai, China:**
+                                                - Look for budget accommodations in areas like Jing'an or Zhabei.
+                                                - Explore attractions like the Bund and Yu Garden.
+                                            
+                                            ### North America:
+                                            21. **San Francisco, USA:**
+                                                - Stay in budget accommodations in areas like the Tenderloin or Mission District.
+                                                - Explore attractions like Golden Gate Park and Fisherman's Wharf.
+                                            22. **San Diego, USA:**
+                                                - Look for budget accommodations in areas like Gaslamp Quarter or Hillcrest.
+                                                - Visit attractions like Balboa Park and La Jolla Cove.
+                                            23. **Los Angeles, USA:**
+                                                - Stay in budget accommodations in areas like Hollywood or Koreatown.
+                                                - Explore attractions like Venice Beach and Griffith Observatory.
+                                            24. **Houston, USA:**
+                                                - Look for budget accommodations in areas like Midtown or Montrose.
+                                                - Visit attractions like the Space Center Houston and Hermann Park.
+                                            25. **Austin, USA:**
+                                                - Stay in budget accommodations in areas like East Austin or South Congress.
+                                                - Explore attractions like Zilker Park and the Texas State Capitol.
+                                            26. **New Orleans, USA:**
+                                                - Look for budget accommodations in areas like the French Quarter or Marigny.
+                                                - Visit attractions like Jackson Square and Frenchmen Street.
+                                            27. **Atlanta, USA:**
+                                                - Stay in budget accommodations in areas like Midtown or Downtown.
+                                                - Explore attractions like the Martin Luther King Jr. National Historic Site and Piedmont Park.
+                                            28. **Orlando, USA:**
+                                                - Look for budget accommodations near International Drive or Kissimmee.
+                                                - Visit attractions like Universal Studios and Walt Disney World.
+                                            29. **New York City, USA:**
+                                                - Stay in budget accommodations in areas like Harlem or Brooklyn.
+                                                - Explore attractions like Central Park and Times Square.
+                                            30. **Boston, USA:**
+                                                - Look for budget accommodations in areas like Fenway or Back Bay.
+                                                - Visit attractions like the Freedom Trail and Harvard Square.
+                                            
+                                            ### Itinerary Summary:
+                                            - Be flexible with travel dates to take advantage of low-cost flights and accommodations.
+                                            - Utilize budget airlines, public transportation, and walking to minimize transportation costs.
+                                            - Consider purchasing city passes or museum passes where available to save money on attractions.
+                                            - Look for free walking tours or self-guided walking itineraries to explore each city on a budget.
+                                            - Research local markets and street food options for affordable dining experiences.
+                                            
+                                            With careful planning and prioritizing budget-friendly options, you can embark on an unforgettable world trip without breaking the bank. Safe travels!
+
+
+                                        </md-block>
+                                    
+                                    </div>
+
+                                    <br>
+                                    <br>
+
+                                    <md-block>
+                                        ### USER INPUT:
+                                        </md-block>
+                            
+                                        <div style="background-color:white;border:15px solid white;">
+                                            <md-block >
+                                                
+                                                Could you provide a specific route on how to do that itinerary?
+                                                
+                                            </md-block>
+                                        </div>
+                                        
+                                        <br>
+                                        <br>
+        
+                                        <md-block>
+                                            ### OUTPUT:
+                                            </md-block>
+                                
+                                            <div style="background-color:white;border:15px solid white;">
+                                                <md-block>
+        
+                                                    
+                                                    Certainly! Here's a suggested route for your world trip itinerary, optimized for cost efficiency and logistical ease:
+
+                                                    1. Start in **Europe**:
+                                                       - Lisbon, Portugal
+                                                       - Madrid, Spain
+                                                       - Barcelona, Spain
+                                                       - Paris, France
+                                                       - London, United Kingdom
+                                                       - Vienna, Austria
+                                                       - Budapest, Hungary
+                                                       - Bratislava, Slovakia
+                                                    
+                                                    2. Move to the **Middle East**:
+                                                       - Athens, Greece
+                                                       - Istanbul, Turkey
+                                                       - Cairo, Egypt
+                                                       - Jerusalem, Israel
+                                                    
+                                                    3. Continue to **Asia**:
+                                                       - Dubai, United Arab Emirates
+                                                       - New Delhi, India
+                                                       - Kathmandu, Nepal
+                                                       - Moscow, Russia
+                                                       - Hong Kong, China
+                                                       - Shanghai, China
+                                                    
+                                                    4. Journey to **North America**:
+                                                       - San Francisco, USA
+                                                       - San Diego, USA
+                                                       - Los Angeles, USA
+                                                       - Houston, USA
+                                                       - Austin, USA
+                                                       - New Orleans, USA
+                                                       - Atlanta, USA
+                                                       - Orlando, USA
+                                                       - New York City, USA
+                                                       - Boston, USA
+                                                    
+                                                    ### Travel Tips:
+                                                    - Plan your flights strategically to minimize costs. Look for multi-city flight options or consider using budget airlines for shorter flights within Europe and Asia.
+                                                    - Use buses or trains for shorter distances between nearby cities, especially in Europe and parts of Asia where transportation networks are well-developed.
+                                                    - Consider using overnight buses or trains for longer journeys to save on accommodation costs.
+                                                    - Opt for budget accommodations like hostels, guesthouses, or Airbnb rentals. Book in advance to secure the best deals.
+                                                    - Take advantage of free walking tours, city passes, and discounts for attractions to make the most of your sightseeing while keeping costs down.
+                                                    
+                                                    By following this route and implementing cost-saving strategies, you can embark on an exciting world trip without exceeding your budget. Safe travels!
+        
+        
+                                                </md-block>
+                                            
+                                            </div>
+        
+                                            <br>
+                                            <br>
+
+                                            <md-block>
+                                                ### USER INPUT:
+                                                </md-block>
+                                    
+                                                <div style="background-color:white;border:15px solid white;">
+                                                    <md-block >
+                                                        
+                                                        What budget would you recommend for the journey?
+                                                        
+                                                    </md-block>
+                                                </div>
+                                                
+                                                <br>
+                                                <br>
+                
+                                                <md-block>
+                                                    ### OUTPUT:
+                                                    </md-block>
+                                        
+                                                    <div style="background-color:white;border:15px solid white;">
+                                                        <md-block>
+                
+                                                            
+                                                            Determining an exact budget for a journey of this scale can vary greatly depending on several factors, including your travel style, preferences, duration of stay in each location, and the level of comfort you're willing to forgo for cost savings. However, I can provide a rough estimate for a budget traveler based on average costs in each region:
+
+                                                            1. **Europe**: Budget approximately $50-70 USD per day for accommodation, $15-30 USD for food, and additional expenses for transportation and sightseeing.
+                                                            
+                                                            2. **Middle East**: Budget approximately $40-60 USD per day for accommodation, $10-25 USD for food, and additional expenses for transportation and sightseeing.
+                                                            
+                                                            3. **Asia**: Budget approximately $20-40 USD per day for accommodation, $5-15 USD for food, and additional expenses for transportation and sightseeing.
+                                                            
+                                                            4. **North America**: Budget approximately $50-100 USD per day for accommodation, $15-30 USD for food, and additional expenses for transportation and sightseeing.
+                                                            
+                                                            Keep in mind that these are rough estimates and costs can vary significantly depending on factors such as the city you're visiting, the time of year, and your personal spending habits.
+                                                            
+                                                            For a comprehensive journey covering all the cities listed in your itinerary, a rough total budget range could be between $10,000 to $20,000 USD for several months of travel. This estimate includes accommodation, food, transportation between cities, sightseeing activities, visa fees (if applicable), and a buffer for unexpected expenses.
+                                                            
+                                                            To refine your budget further, research specific costs for accommodations, transportation, and attractions in each city you plan to visit. Look for ways to minimize expenses, such as opting for budget accommodations, cooking some of your meals, and taking advantage of free or low-cost activities. Additionally, consider any additional expenses such as travel insurance, visa fees, and souvenirs.
+                                                            
+                                                            Ultimately, your budget should be tailored to your individual needs, preferences, and financial situation. Be sure to plan and budget accordingly to ensure a smooth and enjoyable journey within your means.
+                
+                
+                                                        </md-block>
+                                                    
+                                                    </div>
+                
+                                                    <br>
+                                                    <br>
+
+                                                    <md-block>
+                                                        ### USER INPUT:
+                                                        </md-block>
+                                            
+                                                        <div style="background-color:white;border:15px solid white;">
+                                                            <md-block >
+                                                                
+                                                                What are the dangers I have to keep in mind?
+                                                                
+                                                            </md-block>
+                                                        </div>
+                                                        
+                                                        <br>
+                                                        <br>
+                        
+                                                        <md-block>
+                                                            ### OUTPUT:
+                                                            </md-block>
+                                                
+                                                            <div style="background-color:white;border:15px solid white;">
+                                                                <md-block>
+                        
+                                                                    
+                                                                    When embarking on a world trip, especially on a budget, it's important to be aware of potential dangers and take precautions to ensure your safety and well-being. Here are some common dangers to keep in mind:
+
+                                                                    1. **Safety Concerns**: Some destinations may have higher crime rates or safety concerns, especially in certain neighborhoods or areas. Be cautious and vigilant, particularly in crowded tourist areas where pickpocketing and theft are more common.
+                                                                    
+                                                                    2. **Health Risks**: Traveling exposes you to different climates, environments, and diseases. Research health risks such as infectious diseases, food and water safety, and environmental hazards (like extreme weather or natural disasters) in each destination. Take necessary vaccinations, carry any required medications, and practice good hygiene to minimize health risks.
+                                                                    
+                                                                    3. **Scams and Tourist Traps**: Tourist-heavy areas are often targeted by scammers looking to take advantage of unsuspecting travelers. Be wary of common scams such as overcharging for goods or services, fake tour operators, and distraction thefts. Research common scams in each destination and stay informed to avoid falling victim.
+                                                                    
+                                                                    4. **Political Instability**: Some regions may have political unrest, demonstrations, or conflicts that could affect travelers' safety. Stay updated on current events and travel advisories issued by your government or reputable sources. Avoid participating in political activities or demonstrations, and steer clear of areas with known instability.
+                                                                    
+                                                                    5. **Transportation Risks**: Transportation safety can vary widely between countries and regions. Be cautious when using public transportation, especially in crowded or unfamiliar areas. Research reputable transportation options and choose licensed providers with good safety records. Practice road safety and use reputable taxi services.
+                                                                    
+                                                                    6. **Cultural Sensitivities**: Different cultures have different customs, traditions, and social norms. Respect local customs and traditions, dress modestly where appropriate, and be mindful of cultural sensitivities to avoid unintentionally offending locals.
+                                                                    
+                                                                    7. **Natural Disasters**: Some regions are prone to natural disasters such as earthquakes, hurricanes, floods, or wildfires. Research potential natural hazards in each destination and have a plan in place in case of emergency. Stay informed about local weather conditions and heed any evacuation warnings or advisories.
+                                                                    
+                                                                    8. **Travel Documentation**: Ensure you have all necessary travel documentation, including passports, visas, and any required permits or certificates. Keep copies of important documents and store them securely, and consider registering with your embassy or consulate in each destination for emergency assistance.
+                                                                    
+                                                                    By staying informed, exercising caution, and taking necessary precautions, you can minimize risks and enjoy a safe and memorable world trip. Be proactive in your planning and remain adaptable to unexpected situations, and always trust your instincts if something feels unsafe or uncomfortable.
+                        
+                        
+                                                                </md-block>
+                                                            
+                                                            </div>
+                        
+                                                            <br>
+                                                            <br>
+
+                                                            <md-block>
+                                                                ### USER INPUT:
+                                                                </md-block>
+                                                    
+                                                                <div style="background-color:white;border:15px solid white;">
+                                                                    <md-block >
+                                                                        
+                                                                        What vaccinations do I need upfront?
+                                                                        
+                                                                    </md-block>
+                                                                </div>
+                                                                
+                                                                <br>
+                                                                <br>
+                                
+                                                                <md-block>
+                                                                    ### OUTPUT:
+                                                                    </md-block>
+                                                        
+                                                                    <div style="background-color:white;border:15px solid white;">
+                                                                        <md-block>
+                                
+                                                                            
+                                                                            The specific vaccinations you'll need for your world trip will depend on the destinations you plan to visit, the duration of your stay, your medical history, and any pre-existing health conditions. However, there are several common vaccinations recommended for travelers to various regions around the world. Here are some of the most frequently recommended vaccinations:
+
+                                                                            1. **Routine Vaccinations**: Ensure your routine vaccinations are up to date. These may include vaccines for measles, mumps, rubella (MMR), diphtheria, tetanus, pertussis (whooping cough), polio, and influenza.
+                                                                            
+                                                                            2. **Hepatitis A and Hepatitis B**: Recommended for travelers to regions with poor sanitation or where hepatitis is endemic, such as parts of Asia, Africa, and South America. Hepatitis A is usually given as a single shot, while Hepatitis B is a series of shots.
+                                                                            
+                                                                            3. **Typhoid Fever**: Recommended for travelers to regions with poor sanitation or where typhoid is common, such as parts of Asia, Africa, and South America. Typhoid vaccine is available as an injection or oral capsules.
+                                                                            
+                                                                            4. **Yellow Fever**: Required for travelers visiting certain countries in sub-Saharan Africa and tropical South America where yellow fever is endemic. Some countries may require proof of yellow fever vaccination for entry.
+                                                                            
+                                                                            5. **Rabies**: Recommended for travelers to regions where rabies is prevalent, especially if you'll be spending extended periods outdoors or in rural areas where access to medical care may be limited. Rabies vaccine is given in a series of shots.
+                                                                            
+                                                                            6. **Japanese Encephalitis**: Recommended for travelers to rural areas of Asia, particularly during the transmission season. Japanese encephalitis vaccine is given in a series of shots.
+                                                                            
+                                                                            7. **Meningococcal Disease**: Recommended for travelers to regions where meningococcal disease is common, especially during outbreaks or in crowded settings. Meningococcal vaccine may be required for entry into certain countries.
+                                                                            
+                                                                            8. **Cholera**: Recommended for travelers to regions with ongoing cholera outbreaks or where cholera is endemic, particularly in parts of Africa, Asia, and Haiti. Cholera vaccine is available as an oral vaccine.
+                                                                            
+                                                                            9. **Tuberculosis (TB)**: Depending on your destination and activities, you may need a TB vaccine or screening test, especially if you'll be spending extended periods in high-risk areas or close contact with local populations.
+                                                                            
+                                                                            Before your trip, consult with a healthcare provider or travel medicine specialist to assess your individual vaccination needs based on your itinerary, medical history, and any specific health concerns. It's best to plan and receive vaccinations well in advance of your trip, as some vaccines may require multiple doses or take time to become effective.
+                                
+                                
+                                                                        </md-block>
+                                                                    
+                                                                    </div>
+                                
+                                                                    <br>
+                                                                    <br>
+
+                                                                    <md-block>
+                                                                        ### USER INPUT:
+                                                                        </md-block>
+                                                            
+                                                                        <div style="background-color:white;border:15px solid white;">
+                                                                            <md-block >
+                                                                                
+                                                                                Anything else that I am missing?
+                                                                                
+                                                                            </md-block>
+                                                                        </div>
+                                                                        
+                                                                        <br>
+                                                                        <br>
+                                        
+                                                                        <md-block>
+                                                                            ### OUTPUT:
+                                                                            </md-block>
+                                                                
+                                                                            <div style="background-color:white;border:15px solid white;">
+                                                                                <md-block>
+                                        
+                                                                                    
+                                                                                    In addition to vaccinations, there are several other important aspects to consider when planning for your world trip. Here are some key factors you shouldn't overlook:
+
+                                                                                    1. **Travel Insurance**: Purchase comprehensive travel insurance to cover medical expenses, trip cancellations, lost luggage, and other unforeseen emergencies. Make sure the policy provides adequate coverage for the duration and activities of your trip, including any adventure or high-risk activities.
+                                                                                    
+                                                                                    2. **Prescription Medications**: Ensure you have an ample supply of any prescription medications you'll need for the duration of your trip. Pack them in your carry-on luggage along with a copy of your prescription, and research any restrictions or documentation requirements for bringing medications into each country you'll visit.
+                                                                                    
+                                                                                    3. **Health and Safety Precautions**: Research potential health risks and safety concerns in each destination, such as food and water safety, insect-borne diseases, altitude sickness, and local hazards. Take appropriate precautions, such as practicing safe food and water hygiene, using insect repellent, and avoiding risky activities.
+                                                                                    
+                                                                                    4. **Emergency Contacts and Medical Facilities**: Compile a list of emergency contacts, including local emergency services, your embassy or consulate, and any healthcare providers or clinics in each destination. Familiarize yourself with the location of medical facilities and pharmacies in case of emergencies.
+                                                                                    
+                                                                                    5. **Currency and Financial Planning**: Plan your budget and ensure you have access to funds while traveling. Carry a mix of cash and cards, and notify your bank of your travel plans to avoid any issues with using your cards abroad. Research currency exchange rates and banking fees to minimize costs.
+                                                                                    
+                                                                                    6. **Travel Documents and Identification**: Ensure you have all necessary travel documents, including passports, visas, travel permits, and proof of onward travel. Make copies of important documents and store them securely, both physically and digitally.
+                                                                                    
+                                                                                    7. **Communication and Connectivity**: Arrange for international roaming or purchase a local SIM card in each destination to stay connected with family and friends, access maps and travel apps, and communicate in case of emergencies. Familiarize yourself with local customs and etiquette for communication.
+                                                                                    
+                                                                                    8. **Cultural and Environmental Considerations**: Respect local customs, traditions, and cultural norms in each destination. Dress modestly where appropriate, observe local customs regarding greetings and gestures, and be mindful of cultural sensitivities. Respect the environment and minimize your impact on local ecosystems and communities.
+                                                                                    
+                                                                                    9. **Emergency Preparedness**: Have a plan in place for emergencies, including natural disasters, medical emergencies, and security incidents. Know evacuation routes, emergency assembly points, and communication protocols. Stay informed about local developments and heed any travel advisories or warnings.
+                                                                                    
+                                                                                    By addressing these aspects and taking necessary precautions, you can help ensure a smooth and enjoyable world trip while minimizing risks and maximizing your travel experience. Safe travels!
+                                        
+                                        
+                                                                                </md-block>
+                                                                            
+                                                                            </div>
+                                        
+                                                                            <br>
+                                                                            <br>
+
+        </div>
+    </div>
+      <!-- /HOME -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+        <p>
+            This site is goverend by the <a href="../../legal/terms_of_use.html">Terms of Use</a> and
+            <a href="../../legal/privacy_policy.html">Privacy Policy</a>. Copyright 2024 Christoph Hartleb. All
+            Rights reserved.
+        </p>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+</body>

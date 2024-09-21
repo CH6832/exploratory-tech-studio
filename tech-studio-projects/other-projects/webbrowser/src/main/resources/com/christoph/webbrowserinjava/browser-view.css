@@ -1,0 +1,85 @@
+.btnAddTab {
+    -fx-background-color: #4CAF50; /* Green background */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 8px 16px; /* Padding around the text */
+    -fx-border-radius: 4px; /* Rounded corners */
+    -fx-cursor: hand; /* Cursor style */
+}
+
+.btnAddTab:hover {
+    -fx-background-color: #45a049; /* Darker green on hover */
+}
+
+.btnAddTab .label {
+    -fx-graphic: url('darkgreen_plus.png'); /* Path to dark green plus symbol */
+}
+
+/* Style for the address bar */
+.txtAddressBar {
+    -fx-pref-width: 180px; /* Adjust width as needed */
+    -fx-pref-height: 36px; /* Adjust height to match buttons */
+}
+
+/* Style for the search bar */
+.txtSearchBar {
+    -fx-pref-width: 120px; /* Adjust width as needed */
+    -fx-pref-height: 36px; /* Adjust height to match buttons */
+}
+
+.btnOpenFirefox {
+    -fx-background-color: #ff3e36; /* Firefox red */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 8px 16px; /* Padding around the text */
+    -fx-border-radius: 4px; /* Rounded corners */
+    -fx-cursor: hand; /* Cursor style */
+}
+
+.btnOpenFirefox:hover {
+    -fx-background-color: #d6322d; /* Darker red on hover */
+}
+
+.buttonRefresh {
+    -fx-background-color: orange; /* Orange background */
+    -fx-text-fill: white; /* White text color */
+    -fx-padding: 8px; /* Reduced padding */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-cursor: hand; /* Cursor style */
+    -fx-font-size: 14; /* Hide text */
+    -fx-pref-width: 40px; /* Adjust width as needed */
+}
+
+.buttonRefresh:hover {
+    -fx-background-color: #ff8c00; /* Darker orange on hover */
+}
+
+.buttonRefresh:disabled {
+    -fx-opacity: 0.5; /* Reduce opacity when button is disabled */
+}
+
+.buttonRefresh:disabled:hover {
+    -fx-background-color: orange; /* Keep background color on hover when button is disabled */
+}
+
+.buttonForwardBackward {
+    -fx-background-color: lightblue; /* Light blue background */
+    -fx-text-fill: black; /* Black text color */
+    -fx-padding: 8px; /* Reduced padding */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-cursor: hand; /* Cursor style */
+    -fx-font-size: 14; /* Hide text */
+    -fx-pref-width: 60px; /* Adjust width as needed */
+}
+
+.buttonForwardBackward:hover {
+    -fx-background-color: #b3e5fc; /* Lighter blue on hover */
+}
+
+.buttonForwardBackward:disabled {
+    -fx-opacity: 0.5; /* Reduce opacity when button is disabled */
+}
+
+.buttonForwardBackward:disabled:hover {
+    -fx-background-color: lightblue; /* Keep background color on hover when button is disabled */
+}

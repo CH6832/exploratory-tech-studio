@@ -1,0 +1,209 @@
+Project Components
+
+1. Frontend (React)
+
+The frontend is responsible for the user interface and visualization.
+
+    InputForm.jsx: Component for capturing user inputs.
+    CallPutDisplay.jsx: Component to display calculated Call and Put option prices.
+    Heatmap.jsx: Component to visualize the heatmap of profit and loss (PnL) based on user-defined parameters.
+    App.js: Main component that combines InputForm, CallPutDisplay, and Heatmap.
+
+2. Backend (Python/Flask)
+
+The backend handles option pricing calculations and data persistence.
+
+    black_scholes.py: Contains the Black-Scholes pricing formula.
+    models.py: Defines the database schema using SQLAlchemy.
+    routes.py: Implements REST API endpoints for calculating option prices and saving inputs.
+    database.py: Configures the database connection and initialization.
+    config.py: Manages configuration settings for the application.
+
+3. Database (MySQL)
+
+Stores historical inputs for each calculation.
+
+    Schema: BlackScholesInputs table with columns for CalculationId, StockPrice, StrikePrice, InterestRate, Volatility, and TimeToExpiry.
+
+Setup Instructions
+Prerequisites
+
+    Python 3.x
+    Node.js and npm
+    MySQL server
+
+Backend Setup
+
+    Clone the Repository
+
+    bash
+
+git clone https://github.com/yourusername/black-scholes-option-pricer.git
+cd black-scholes-option-pricer/backend
+
+Create a Virtual Environment
+
+bash
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+Install Dependencies
+
+bash
+
+pip install -r requirements.txt
+
+Configure Database
+
+    Update config.py with your MySQL database credentials.
+
+Initialize Database
+
+bash
+
+python database.py
+
+Run the Flask App
+
+bash
+
+    python app.py
+
+Frontend Setup
+
+    Navigate to the Frontend Directory
+
+    bash
+
+cd ../frontend
+
+Install Node.js Dependencies
+
+bash
+
+npm install
+
+Start the React App
+
+bash
+
+    npm start
+
+Running the Application
+
+    Start Backend Server
+
+    Ensure your Flask server is running on http://localhost:5000.
+
+    Start Frontend Server
+
+    Ensure your React development server is running on http://localhost:3000.
+
+    Access the Application
+
+    Open a web browser and navigate to http://localhost:3000 to interact with the application.
+
+API Endpoints
+
+    POST /calculate
+
+    Description: Calculates Call and Put option prices based on input parameters.
+
+    Request Body:
+
+    json
+
+{
+  "stock_price": 100,
+  "strike_price": 100,
+  "time_to_maturity": 1,
+  "volatility": 0.2,
+  "interest_rate": 0.05
+}
+
+Response:
+
+json
+
+    {
+      "call_price": 10.4506,
+      "put_price": 5.5735
+    }
+
+Testing
+Backend Tests
+
+    Run Unit Tests
+
+    bash
+
+    python -m unittest discover -s tests
+
+Frontend Tests
+
+    Run Tests
+
+    bash
+
+    npm test
+
+Contributions
+
+Feel free to contribute to the project by creating pull requests or opening issues. For major changes, please open an issue first to discuss what you would like to change.
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+Acknowledgements
+
+    Black-Scholes Model: Original model by Fischer Black and Myron Scholes.
+    React: For building the user interface.
+    Flask: For creating the backend server.
+    Chart.js: For heatmap visualization.
+
+Contact
+
+For any questions or feedback, please reach out to your.email@example.com.
+
+This documentation should provide a comprehensive guide to understanding, setting up, and using the Black-Scholes Option Pricer project.
+You said:
+Are there anyother diagrams useful for the documentation? If yes, please provide them. Integrate the entire documentation in a separate docs folder and updated the github repository structure if needed
+
+Certainly! Diagrams can be extremely useful for illustrating the architecture and flow of the application. Here are some additional diagrams that might be beneficial for the documentation:
+
+    Component Diagram: Shows the key components of the application and their interactions.
+    Data Flow Diagram (DFD): Illustrates how data moves through the system, including interactions between the frontend, backend, and database.
+    Deployment Diagram: Depicts how the application components are deployed and interact with each other in a production environment.
+
+1. Component Diagram
+
+Purpose: To show the components of your system and their interactions.
+
+    Components:
+        Frontend (React): Includes UI components like Input Form and Heatmap.
+        Backend (Python/Flask): Includes services like User Inputs & Heatmap Data and Black-Scholes Calculations.
+        Database (MySQL): Stores Historical Inputs.
+
+    Connections:
+        Frontend communicates with Backend via REST API.
+        Backend interacts with Database via SQL.
+
+Diagram Example:
+
+sql
+
++------------------+                +-----------------+                +-------------------+
+|   Frontend       |   <----->      |     Backend      |   <----->      |      Database      |
+|   (React)        |   REST API     |   (Python/Flask) |   SQL          |   (MySQL)          |
+|                  |                |                 |                |                   |
+|  +------------+  |                |  +------------+ |                |  +-------------+  |
+|  | Interactive |  |                |  | User Inputs | |                |  | Historical  |  |
+|  | UI          |  |                |  | & Heatmap   | |                |  | Inputs      |  |
+|  +------------+  |                |  +------------+ |                |  +-------------+  |
+|      ^           |                |       ^        |                |                   |
+|      |           |                |       |        |                |                   |
+|  +------------+  |                |  +------------+ |                |                   |
+|  | Input Form  |  |                |  | Black-Scholes| |                |                   |
+|  +------------+  |                |  | Calculations | |                |                   |
+|                  |                |  +------------+ |                |                   |
++------------------+                +-----------------+                +-------------------+

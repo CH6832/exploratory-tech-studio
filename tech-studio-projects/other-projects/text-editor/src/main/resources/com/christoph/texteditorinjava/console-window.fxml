@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.christoph.texteditorinjava.ConsoleWindowController">
+    <center>
+        <TextArea fx:id="consoleTextArea" wrapText="true" editable="false"/>
+    </center>
+</BorderPane>

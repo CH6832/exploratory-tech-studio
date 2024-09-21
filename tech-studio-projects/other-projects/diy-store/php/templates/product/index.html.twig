@@ -1,0 +1,57 @@
+{# templates/product/index.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <form action="{{ path('products') }}" method="POST">
+        <p style="text-align:right">
+            <input type="submit" name="Cart" value="Show shopping cart">
+        </p>
+    </form>
+    <div style="margin-left:.1in;margin-right:.1in">
+        <h1 align="center">{{ page.top }}</h1>
+        <p style="font-size:150%"><b>{{ interest }}</b></p>
+        <p align="right">{{ n_products }} Product(s) found</p>
+        <table border="0" cellpadding="5" width="100%">
+            <tr>
+                {% for heading in table_heads %}
+                    <th>{{ heading }}</th>
+                {% endfor %}
+            </tr>
+            <form action="{{ path('products') }}" method="POST">
+                {% for product in products %}
+                    <tr>
+                        <td align="center" width="10%">{{ product.katalog_nr }}</td>
+                        <td align="center">{{ product.name }}</td>
+                        <td align="center">{{ product.pr_beschr }}</td>
+                        <td align="right" width="12%">{{ product.preis }} Euro</td>
+                        <td align="center" width="12%"><input type="text" name="item{{ product.katalog_nr }}" value="0" size="4"></td>
+                    </tr>
+                {% endfor %}
+                <input type="hidden" name="n_end" value="{{ n_end }}">
+                <input type="hidden" name="interest" value="{{ interest }}">
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Other category">
+                    </td>
+                    <td colspan="2">
+                        <input type="submit" name="Cart" value="Add to shopping cart">
+                    </td>
+                    <td colspan="2" align="right">
+                        {% if n_end > n_per_page %}
+                            <input type="submit" name="Products" value="Previous">
+                        {% endif %}
+                        {% if n_end < n_products %}
+                            <input type="submit" name="Products" value="Next {{ n_per_page }}">
+                        {% endif %}
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <p style="align:center;"><font size="-1">{{ page.bottom }}</font></p>
+    </div>
+</body>
+</html>
