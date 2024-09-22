@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link href="../static/style.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/@fullcalendar/core/main.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@fullcalendar/daygrid/main.css" rel="stylesheet" />
     <title>Birthdays</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
     </div>
     <div class="container">
         <div class="section">
-            <h2>Add a Birthday</h2>
+            <h1>Manage Birthday Entries</h1>
             <!-- Form to add a birthday -->
             <form method="post" action="/add">
                 <label for="name">Name:</label><br>
@@ -28,8 +30,6 @@
                 
                 <input type="submit" value="Add Birthday" class="add-btn"><br><br>
             </form>
-        </div>
-        <div class="section">
             <h2>All Birthdays</h2>
             <table>
                 <thead>
@@ -44,7 +44,7 @@
                     {% for row in rows %}
                     <tr>
                         <td>{{ row.name }}</td>
-                        <td>{{ row.year }}/{{ row.month }}/{{ row.day }}</td>
+                        <td>{{ row.year }}-{{ row.month }}-{{ row.day }}</td>
                         <!-- Form to delete a birthday -->
                         <td>
                             <form method="post" action="/delete/{{ row.name }}">
@@ -55,6 +55,31 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+        <div class="section">
+            <h1>Statistics</h1>
+            <p>Total Birthdays: {{ total_birthdays }}</p>
+
+            <h2>Birthdays by Month</h2>
+            <ul style="list-style-type: none;">
+                {% for month, count in month_count.items() %}
+                    <li>Month {{ month }}: {{ count }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Age Distribution</h2>
+            <ul style="list-style-type: none;">
+                {% for age, count in age_distribution.items() %}
+                    <li>Age {{ age }}: {{ count }}</li>
+                {% endfor %}
+            </ul>
+            
+            <h2>Most Common Birthday Month</h2>
+            <p>Month {{ most_common_month }} has the most birthdays.</p>
+        </div>
+        <div class="section">
+            <h1>View Custom Calendar</h1>
+            <a href="/custom_calendar" class="add-btn">Go to Custom Calendar</a>
         </div>
     </div>
 </body>

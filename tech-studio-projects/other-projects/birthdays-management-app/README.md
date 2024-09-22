@@ -13,13 +13,12 @@ Birthday Manager is a simple web application built with Flask that allows users 
   - [Getting started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Run the application](#run-the-application)
+    - [Impressions](#impressions)
     - [Read the docs](#read-the-docs)
     - [Run the application in a Docker container:](#run-the-application-in-a-docker-container)
     - [Build the docs](#build-the-docs)
     - [Update database](#update-database)
   - [Resources used to create this project](#resources-used-to-create-this-project)
-  - [License](#bookmark-license)
-  - [Copyright](#copyright-copyright)
 
 ### Directory directory structure
 
@@ -41,6 +40,9 @@ Birthday Manager is a simple web application built with Flask that allows users 
 * Add and delete new birthday entries.
 * View all stored birthday entries.
 * Simple and intuitive user interface.
+* Display birthdays in a custom calendar format for easy viewing.
+* Automatic updates of birthdays in the calendar for each month.
+* Statistics on total birthdays, birthdays by month, and age distribution.
 
 ## Getting started
 
@@ -69,6 +71,12 @@ pip3 install -r requirements.txt
 ```sh
 py app.py
 ```
+
+### Impressions
+
+![](/static/images/readme_images/index_0.png)
+
+![](/static/images/readme_images/index_1.png)
 
 ### Read the docs
 
@@ -106,7 +114,7 @@ cd docs
 1. Initilaize project:
 
 ```sh
-sphinx-quickstart 
+sphinx-quickstart
 ```
 
 2. Build/rebuild the documentation:

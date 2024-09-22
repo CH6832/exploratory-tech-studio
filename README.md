@@ -78,6 +78,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [stock-price-visualization](/tech-studio-projects/financial-industry/stock-price-visualization/)
 
   * [machine-learning](/tech-studio-projects/machine-learning/)
+    * [credit-card-fraud-detection-simulation](/tech-studio-projects/machine-learning/natural-language-processing/credit-card-fraud-detection-simulation/)
     * [natural-language-processing](/tech-studio-projects/machine-learning/natural-language-processing/)
     * [reinforcement-learning](/tech-studio-projects/machine-learning/reinforcement-learning/)
     * [responsible-ai](/tech-studio-projects/machine-learning/responsible-ai/)
