@@ -62,17 +62,17 @@ Navigate to the homepage to explore the list of cities. Click on a city to view 
 
 #### Homepage
 
-![index_0.png](/media/readme_images/index_0.png)
+![index_0.png](./media/readme_images/index_0.png)
 
-![index_1.png](/media/readme_images/index_1.png)
+![index_1.png](./media/readme_images/index_1.png)
 
-![index_2.png](/media/readme_images/index_2.png)
+![index_2.png](./media/readme_images/index_2.png)
 
 #### Bogota
 
-![bogota_0.png](/media/readme_images/bogota_0.png)
+![bogota_0.png](./media/readme_images/bogota_0.png)
 
-![bogota_1.png](/media/readme_images/bogota_1.png)
+![bogota_1.png](./media/readme_images/bogota_1.png)
 
 ## External APIs
 
