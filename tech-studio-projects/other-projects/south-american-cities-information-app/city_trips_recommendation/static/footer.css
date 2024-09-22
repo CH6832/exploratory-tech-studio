@@ -1,8 +1,8 @@
-html, body {
-    height: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 0;
+/* Basic styles for the page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-bottom: 60px;
 }
 
 .wrapper {
@@ -11,15 +11,21 @@ html, body {
     flex-direction: column;
 }
 
+/* Main content styles */
 .content {
-    flex: 1;
+    padding: 20px;
 }
 
-.footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
-    position: fixed;
+/* Footer styles */
+footer {
+    left: 0;
     bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
 }
+
+
+
+
+

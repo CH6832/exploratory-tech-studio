@@ -3,20 +3,28 @@
 South America City Explorer is a web application built with Django that provides information and images for various cities in South America. It offers features such as displaying city details, weather information, tourist attractions, and images related to each city.
 
 ## Table of Contents
-- [Features](#features)
-- [Getting started](#getting-started)
+- [City Explorer](#city-explorer)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Usage](#usage)
-- [External APIs](#external-apis)
-
+    - [Impressions](#impressions)
+      - [Homepage](#homepage)
+      - [Bogota](#bogota)
+  - [External APIs](#external-apis)
+  - [Other resources used to create this project](#other-resources-used-to-create-this-project)
 
 ## Features
 
 * Display detailed information for each city:
-    * Official name, population, country, timezone, official languages, etc.   
+    * Official name, population, country, timezone, official languages, etc.
 * Show important tourist information for each city.
 * Present tourist attractions and points of interest in each city.
 * A map that displays the climate for the entire continent.
+* Weather prediction for each capital city based on historical data.
+* Calculate the shortest travel routes and distances between different cities using the Haversine formula.
+* Legal information including terms of service, privacy policy, and legal notice for transparency and compliance. 
 
 ## Getting Started
 
@@ -49,6 +57,22 @@ py manage.py runserver
 ### Usage
 
 Navigate to the homepage to explore the list of cities. Click on a city to view detailed information, weather data, tourist attractions, and images.
+
+### Impressions
+
+#### Homepage
+
+![index_0.png](/media/readme_images/index_0.png)
+
+![index_1.png](/media/readme_images/index_1.png)
+
+![index_2.png](/media/readme_images/index_2.png)
+
+#### Bogota
+
+![bogota_0.png](/media/readme_images/bogota_0.png)
+
+![bogota_1.png](/media/readme_images/bogota_1.png)
 
 ## External APIs
 
