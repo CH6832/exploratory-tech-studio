@@ -74,9 +74,9 @@ py app.py
 
 ### Impressions
 
-![](/static/images/readme_images/index_0.png)
+![](./static/images/readme_images/index_0.png)
 
-![](/static/images/readme_images/index_1.png)
+![](./static/images/readme_images/index_1.png)
 
 ### Read the docs
 
