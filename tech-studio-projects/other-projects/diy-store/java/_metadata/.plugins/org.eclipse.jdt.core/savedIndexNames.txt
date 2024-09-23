@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+C:\Users\chris\Desktop\diy-store-java-test\.metadata\.plugins\org.eclipse.jdt.core
-2260044588.index
-2921196571.index
-1795243016.index
-1865797976.index

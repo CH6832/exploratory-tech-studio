@@ -87,9 +87,10 @@ This project is an interdisciplinary repository for collaborative projects spann
 
   * [other-projects](/tech-studio-projects/other-projects/)
     * [birthdays-management-app](/tech-studio-projects/other-projects/birthdays-management-app/)
+    * [contract-management-system](/tech-studio-projects/other-projects/contract-management-system/)
     * [directory-tree-generator](/tech-studio-projects/other-projects/directory-tree-generator/)
-    * [diy-store](/tech-studio-projects/other-projects/diy-store/)
     * [document-management-system](/tech-studio-projects/other-projects/document-management-system/)
+    * [e-commerce](/tech-studio-projects/other-projects/e-commerce/)
     * [github-user-finder](/tech-studio-projects/other-projects/github-user-finder/)
     * [guestbook](/tech-studio-projects/other-projects/guestbook/)
     * [multithreaded-webserver](/tech-studio-projects/other-projects/multithreaded-webserver/)
@@ -131,7 +132,7 @@ To get started with the projects, please explore the folders in the [Content ove
     * [C++ reference](https://en.cppreference.com/w/)
     * [C++ Programming Language](https://devdocs.io/cpp/)
 * Python
-    * [Python 3.12 documentation](https://docs.python.org/3/)
+    * [Python 3.X documentation](https://docs.python.org/3/)
     * [Built-in Functions](https://docs.python.org/3/library/functions.html)
     * [Python Module Index](https://docs.python.org/3/py-modindex.html)
 * Java
