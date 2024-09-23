@@ -1,0 +1,602 @@
+{
+  "1": {
+    "name": "Wireless Mouse",
+    "price": 25.99,
+    "description": "Ergonomic wireless mouse with customizable buttons.",
+    "stock": 150
+  },
+  "2": {
+    "name": "Bluetooth Headphones",
+    "price": 59.99,
+    "description": "Noise-cancelling over-ear headphones with 30 hours battery life.",
+    "stock": 85
+  },
+  "3": {
+    "name": "4K Monitor",
+    "price": 299.99,
+    "description": "27-inch 4K UHD monitor with HDR support.",
+    "stock": 50
+  },
+  "4": {
+    "name": "Mechanical Keyboard",
+    "price": 89.99,
+    "description": "RGB backlit mechanical keyboard with programmable keys.",
+    "stock": 120
+  },
+  "5": {
+    "name": "Laptop Stand",
+    "price": 39.99,
+    "description": "Adjustable laptop stand for ergonomic positioning.",
+    "stock": 200
+  },
+  "6": {
+    "name": "USB-C Hub",
+    "price": 29.99,
+    "description": "Multi-port USB-C hub with HDMI, USB-A, and SD card reader.",
+    "stock": 175
+  },
+  "7": {
+    "name": "Smartwatch",
+    "price": 199.99,
+    "description": "Fitness tracker with heart rate monitor and GPS.",
+    "stock": 75
+  },
+  "8": {
+    "name": "External SSD",
+    "price": 99.99,
+    "description": "1TB external SSD with high-speed USB 3.1 connectivity.",
+    "stock": 60
+  },
+  "9": {
+    "name": "Wireless Charger",
+    "price": 19.99,
+    "description": "Fast wireless charging pad for smartphones.",
+    "stock": 300
+  },
+  "10": {
+    "name": "HDMI Cable",
+    "price": 12.99,
+    "description": "High-speed HDMI cable, 6 feet long.",
+    "stock": 250
+  },
+  "11": {
+    "name": "Gaming Chair",
+    "price": 249.99,
+    "description": "Ergonomic gaming chair with lumbar support.",
+    "stock": 40
+  },
+  "12": {
+    "name": "Graphic Card",
+    "price": 499.99,
+    "description": "High-performance GPU for gaming and rendering.",
+    "stock": 30
+  },
+  "13": {
+    "name": "Webcam",
+    "price": 79.99,
+    "description": "1080p HD webcam with built-in microphone.",
+    "stock": 100
+  },
+  "14": {
+    "name": "Action Camera",
+    "price": 199.99,
+    "description": "4K action camera with waterproof case.",
+    "stock": 55
+  },
+  "15": {
+    "name": "VR Headset",
+    "price": 399.99,
+    "description": "Virtual reality headset with motion controllers.",
+    "stock": 20
+  },
+  "16": {
+    "name": "Laptop Backpack",
+    "price": 49.99,
+    "description": "Spacious backpack with padded laptop compartment.",
+    "stock": 180
+  },
+  "17": {
+    "name": "Desk Lamp",
+    "price": 34.99,
+    "description": "Adjustable LED desk lamp with touch control.",
+    "stock": 160
+  },
+  "18": {
+    "name": "Coffee Maker",
+    "price": 79.99,
+    "description": "12-cup programmable coffee maker.",
+    "stock": 65
+  },
+  "19": {
+    "name": "Electric Kettle",
+    "price": 39.99,
+    "description": "1.7L electric kettle with automatic shut-off.",
+    "stock": 100
+  },
+  "20": {
+    "name": "Air Fryer",
+    "price": 129.99,
+    "description": "Healthy air fryer with digital controls.",
+    "stock": 45
+  },
+  "21": {
+    "name": "Robot Vacuum",
+    "price": 249.99,
+    "description": "Smart robot vacuum with app control.",
+    "stock": 35
+  },
+  "22": {
+    "name": "Portable Speaker",
+    "price": 49.99,
+    "description": "Water-resistant Bluetooth speaker with 10 hours battery life.",
+    "stock": 150
+  },
+  "23": {
+    "name": "Wireless Earbuds",
+    "price": 79.99,
+    "description": "True wireless earbuds with touch control.",
+    "stock": 90
+  },
+  "24": {
+    "name": "Digital Camera",
+    "price": 699.99,
+    "description": "Mirrorless camera with interchangeable lenses.",
+    "stock": 25
+  },
+  "25": {
+    "name": "Fitness Tracker",
+    "price": 59.99,
+    "description": "Water-resistant fitness tracker with sleep monitoring.",
+    "stock": 110
+  },
+  "26": {
+    "name": "Gaming Console",
+    "price": 499.99,
+    "description": "Next-gen gaming console with 4K gaming capabilities.",
+    "stock": 30
+  },
+  "27": {
+    "name": "Smart TV",
+    "price": 899.99,
+    "description": "55-inch 4K UHD smart TV with streaming apps.",
+    "stock": 20
+  },
+  "28": {
+    "name": "Portable SSD",
+    "price": 129.99,
+    "description": "2TB portable SSD with high-speed transfer.",
+    "stock": 50
+  },
+  "29": {
+    "name": "Smart Thermostat",
+    "price": 199.99,
+    "description": "Wi-Fi-enabled smart thermostat with energy-saving features.",
+    "stock": 75
+  },
+  "30": {
+    "name": "Bluetooth Tracker",
+    "price": 24.99,
+    "description": "Key finder with smartphone integration.",
+    "stock": 200
+  },
+  "31": {
+    "name": "Electric Toothbrush",
+    "price": 59.99,
+    "description": "Rechargeable electric toothbrush with smart timer.",
+    "stock": 110
+  },
+  "32": {
+    "name": "Portable Power Bank",
+    "price": 39.99,
+    "description": "20,000mAh power bank with fast charging.",
+    "stock": 120
+  },
+  "33": {
+    "name": "Bicycle Helmet",
+    "price": 49.99,
+    "description": "Lightweight and durable bicycle helmet.",
+    "stock": 80
+  },
+  "34": {
+    "name": "Yoga Mat",
+    "price": 29.99,
+    "description": "Non-slip yoga mat with extra cushioning.",
+    "stock": 150
+  },
+  "35": {
+    "name": "Camping Tent",
+    "price": 199.99,
+    "description": "Spacious 4-person camping tent.",
+    "stock": 25
+  },
+  "36": {
+    "name": "Hiking Backpack",
+    "price": 89.99,
+    "description": "Durable hiking backpack with hydration reservoir.",
+    "stock": 45
+  },
+  "37": {
+    "name": "Sports Watch",
+    "price": 89.99,
+    "description": "Waterproof sports watch with GPS.",
+    "stock": 100
+  },
+  "38": {
+    "name": "Coffee Grinder",
+    "price": 39.99,
+    "description": "Burr coffee grinder for fresh ground coffee.",
+    "stock": 65
+  },
+  "39": {
+    "name": "Smart Light Bulb",
+    "price": 19.99,
+    "description": "Wi-Fi-enabled LED light bulb with color control.",
+    "stock": 200
+  },
+  "40": {
+    "name": "Blender",
+    "price": 59.99,
+    "description": "High-speed blender for smoothies and shakes.",
+    "stock": 90
+  },
+  "41": {
+    "name": "Travel Mug",
+    "price": 24.99,
+    "description": "Insulated travel mug for hot and cold beverages.",
+    "stock": 150
+  },
+  "42": {
+    "name": "Instant Pot",
+    "price": 99.99,
+    "description": "Multi-cooker with pressure cooking and slow cooking features.",
+    "stock": 60
+  },
+  "43": {
+    "name": "Cordless Drill",
+    "price": 89.99,
+    "description": "Powerful cordless drill with multiple attachments.",
+    "stock": 40
+  },
+  "44": {
+    "name": "LED Strip Lights",
+    "price": 29.99,
+    "description": "RGB LED strip lights for home decoration.",
+    "stock": 175
+  },
+  "45": {
+    "name": "Air Purifier",
+    "price": 129.99,
+    "description": "HEPA air purifier with multiple fan speeds.",
+    "stock": 35
+  },
+  "46": {
+    "name": "Dehumidifier",
+    "price": 149.99,
+    "description": "Compact dehumidifier for small spaces.",
+    "stock": 40
+  },
+  "47": {
+    "name": "Smart Door Lock",
+    "price": 199.99,
+    "description": "Keyless smart door lock with remote access.",
+    "stock": 30
+  },
+  "48": {
+    "name": "Home Security Camera",
+    "price": 79.99,
+    "description": "1080p HD home security camera with night vision.",
+    "stock": 70
+  },
+  "49": {
+    "name": "Fitness Bike",
+    "price": 299.99,
+    "description": "Stationary bike with adjustable resistance.",
+    "stock": 25
+  },
+  "50": {
+    "name": "Electric Scooter",
+    "price": 399.99,
+    "description": "Foldable electric scooter with 15 miles range.",
+    "stock": 20
+  },
+  "51": {
+    "name": "Mini Fridge",
+    "price": 149.99,
+    "description": "Compact mini fridge for dorms and offices.",
+    "stock": 40
+  },
+  "52": {
+    "name": "Cooking Thermometer",
+    "price": 24.99,
+    "description": "Digital cooking thermometer for accurate readings.",
+    "stock": 80
+  },
+  "53": {
+    "name": "Electric Skillet",
+    "price": 49.99,
+    "description": "Non-stick electric skillet for cooking meals.",
+    "stock": 50
+  },
+  "54": {
+    "name": "Pressure Cooker",
+    "price": 79.99,
+    "description": "Programmable pressure cooker for quick meals.",
+    "stock": 55
+  },
+  "55": {
+    "name": "Pizza Oven",
+    "price": 299.99,
+    "description": "Countertop pizza oven with stone baking surface.",
+    "stock": 25
+  },
+  "56": {
+    "name": "Sofa",
+    "price": 499.99,
+    "description": "Comfortable 3-seater sofa with removable covers.",
+    "stock": 15
+  },
+  "57": {
+    "name": "Dining Table",
+    "price": 299.99,
+    "description": "Stylish dining table that seats six.",
+    "stock": 20
+  },
+  "58": {
+    "name": "Office Chair",
+    "price": 199.99,
+    "description": "Ergonomic office chair with adjustable height.",
+    "stock": 30
+  },
+  "59": {
+    "name": "Bed Frame",
+    "price": 399.99,
+    "description": "Queen-sized bed frame made of solid wood.",
+    "stock": 10
+  },
+  "60": {
+    "name": "Mattress",
+    "price": 499.99,
+    "description": "Memory foam mattress with cooling technology.",
+    "stock": 15
+  },
+  "61": {
+    "name": "Wardrobe",
+    "price": 599.99,
+    "description": "Large wardrobe with sliding doors.",
+    "stock": 10
+  },
+  "62": {
+    "name": "Bookshelf",
+    "price": 149.99,
+    "description": "Tall bookshelf made of sturdy wood.",
+    "stock": 25
+  },
+  "63": {
+    "name": "Coffee Table",
+    "price": 89.99,
+    "description": "Modern coffee table with storage space.",
+    "stock": 40
+  },
+  "64": {
+    "name": "Nightstand",
+    "price": 49.99,
+    "description": "Compact nightstand with drawer.",
+    "stock": 50
+  },
+  "65": {
+    "name": "Area Rug",
+    "price": 79.99,
+    "description": "Soft area rug for living room or bedroom.",
+    "stock": 60
+  },
+  "66": {
+    "name": "Curtains",
+    "price": 34.99,
+    "description": "Light-filtering curtains for privacy.",
+    "stock": 100
+  },
+  "67": {
+    "name": "Wall Art",
+    "price": 29.99,
+    "description": "Framed wall art to decorate your home.",
+    "stock": 150
+  },
+  "68": {
+    "name": "Vase",
+    "price": 19.99,
+    "description": "Ceramic vase for flowers.",
+    "stock": 200
+  },
+  "69": {
+    "name": "Bedding Set",
+    "price": 89.99,
+    "description": "Queen bedding set with comforter and pillows.",
+    "stock": 80
+  },
+  "70": {
+    "name": "Toaster",
+    "price": 29.99,
+    "description": "2-slice toaster with variable browning control.",
+    "stock": 120
+  },
+  "71": {
+    "name": "Microwave Oven",
+    "price": 149.99,
+    "description": "Compact microwave oven with multiple cooking modes.",
+    "stock": 60
+  },
+  "72": {
+    "name": "Rice Cooker",
+    "price": 39.99,
+    "description": "Easy-to-use rice cooker for perfect rice.",
+    "stock": 70
+  },
+  "73": {
+    "name": "Slow Cooker",
+    "price": 49.99,
+    "description": "Programmable slow cooker for tender meals.",
+    "stock": 55
+  },
+  "74": {
+    "name": "Electric Grill",
+    "price": 89.99,
+    "description": "Indoor electric grill for healthy cooking.",
+    "stock": 40
+  },
+  "75": {
+    "name": "Fondue Set",
+    "price": 59.99,
+    "description": "Complete fondue set for delicious gatherings.",
+    "stock": 30
+  },
+  "76": {
+    "name": "Knife Set",
+    "price": 79.99,
+    "description": "High-quality knife set for home chefs.",
+    "stock": 50
+  },
+  "77": {
+    "name": "Cutting Board",
+    "price": 19.99,
+    "description": "Bamboo cutting board with juice groove.",
+    "stock": 100
+  },
+  "78": {
+    "name": "Wine Glasses",
+    "price": 29.99,
+    "description": "Set of four elegant wine glasses.",
+    "stock": 90
+  },
+  "79": {
+    "name": "Coffee Cups",
+    "price": 19.99,
+    "description": "Set of four ceramic coffee cups.",
+    "stock": 120
+  },
+  "80": {
+    "name": "Dinner Plates",
+    "price": 39.99,
+    "description": "Set of six dinner plates in classic white.",
+    "stock": 80
+  },
+  "81": {
+    "name": "Baking Sheet",
+    "price": 14.99,
+    "description": "Non-stick baking sheet for cookies and pastries.",
+    "stock": 150
+  },
+  "82": {
+    "name": "Measuring Cups",
+    "price": 12.99,
+    "description": "Set of four measuring cups for baking.",
+    "stock": 200
+  },
+  "83": {
+    "name": "Blender Bottle",
+    "price": 19.99,
+    "description": "BPA-free blender bottle for shakes.",
+    "stock": 170
+  },
+  "84": {
+    "name": "Protein Powder",
+    "price": 29.99,
+    "description": "Vanilla protein powder for muscle recovery.",
+    "stock": 90
+  },
+  "85": {
+    "name": "Yoga Blocks",
+    "price": 19.99,
+    "description": "Set of two yoga blocks for support.",
+    "stock": 110
+  },
+  "86": {
+    "name": "Resistance Bands",
+    "price": 29.99,
+    "description": "Set of resistance bands for strength training.",
+    "stock": 100
+  },
+  "87": {
+    "name": "Dumbbells",
+    "price": 49.99,
+    "description": "Pair of adjustable dumbbells.",
+    "stock": 80
+  },
+  "88": {
+    "name": "Jump Rope",
+    "price": 14.99,
+    "description": "Adjustable jump rope for cardio workouts.",
+    "stock": 150
+  },
+  "89": {
+    "name": "Yoga Pants",
+    "price": 39.99,
+    "description": "Comfortable yoga pants with moisture-wicking fabric.",
+    "stock": 120
+  },
+  "90": {
+    "name": "Fitness T-Shirt",
+    "price": 24.99,
+    "description": "Breathable fitness t-shirt for workouts.",
+    "stock": 130
+  },
+  "91": {
+    "name": "Baseball Bat",
+    "price": 79.99,
+    "description": "Aluminum baseball bat for players.",
+    "stock": 40
+  },
+  "92": {
+    "name": "Soccer Ball",
+    "price": 24.99,
+    "description": "Official size soccer ball for training.",
+    "stock": 100
+  },
+  "93": {
+    "name": "Tennis Racket",
+    "price": 89.99,
+    "description": "Lightweight tennis racket with grip.",
+    "stock": 60
+  },
+  "94": {
+    "name": "Golf Clubs",
+    "price": 299.99,
+    "description": "Set of golf clubs for beginners.",
+    "stock": 25
+  },
+  "95": {
+    "name": "Skateboard",
+    "price": 69.99,
+    "description": "Durable skateboard with smooth wheels.",
+    "stock": 30
+  },
+  "96": {
+    "name": "Fishing Rod",
+    "price": 49.99,
+    "description": "Lightweight fishing rod with reel.",
+    "stock": 50
+  },
+  "97": {
+    "name": "Camping Chair",
+    "price": 29.99,
+    "description": "Foldable camping chair with cup holder.",
+    "stock": 150
+  },
+  "98": {
+    "name": "Portable Grill",
+    "price": 89.99,
+    "description": "Compact portable grill for outdoor cooking.",
+    "stock": 40
+  },
+  "99": {
+    "name": "Cooler Bag",
+    "price": 34.99,
+    "description": "Insulated cooler bag for picnics.",
+    "stock": 120
+  },
+  "100": {
+    "name": "First Aid Kit",
+    "price": 19.99,
+    "description": "Comprehensive first aid kit for emergencies.",
+    "stock": 200
+  }
+}

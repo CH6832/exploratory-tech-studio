@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  order_service:
+    build:
+      context: ./app/order_service
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/order_service:/app
+
+  auth_service:
+    build:
+      context: ./app/auth_service
+    ports:
+      - "5002:5002"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/auth_service:/app
+
+  cart_service:
+    build:
+      context: ./app/cart_service
+    ports:
+      - "5003:5003"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/cart_service:/app
+
+  review_service:
+    build:
+      context: ./app/review_service
+    ports:
+      - "5004:5004"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/review_service:/app
+
+  inventory_service:
+    build:
+      context: ./app/inventory_service
+    ports:
+      - "5005:5005"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/inventory_service:/app
+
+  user_profile_service:
+    build:
+      context: ./app/user_profile_service
+    ports:
+      - "5006:5006"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/user_profile_service:/app
+
+  shipping_service:
+    build:
+      context: ./app/shipping_service
+    ports:
+      - "5007:5007"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/shipping_service:/app
+
+  activity_logging_service:
+    build:
+      context: ./app/activity_logging_service
+    ports:
+      - "5008:5008"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app/activity_logging_service:/app
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+
+networks:
+  default:
+    driver: bridge
