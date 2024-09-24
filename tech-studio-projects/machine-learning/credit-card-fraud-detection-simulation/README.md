@@ -165,12 +165,6 @@ You should see output indicating whether each transaction is fraudulent or legit
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
 ## Future Improvements
 
 - **Scalability**: Use distributed computing or containerization (e.g., Kubernetes, Docker) to scale the project further.
