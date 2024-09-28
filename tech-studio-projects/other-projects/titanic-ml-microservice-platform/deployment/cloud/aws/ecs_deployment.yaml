@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: titanic-model-serving
+  labels:
+    app: titanic
+spec:
+  replicas: 2  # Number of replicas for the service
+  selector:
+    matchLabels:
+      app: titanic
+  template:
+    metadata:
+      labels:
+        app: titanic
+    spec:
+      containers:
+        - name: model-serving
+          image: <YOUR_ECR_REPOSITORY_URI>/model-serving:latest  # Update with your ECR image URI
+          ports:
+            - containerPort: 5000  # The port the container listens on
+          resources:
+            limits:
+              memory: "512Mi"  # Maximum memory for the container
+              cpu: "256m"      # Maximum CPU for the container
+          env:
+            - name: ENVIRONMENT
+              value: "production"  # Example environment variable
+          # Optional: Add liveness and readiness probes
+          livenessProbe:
+            httpGet:
+              path: /health  # Health check endpoint
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready  # Readiness check endpoint
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: titanic-model-serving
+spec:
+  selector:
+    app: titanic
+  ports:
+    - protocol: TCP
+      port: 80  # Port for accessing the service
+      targetPort: 5000  # Port the container listens on
+  type: LoadBalancer  # Expose the service externally using a load balancer

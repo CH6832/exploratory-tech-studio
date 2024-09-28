@@ -1,0 +1,8 @@
+Flask==2.2.2               # A lightweight WSGI web application framework for Python
+Flask-Cors==3.0.10        # For handling Cross-Origin Resource Sharing (CORS)
+gunicorn==20.1.0          # WSGI HTTP Server for UNIX
+pandas==1.5.0             # For data manipulation and analysis
+scikit-learn==1.1.2       # For machine learning algorithms and model handling
+numpy==1.23.4             # Fundamental package for numerical computation
+tensorflow==2.11.0        # For TensorFlow models (use appropriate version as per your model)
+joblib==1.1.0             # For loading and saving models

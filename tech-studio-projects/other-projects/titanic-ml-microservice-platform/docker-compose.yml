@@ -1,0 +1,31 @@
+
+version: '3.8'
+
+services:
+  data-ingestion:
+    build:
+      context: ./services/data-ingestion
+    volumes:
+      - ./data:/app/data
+    environment:
+      - CONFIG_PATH=/app/config.yaml
+
+  model-serving:
+    build:
+      context: ./services/model-serving
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./model/trained_models:/app/trained_models
+    environment:
+      - CONFIG_PATH=/app/config.yaml
+
+  monitoring:
+    build:
+      context: ./services/monitoring
+
+  websocket-server:
+    build:
+      context: ./services/websocket-server
+    ports:
+      - "8080:8080"

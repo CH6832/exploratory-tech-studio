@@ -9,8 +9,11 @@ Modules handles information mgmgt about all cities.
 import math
 import pprint
 from typing import Any
+import boto3
+import json
 from bs4 import BeautifulSoup
 import requests
+from urllib3 import HTTPResponse
 from meteostat import Point, Daily
 from datetime import datetime
 from statsmodels.tsa.arima.model import ARIMA
@@ -252,6 +255,41 @@ def calculate_optimal_route(city_name) -> str:
     return str(c * r)  # Return distance in kilometers
 
 
+# TODO:
+# Set Up AWS Credentials:
+#
+# You'll need to configure your AWS credentials (access_key_id, secret_access_key) either via environment variables or through the AWS credentials file.
+# Alternatively, use AWS Identity and Access Management (IAM) roles if running on AWS infrastructure (EC2, Lambda, etc.).
+#
+# Send a Request to the SQS Queue: You’d modify your Django app to send a message to the SQS queue whenever a user requests city data.
+# Call This Function When a User Requests City Data: In your Django view or backend logic, invoke the send_city_request_to_sqs() function whenever a user asks for city data.
+# # Initialize the SQS client
+# sqs = boto3.client('sqs', region_name='your-region')  # e.g., 'us-east-1'
+#
+# # The URL of your SQS Queue
+# QUEUE_URL = 'https://sqs.your-region.amazonaws.com/your-account-id/your-queue-name'
+#
+# def send_city_request_to_sqs(city_name):
+#     try:
+#         # The message payload (you can add more details if necessary)
+#         message_body = json.dumps({'city': city_name})
+        
+#         # Send the message to the SQS queue
+#         response = sqs.send_message(
+#             QueueUrl=QUEUE_URL,
+#             MessageBody=message_body
+#         )
+#         print(f'Message sent to SQS. Message ID: {response["MessageId"]}')
+#     except Exception as e:
+#         print(f'Error sending message to SQS: {str(e)}')
+#
+# def fetch_city_data(request, city_name):
+#     """Return city data based on user request."""
+#     # Send city request to SQS for background processing
+#     send_city_request_to_sqs(city_name)
+#     return HttpResponse(f'Request for {city_name} has been queued for processing.')
+
+# TODO:
 # def recommend_optimal_travel_time(city_name):
 #     """"""
 #     # Load your datasets

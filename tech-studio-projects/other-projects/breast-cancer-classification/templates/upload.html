@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Exploratory Data Analysis</h2>
+<p>Summary of the dataset:</p>
+<div>
+    {{ tables|safe }}
+</div>
+<a href="{{ url_for('feature_selection', filename=filename) }}" class="btn btn-primary">Select Features</a>
+{% endblock %}

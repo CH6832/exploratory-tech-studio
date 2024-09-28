@@ -1,0 +1,122 @@
+[
+  {
+      "id": 1,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "published_year": 1960,
+      "average_rating": 4.27,
+      "ratings_count": 4500000,
+      "language": "English",
+      "tags": ["classic", "civil rights", "southern usa"],
+      "description": "A novel about the serious issues of race, class, and gender in the Deep South, seen through the eyes of young Scout Finch."
+  },
+  {
+      "id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "published_year": 1949,
+      "average_rating": 4.18,
+      "ratings_count": 3200000,
+      "language": "English",
+      "tags": ["dystopia", "totalitarianism", "political"],
+      "description": "A dystopian novel set in a totalitarian society ruled by Big Brother, where truth is controlled and surveillance is constant."
+  },
+  {
+      "id": 3,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "published_year": 1951,
+      "average_rating": 3.80,
+      "ratings_count": 2600000,
+      "language": "English",
+      "tags": ["coming-of-age", "rebellion", "alienation"],
+      "description": "The story of Holden Caulfield, a teenage boy who struggles with growing up and the phoniness of the adult world."
+  },
+  {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "published_year": 1813,
+      "average_rating": 4.26,
+      "ratings_count": 3200000,
+      "language": "English",
+      "tags": ["classic", "romance", "social criticism"],
+      "description": "A romantic novel that critiques the British landed gentry at the end of the 18th century, focusing on the turbulent relationship between Elizabeth Bennet and Mr. Darcy."
+  },
+  {
+      "id": 5,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Fiction",
+      "published_year": 1925,
+      "average_rating": 3.92,
+      "ratings_count": 4000000,
+      "language": "English",
+      "tags": ["classic", "american dream", "1920s"],
+      "description": "A novel about the disillusionment of the American Dream, seen through the eyes of Nick Carraway, who witnesses the tragic downfall of Jay Gatsby."
+  },
+  {
+      "id": 6,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "published_year": 1851,
+      "average_rating": 3.50,
+      "ratings_count": 550000,
+      "language": "English",
+      "tags": ["adventure", "classic", "whale hunting"],
+      "description": "The narrative of Captain Ahab's obsessive quest to kill Moby Dick, a giant white whale."
+  },
+  {
+      "id": 7,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "published_year": 1937,
+      "average_rating": 4.27,
+      "ratings_count": 2900000,
+      "language": "English",
+      "tags": ["fantasy", "adventure", "middle earth"],
+      "description": "Bilbo Baggins embarks on a quest to help dwarves reclaim their homeland from the dragon Smaug."
+  },
+  {
+      "id": 8,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Dystopian",
+      "published_year": 1932,
+      "average_rating": 3.99,
+      "ratings_count": 1400000,
+      "language": "English",
+      "tags": ["dystopia", "science fiction", "social control"],
+      "description": "A novel set in a future world where humanity is engineered and controlled through technology, drugs, and social conditioning."
+  },
+  {
+      "id": 9,
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "genre": "Historical Fiction",
+      "published_year": 1869,
+      "average_rating": 4.11,
+      "ratings_count": 250000,
+      "language": "Russian",
+      "tags": ["historical fiction", "war", "russian literature"],
+      "description": "An epic tale that explores the lives of five families during the Napoleonic wars in Russia."
+  },
+  {
+      "id": 10,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "genre": "Adventure",
+      "published_year": 1988,
+      "average_rating": 3.88,
+      "ratings_count": 2100000,
+      "language": "Portuguese",
+      "tags": ["spiritual", "quest", "philosophy"],
+      "description": "A novel that follows a young shepherd named Santiago on his journey to discover his personal legend and achieve his dreams."
+  }
+]

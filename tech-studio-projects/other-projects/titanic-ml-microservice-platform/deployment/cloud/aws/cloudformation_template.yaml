@@ -1,0 +1,122 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for deploying the RealTime-ML-Microservice-Platform
+
+Resources:
+  # Create an ECS Cluster
+  TitanicCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: TitanicCluster
+
+  # Create an Application Load Balancer
+  TitanicALB:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: TitanicALB
+      Subnets:
+        - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
+      SecurityGroups:
+        - !Ref LoadBalancerSG
+      Scheme: internet-facing
+
+  # Security Group for the Load Balancer
+  LoadBalancerSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow HTTP traffic
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  # Target Group for the ALB
+  TitanicTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: TitanicTargetGroup
+      Port: 5000
+      Protocol: HTTP
+      VpcId: !Ref VPC
+      TargetType: ip
+
+  # ECS Task Definition for the model serving service
+  TitanicTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: TitanicTaskDefinition
+      ContainerDefinitions:
+        - Name: model-serving
+          Image: <YOUR_ECR_REPOSITORY_URI>/model-serving:latest
+          Memory: 512
+          Cpu: 256
+          PortMappings:
+            - ContainerPort: 5000
+              HostPort: 5000
+              Protocol: tcp
+
+  # ECS Service
+  TitanicService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref TitanicCluster
+      TaskDefinition: !Ref TitanicTaskDefinition
+      DesiredCount: 1
+      LaunchType: FARGATE
+      LoadBalancers:
+        - ContainerName: model-serving
+          ContainerPort: 5000
+          TargetGroupArn: !Ref TitanicTargetGroup
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          Subnets:
+            - !Ref PublicSubnet1
+            - !Ref PublicSubnet2
+          SecurityGroups:
+            - !Ref ServiceSG
+          AssignPublicIp: ENABLED
+
+  # Security Group for the ECS Service
+  ServiceSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow traffic from the Load Balancer
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 5000
+          ToPort: 5000
+          SourceArn: !Sub "arn:aws:elasticloadbalancing:${AWS::Region}:${AWS::AccountId}:loadbalancer/app/${TitanicALB}"
+
+  # VPC for networking
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+
+  # Public Subnet 1
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [ 0, !GetAZs 'us-east-1' ]
+      MapPublicIpOnLaunch: true
+
+  # Public Subnet 2
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select [ 1, !GetAZs 'us-east-1' ]
+      MapPublicIpOnLaunch: true
+
+Outputs:
+  LoadBalancerDNS:
+    Description: "DNS Name of the Load Balancer"
+    Value: !GetAtt TitanicALB.DNSName
