@@ -65,7 +65,7 @@ This project is an interdisciplinary repository for collaborative projects spann
 
   * [financial-industry](/tech-studio-projects/financial-industry/)
     * [algo-trading-platform](/tech-studio-projects/financial-industry/algo-trading-platform/)
-    * [black-scholes-option-pricer](/tech-studio-projects/financial-industry/black-scholes-option-pricer/)  
+    * [black-scholes-option-pricer](/tech-studio-projects/financial-industry/black-scholes-option-pricer/)
     * [blockchain-and-cryptocurrency-simulation](/tech-studio-projects/financial-industry/blockchain-and-cryptocurrency-simulation/)
     * [credit-scoring-algorithm](/tech-studio-projects/financial-industry/credit-scoring-algorithms/)
     * [financial_data_prediciton](/tech-studio-projects/financial-industry/financial_data_prediction/)
@@ -99,8 +99,8 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [document-management-system](/tech-studio-projects/other-projects/document-management-system/)
     * [e-commerce](/tech-studio-projects/other-projects/e-commerce/)
     * [github-user-finder](/tech-studio-projects/other-projects/github-user-finder/)
-    * [multi-product-recommendation-system](/tech-studio-projects/other-projects/multi-product-recommendation-system/)
     * [guestbook](/tech-studio-projects/other-projects/guestbook/)
+    * [multi-product-recommendation-system](/tech-studio-projects/other-projects/multi-product-recommendation-system/)
     * [multithreaded-webserver](/tech-studio-projects/other-projects/multithreaded-webserver/)
     * [package-management-system](/tech-studio-projects/other-projects/package-management-system/)
     * [prompt-engineering-experiments](/tech-studio-projects/other-projects/prompt-engineering-experiments/)
