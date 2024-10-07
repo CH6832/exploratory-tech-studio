@@ -77,6 +77,8 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [stock-price-ticker](/tech-studio-projects/financial-industry/stock-price-ticker/)
     * [stock-price-visualization](/tech-studio-projects/financial-industry/stock-price-visualization/)
 
+  * [leetcode](/tech-studio-projects/leetcode/)
+
   * [machine-learning](/tech-studio-projects/machine-learning/)
     * [autoencoder-for-anomaly-detection](/tech-studio-projects/machine-learning/autoencoder-for-anomaly-detection)
     * [bean-desease-classifier](/tech-studio-projects/machine-learning/bean-desease-classifier)
