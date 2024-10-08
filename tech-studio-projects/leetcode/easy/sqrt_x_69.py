@@ -26,6 +26,15 @@ Space Complexity:
 O(1)
 """
 
+def main() -> None:
+    """Driving code"""
+    sol = Solution()
+    print(sol.mySqrt(4))
+    print(sol.mySqrt(8))
+
+    return None
+
+
 class Solution:
     def mySqrt(self, x: int) -> int:
         if x == 0 or x == 1:
@@ -55,6 +64,6 @@ class Solution:
 
         return res
 
-sol = Solution()
-print(sol.mySqrt(4))
-print(sol.mySqrt(8))
+
+if __name__ == '__main__':
+    main()
