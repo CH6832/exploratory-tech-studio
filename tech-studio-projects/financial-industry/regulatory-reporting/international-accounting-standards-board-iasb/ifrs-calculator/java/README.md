@@ -1,6 +1,3 @@
-Here's an updated `README.md` file, detailing each function and explaining the tool comprehensively:
-
-```markdown
 # IFRS Calculator Command-Line Tool
 
 ## Overview
@@ -63,24 +60,3 @@ The tool includes robust error handling mechanisms to manage and report errors g
 ## Logging and Profiling
 
 Comprehensive logging and profiling functionalities are integrated to track the tool's performance and log critical events. This helps in monitoring the application's behavior and identifying areas for optimization.
-
-## License
-
-Specify the license under which the tool is distributed, if applicable.
-
-## Contact
-
-For any inquiries or support, please contact [Your Contact Information].
-```
-
-### Summary of Updates
-
-- **Fair Value Calculation**: Detailed the computation of fair value for financial instruments.
-- **Revenue Allocation**: Explained revenue allocation based on standalone selling prices.
-- **Lease Liability**: Described the calculation of lease liability.
-- **Defined Benefit Obligation**: Covered the computation of defined benefit obligations.
-- **Deferred Tax**: Detailed the calculation of deferred tax assets or liabilities.
-- **Goodwill**: Explained the calculation of goodwill from business combinations.
-- **Recoverable Amount**: Provided details on calculating the recoverable amount for impairment testing.
-
-Each section gives a clear explanation of what the respective calculation does, providing users with a comprehensive understanding of the tool’s capabilities and functionality.
