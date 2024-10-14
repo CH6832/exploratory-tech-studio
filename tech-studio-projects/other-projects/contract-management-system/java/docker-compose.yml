@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8081:8080"
+    depends_on:
+      - discovery-server
+
+  contract-service:
+    build:
+      context: ./contract-service
+    ports:
+      - "8082:8080"
+    depends_on:
+      - discovery-server
+
+  notification-service:
+    build:
+      context: ./notification-service
+    ports:
+      - "8083:8080"
+    depends_on:
+      - discovery-server
+
+  discovery-server:
+    build:
+      context: ./eureka-server
+    ports:
+      - "8761:8761"
+
+  config-server:
+    build:
+      context: ./config-server
+    ports:
+      - "8888:8888"

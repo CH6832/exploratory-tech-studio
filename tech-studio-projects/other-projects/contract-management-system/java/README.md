@@ -7,7 +7,7 @@ The project is a blockchain-powered contract management platform designed to sec
 
 ### **Key Features:**
 
-#### 1. **Smart ontracts**
+#### 1. **Smart Contracts**
    **Objective:**
    Automate contract execution, payment release, and validation based on predefined milestones.
 
@@ -56,6 +56,15 @@ The project is a blockchain-powered contract management platform designed to sec
    - **Compliance Reports**: Generate downloadable audit reports (PDF/Excel) that include all contract events for compliance purposes, integrated into the admin dashboard.
    - **Spring Boot Scheduler**: A scheduled job that automatically generates audit reports for regulatory bodies and stores them securely.
 
+#### 6. **Search Service**
+   **Objective:**
+   Enable efficient searching of contracts by title and description.
+
+   **Implementation:**
+   - **Elasticsearch Integration**: Utilize Elasticsearch for indexing contracts and providing fast search capabilities.
+   - **Search API**: Expose REST APIs for searching contracts, which leverage Elasticsearch's powerful querying capabilities.
+   - **Microservices Architecture**: The Search Service operates independently within the microservices ecosystem, facilitating loose coupling and easier scalability.
+
 ---
 
 ### **Technical Stack:**
@@ -70,6 +79,7 @@ The project is a blockchain-powered contract management platform designed to sec
    - **Blockchain Framework**: Hyperledger Fabric or Ethereum (for smart contract deployment and ledger management)
    - **Database**: PostgreSQL (for relational data), MongoDB (for distributed storage)
    - **Message Broker**: Kafka or RabbitMQ (for handling smart contract events and inter-service communication)
+   - **Search Service**: Elasticsearch for contract indexing and querying.
 
 #### **Frontend Technologies:**
    - **Angular** (for stakeholder access portals, contract management dashboard)
@@ -86,7 +96,7 @@ The project is a blockchain-powered contract management platform designed to sec
    - **Blockchain Nodes**: Dockerized blockchain nodes managed on Kubernetes or cloud providers.
 
 #### **IDE**
-   - **Eclipse IDE**: SOlid and free alternative solutions
+   - **Eclipse IDE**: Solid and free alternative solutions
 
 ---
 
@@ -107,3 +117,4 @@ The project is a blockchain-powered contract management platform designed to sec
 
 5. **Event Processing**:
    - **Kafka/RabbitMQ** handles blockchain events (e.g., payment milestones reached), allowing the microservices to react and trigger additional actions like notifications or approvals.
+

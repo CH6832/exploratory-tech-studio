@@ -1,0 +1,13 @@
+# Maven
+target/
+*.jar
+*.war
+
+# Logs
+*.log
+
+# IDE
+*.iml
+*.classpath
+*.project
+*.settings/
