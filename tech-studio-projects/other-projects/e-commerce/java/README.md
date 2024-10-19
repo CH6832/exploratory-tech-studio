@@ -4,15 +4,22 @@ This is a simple web-based application for a DIY store. It allows users to brows
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Running the Server](#running-the-server)
-- [Accessing the Application](#accessing-the-application)
-- [Sample URLs](#sample-urls)
-- [Further Improvements](#further-improvements)
+- [DIY Store Web Application](#diy-store-web-application)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Project Structure](#project-structure)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Clone the Repository](#clone-the-repository)
+    - [Configure Tomcat (Optional)](#configure-tomcat-optional)
+    - [Configure Maven](#configure-maven)
+  - [Running the Server](#running-the-server)
+  - [Accessing the Application](#accessing-the-application)
+  - [Sample URLs](#sample-urls)
+  - [Further Improvements](#further-improvements)
+  - [License](#license)
 
 ## Project Overview
 
