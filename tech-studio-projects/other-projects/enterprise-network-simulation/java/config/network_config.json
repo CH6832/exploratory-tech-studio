@@ -1,0 +1,20 @@
+{
+  "network": {
+      "subnets": [
+          {
+              "subnet": "192.168.1.0/24",
+              "devices": [
+                  "computer",
+                  "printer"
+              ]
+          },
+          {
+              "subnet": "192.168.2.0/24",
+              "devices": [
+                  "router",
+                  "firewall"
+              ]
+          }
+      ]
+  }
+}

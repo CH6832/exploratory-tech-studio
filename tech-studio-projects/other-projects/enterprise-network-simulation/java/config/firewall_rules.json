@@ -1,0 +1,14 @@
+{
+  "rules": [
+      {
+          "action": "allow",
+          "protocol": "tcp",
+          "port": 80
+      },
+      {
+          "action": "deny",
+          "protocol": "udp",
+          "port": 53
+      }
+  ]
+}
