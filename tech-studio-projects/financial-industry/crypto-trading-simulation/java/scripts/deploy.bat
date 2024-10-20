@@ -6,6 +6,7 @@ echo Deploying the cryptocurrency market-making platform...
 REM Build and deploy containers
 docker-compose up -d --build
 
+REM Check if the last command was successful
 IF ERRORLEVEL 1 (
     echo Deployment failed!
     exit /b 1
