@@ -14,13 +14,13 @@ import java.util.List;
  * Provides endpoints for account operations such as creating, updating, deleting,
  * and retrieving accounts, as well as handling deposits and withdrawals.
  */
-/**
+/*
  * The @RestController annotation is a specialized version of the @Controller annotation, 
  * indicating that this class serves RESTful web services. It combines @Controller and @ResponseBody, 
  * allowing methods to return data directly as JSON or XML instead of rendering views, making it suitable for building REST APIs.
  */
 @RestController
-/**
+/*
  * The @RequestMapping("/api/accounts") annotation specifies the base URL path for all 
  * HTTP requests handled by this controller, allowing it to group related endpoints 
  * under the "/api/accounts" route for account management operations.
