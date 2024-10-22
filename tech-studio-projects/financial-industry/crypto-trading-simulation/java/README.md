@@ -14,7 +14,6 @@ This project implements a market maker strategy using a modular architecture in 
     - [Running Tests](#running-tests)
     - [Running with Docker](#running-with-docker)
   - [License](#license)
-  - [Acknowledgments](#acknowledgments)
 
 ## Features
 
@@ -63,20 +62,13 @@ Replace `market-maker-project-1.0.jar` with the actual jar file name generated a
 
 ### Running Tests
 
-This project includes unit tests using Google Test for C++ components and JUnit for Java components.
+This project includes unit tests using JUnit for Java components.
 
-1. **C++ Tests**: 
-   Make sure you have Google Test installed, then run the tests using:
-   ```bash
-   cd build
-   ./run_tests
-   ```
+You can run tests with Maven:
 
-2. **Java Tests**:
-   You can run tests with Maven:
-   ```bash
-   mvn test
-   ```
+```bash
+mvn test
+```
 
 ### Running with Docker
 
@@ -95,9 +87,3 @@ If you wish to run the project in a Docker container, ensure that Docker is inst
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [nlohmann/json](https://github.com/nlohmann/json) for JSON parsing in C++
-- [JUnit](https://junit.org/junit5/) for testing in Java
-- [Google Test](https://github.com/google/googletest) for C++ unit testing
