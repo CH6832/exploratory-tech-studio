@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- The root element of a Maven project object model (POM) file -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- Specifies the version of the POM model being used -->
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.filemanager</groupId>
-    <artifactId>online-banking-system-simulation</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <!-- The unique identifier for the project -->
+    <groupId>com.filemanager</groupId> <!-- The group ID, typically a reversed domain name -->
+    <artifactId>online-banking-system-simulation</artifactId> <!-- The artifact ID, the name of the project -->
+    <version>1.0-SNAPSHOT</version> <!-- The version of the project; SNAPSHOT indicates a version in development -->
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Compiler configuration for the Java version being used -->
+        <maven.compiler.source>22</maven.compiler.source> <!-- The source compatibility level (Java version used for the source code) -->
+        <maven.compiler.target>22</maven.compiler.target> <!-- The target compatibility level (Java version for compiled code) -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- The character encoding used for the project -->
     </properties>
+
     <dependencies>
+        <!-- The dependencies required by the project -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
+            <groupId>org.junit.jupiter</groupId> <!-- The group ID of the dependency -->
+            <artifactId>junit-jupiter</artifactId> <!-- The artifact ID of the dependency -->
+            <version>5.8.1</version> <!-- The version of the dependency -->
+            <scope>test</scope> <!-- The scope of the dependency; 'test' means it's only used in the testing phase -->
         </dependency>
     </dependencies>
 
