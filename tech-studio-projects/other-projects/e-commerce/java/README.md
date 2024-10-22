@@ -202,7 +202,3 @@ Once Tomcat is running and the application is deployed:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-This `README.md` should help anyone new to the project understand how to set it up and run it, and where to access the main features. Adjust the repository URL or specific details as necessary for your project.
