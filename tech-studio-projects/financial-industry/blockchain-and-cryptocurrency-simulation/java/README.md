@@ -5,16 +5,24 @@ This project is a simplified implementation of a blockchain system with Proof of
 ## Features
 
 - **Blockchain Management**: Basic blockchain with block validation and transaction management.
-- **Transactions**: Support for transactions with digital signatures using RSA encryption.
+- **Transactions**: Support for transactions with digital signatures.
 - **Proof of Work (PoW)**: Mining mechanism to add new blocks.
 - **Proof of Stake (PoS)**: Validator selection based on stake.
 - **Networking**: Basic network capabilities to connect nodes and broadcast new blocks.
 
+## Technologies Used
+
+This project utilizes various technologies and frameworks to implement its features. Below is a list of the main technologies used along with links to their documentation:
+
+- **Java**: A high-level programming language used for developing the application. [Java Documentation](https://docs.oracle.com/en/java/)
+- **Spring Boot**: A framework for building stand-alone, production-grade Spring-based applications. [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+- **JUnit 5**: A popular testing framework for Java, used to write unit tests for the application. [JUnit 5 Documentation](https://junit.org/junit5/docs/current/user-guide/)
+- **Maven**: A build automation tool used primarily for Java projects. [Maven Documentation](https://maven.apache.org/guides/index.html)
+
 ## Prerequisites
 
-- **OpenSSL**: For cryptographic functions like RSA encryption and SHA-256 hashing.
-- **CMake**: For building the project.
-- **Google Test**: For running unit tests.
+- **Java Development Kit (JDK)**: Ensure that JDK is installed on your machine. [JDK Documentation](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-linux-platforms.html)
+- **Maven**: Required for managing dependencies and building the project. [Maven Installation Guide](https://maven.apache.org/install.html)
 
 ## Installation
 
@@ -28,16 +36,13 @@ This project is a simplified implementation of a blockchain system with Proof of
 2. **Build the Project**
 
    ```bash
-   mkdir build
-   cd build
-   cmake ..
-   make
+   mvn clean install
    ```
 
 3. **Run the Application**
 
    ```bash
-   ./your_application_name
+   mvn spring-boot:run
    ```
 
 ## Usage
@@ -48,17 +53,17 @@ After running the application, you can interact with the blockchain through its 
 
 - Create a transaction:
   ```bash
-  ./your_application_name create_transaction --from Alice --to Bob --amount 50
+  curl -X POST http://localhost:8080/transactions --data '{"sender": "Alice", "receiver": "Bob", "amount": 50}'
   ```
 
 - Mine a block:
   ```bash
-  ./your_application_name mine_block
+  curl -X POST http://localhost:8080/mine
   ```
 
 - Print the blockchain:
   ```bash
-  ./your_application_name print_chain
+  curl http://localhost:8080/chain
   ```
 
 ## Testing
@@ -96,9 +101,3 @@ Contributions are welcome! If you would like to contribute to this project, plea
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-## Acknowledgments
-
-- Thanks to the open-source community for providing libraries and frameworks that make building blockchain applications easier.
-- Inspired by various blockchain technologies and concepts.
-
