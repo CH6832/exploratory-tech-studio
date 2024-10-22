@@ -1,5 +1,5 @@
 # Use an official Maven image to build the application
-FROM maven:3.8.4-openjdk-11 AS builder
+FROM maven:3.8.4-openjdk-17 AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -9,10 +9,10 @@ COPY pom.xml .
 COPY src ./src
 
 # Package the application
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # Use an official OpenJDK image to run the application
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jre-slim
 
 # Set the working directory
 WORKDIR /app
@@ -25,3 +25,4 @@ EXPOSE 8443
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "/app/banking.jar"]
+
