@@ -12,6 +12,8 @@ module com.browser.webbrowserinjava {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires org.junit.jupiter.api;
+    requires org.apache.logging.log4j;
+    requires ApacheJMeter.core;
 
     opens com.christoph.webbrowserinjava to javafx.fxml;
     exports com.christoph.webbrowserinjava;

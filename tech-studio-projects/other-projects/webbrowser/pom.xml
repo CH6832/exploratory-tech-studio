@@ -1,35 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Root project object model (POM) defining the structure, dependencies, and build process for a Maven-based project -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- The POM version used, indicating the model's format -->
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.browser</groupId>
-    <artifactId>web-browser-in-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>web-browser-in-java</name>
+    <!-- Basic project metadata for Maven coordinates -->
+    <groupId>com.browser</groupId> <!-- The group ID for your project, usually a domain or unique namespace -->
+    <artifactId>web-browser-in-java</artifactId> <!-- The project name or identifier -->
+    <version>1.0-SNAPSHOT</version> <!-- Project version; "SNAPSHOT" denotes an in-development version -->
+    <name>web-browser-in-java</name> <!-- Display name of the project -->
 
     <properties>
+        <!-- Defines Java source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Sets the JUnit version for testing dependencies -->
         <junit.version>5.10.0</junit.version>
     </properties>
 
     <dependencies>
+        <!-- Dependencies required for the project, defining libraries that the application relies on -->
+
+        <!-- Core JMeter dependency for performance testing and analysis -->
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>5.5</version>
+        </dependency>
+
+        <!-- jProfiler dependency for profiling and performance monitoring -->
+        <dependency>
+            <groupId>com.ej-technologies</groupId>
+            <artifactId>jprofiler</artifactId>
+            <version>14.0</version>
+            <scope>system</scope>
+            <!-- System path for jProfiler JAR; adjust path as necessary for your environment -->
+            <systemPath>C:/Program Files/Java/jprofiler_windows-x64_14_0_4/jprofiler14.0.4/bin/jprofiler.jar</systemPath>
+        </dependency>
+
+        <!-- Log4j Core dependency for logging functionality -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+        <!-- Log4j API dependency, required alongside log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+
+        <!-- JavaFX dependencies for building a GUI-based web browser application -->
+        <!-- JavaFX Controls for essential GUI components -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>22-ea+11</version>
         </dependency>
+        <!-- JavaFX FXML for markup-based GUI creation -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>22-ea+11</version>
         </dependency>
+        <!-- JavaFX Web for web content rendering within the application -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>22-ea+11</version>
         </dependency>
+        <!-- JavaFX Swing and Media dependencies for extended JavaFX capabilities -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
@@ -40,15 +83,20 @@
             <artifactId>javafx-media</artifactId>
             <version>22-ea+11</version>
         </dependency>
+
+        <!-- ControlsFX for additional UI components in JavaFX applications -->
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
             <version>11.1.2</version>
         </dependency>
+
+        <!-- FormsFX for form creation and validation in JavaFX -->
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
             <artifactId>formsfx-core</artifactId>
             <version>11.6.0</version>
+            <!-- Exclude JavaFX libraries that might conflict with other dependencies -->
             <exclusions>
                 <exclusion>
                     <groupId>org.openjfx</groupId>
@@ -56,10 +104,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- ValidatorFX for form validation -->
         <dependency>
             <groupId>net.synedra</groupId>
             <artifactId>validatorfx</artifactId>
             <version>0.4.0</version>
+            <!-- Exclude JavaFX libraries to avoid dependency conflicts -->
             <exclusions>
                 <exclusion>
                     <groupId>org.openjfx</groupId>
@@ -67,16 +118,22 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- Ikonli for icon libraries in JavaFX -->
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
             <version>12.3.1</version>
         </dependency>
+
+        <!-- BootstrapFX for applying Bootstrap-style UI components in JavaFX -->
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
         </dependency>
+
+        <!-- TilesFX for creating custom JavaFX dashboards and data visualizations -->
         <dependency>
             <groupId>eu.hansolo</groupId>
             <artifactId>tilesfx</artifactId>
@@ -88,6 +145,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- FXGL for creating 2D games and graphical applications in JavaFX -->
         <dependency>
             <groupId>com.github.almasb</groupId>
             <artifactId>fxgl</artifactId>
@@ -99,6 +158,9 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- JUnit and TestNG dependencies for testing -->
+        <!-- JUnit 5 engine and API dependencies for unit testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -106,27 +168,29 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.11.0-M1</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Legacy JUnit 4 dependency and TestNG for compatibility and flexibility in testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin to set Java version for source and target compatibility -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -136,13 +200,30 @@
                     <target>22</target>
                 </configuration>
             </plugin>
+
+            <!-- JMeter Maven Plugin for running JMeter tests directly from Maven -->
+            <plugin>
+                <groupId>org.apache.jmeter</groupId>
+                <artifactId>jmeter-maven-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>jmeter-tests</id>
+                        <goals>
+                            <goal>jmeter</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- JavaFX Maven Plugin for packaging JavaFX applications -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <!-- Default configuration for running the JavaFX application -->
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.browser.webbrowserinjava/com.christoph.webbrowserinjava.BrowserApplication

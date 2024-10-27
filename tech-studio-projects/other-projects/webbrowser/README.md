@@ -6,14 +6,23 @@ This project is a simple yet powerful web browser application built using JavaFX
 
 ## Features
 
-* **Seamless Tabbed Browsing:** Effortlessly open multiple tabs to navigate across various websites at once, providing a streamlined and efficient browsing experience.
-* **Smart Address Bar:** Enter website URLs with ease using our intelligent address bar that auto-completes URLs with common prefixes and domain extensions, getting you to your destination faster.
-* **Intuitive Navigation Controls:** Glide through your browsing history with our smooth forward and backward navigation buttons, making it easy to revisit your favorite sites.
-* **Instant Refresh:** Reload your current webpage with a single click to ensure you're always viewing the latest content.
-* **Dynamic Tab Titles:** Enjoy a clutter-free browsing experience with tab titles that automatically display the name of the website, making it simple to manage multiple tabs.
-* **Quick In-Page Search:** Instantly jump to the search bar by pressing Ctrl + F, allowing you to find specific content on a webpage quickly and efficiently.
-* **External Browser Support:** Open websites in your preferred external web browser directly from our app, giving you the flexibility to choose your browsing environment.
-* **Hotkey for Tab Management:** Use the convenient Ctrl + W hotkey to close tabs instantly, enhancing your browsing productivity.
+* **Multi-Tab Browsing:** Open and manage multiple tabs effortlessly, allowing you to view and switch between several websites without losing context. This feature creates a smooth and organized browsing experience tailored for multitasking.
+
+* **Enhanced Address Bar with Auto-Completion:** Quickly navigate to websites with our address bar that intuitively auto-completes URLs, including common prefixes (like “https://”) and domain extensions (e.g., “.com,” “.org”). This speeds up navigation and minimizes typing errors.
+
+* **User-Friendly Navigation Controls:** Easily access and retrace your browsing path with forward and backward navigation buttons, so you can revisit or skip past pages in your browsing history with ease.
+
+* **Quick Page Reload:** Refresh any open page with a single click to make sure you’re seeing the latest updates. This instant reload feature is designed for dynamic content and provides seamless updates without disrupting your browsing session.
+
+* **Auto-Updating Tab Titles:** Manage multiple tabs efficiently with tabs that automatically show the title of each website. This dynamic titling keeps your tabs organized, letting you locate and switch between tabs effortlessly.
+
+* **In-Page Text Search (Ctrl + F):** Search for specific content within a webpage with our in-page search function, accessible by pressing Ctrl + F. This lets you find and jump to exact phrases or keywords within seconds.
+
+* **Open in External Browser:** For added flexibility, you can open any website in an external browser of your choice directly from the application, giving you control over your browsing environment and preferences.
+
+* **Convenient Hotkeys for Tab Management (Ctrl + W):** Easily close tabs using the Ctrl + W shortcut, making it quick and simple to manage your open tabs and optimize your workflow.
+
+* **Built-in Performance Profiling:** Monitor and improve browsing performance with integrated profiling tools, which provide insights into resource usage, enabling a smoother and more responsive browsing experience.
 
 ## Getting Started
 
