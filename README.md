@@ -64,7 +64,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [template-method-pattern](/tech-studio-projects/design-patterns/template-method-pattern/)
 
   * [financial-industry](/tech-studio-projects/financial-industry/)
-    * [algo-trading-platform](/tech-studio-projects/financial-industry/algo-trading-platform/)
+    * [algorithmic-trading-simulation](/tech-studio-projects/financial-industry/algorithmic-trading-simulation/)
     * [black-scholes-option-pricer](/tech-studio-projects/financial-industry/black-scholes-option-pricer/)
     * [blockchain-and-cryptocurrency-simulation](/tech-studio-projects/financial-industry/blockchain-and-cryptocurrency-simulation/)
     * [credit-scoring-algorithm](/tech-studio-projects/financial-industry/credit-scoring-algorithms/)
