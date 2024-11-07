@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- Appenders: Define where logs should go -->
+    <Appenders>
+        <!-- Console Appender: Logs to the console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n"/>
+        </Console>
+
+        <!-- File Appender: Logs to a file (server.log) -->
+        <File name="File" fileName="logs/server.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n"/>
+            <Policies>
+                <!-- Rolling policy: Create a new file every day -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </File>
+    </Appenders>
+
+    <!-- Loggers: Define loggers for different packages -->
+    <Loggers>
+        <!-- Root logger with INFO level for general logging -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+
+        <!-- Specific logger for the application with WARN level (Optional) -->
+        <Logger name="com.example.server" level="warn" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+
+        <!-- Specific logger for error logging with ERROR level -->
+        <Logger name="com.example.server.error" level="error" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+
+        <!-- Specific logger for debug logging with DEBUG level -->
+        <Logger name="com.example.server.debug" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+        
+        <!-- Specific logger for the application (optional) -->
+        <Logger name="com.example.server" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+    </Loggers>
+</Configuration>

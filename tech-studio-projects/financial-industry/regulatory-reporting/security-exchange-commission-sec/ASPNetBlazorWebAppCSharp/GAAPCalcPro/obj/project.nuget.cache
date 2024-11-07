@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RphIPeLaTP8=",
+  "dgSpecHash": "Jv3xPTvwWdU=",
   "success": true,
-  "projectFilePath": "F:\\usb_drive_sandisk\\progress\\exploratory-tech-studio\\tech-studio-projects\\financial-industry\\regulatory-reporting\\security-exchange-commission-sec\\ASPNetBlazorWebAppCSharp\\GAAPCalcPro\\GAAPCalcPro.csproj",
+  "projectFilePath": "C:\\Users\\chris\\Desktop\\exploratory-tech-studio\\tech-studio-projects\\financial-industry\\regulatory-reporting\\security-exchange-commission-sec\\ASPNetBlazorWebAppCSharp\\GAAPCalcPro\\GAAPCalcPro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chris\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"

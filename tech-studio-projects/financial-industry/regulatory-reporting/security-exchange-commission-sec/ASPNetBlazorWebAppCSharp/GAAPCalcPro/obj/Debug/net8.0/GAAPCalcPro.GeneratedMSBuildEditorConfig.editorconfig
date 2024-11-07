@@ -9,75 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GAAPCalcPro
 build_property.RootNamespace = GAAPCalcPro
-build_property.ProjectDir = F:\usb_drive_sandisk\progress\exploratory-tech-studio\tech-studio-projects\financial-industry\regulatory-reporting\security-exchange-commission-sec\ASPNetBlazorWebAppCSharp\GAAPCalcPro\
+build_property.ProjectDir = C:\Users\chris\Desktop\exploratory-tech-studio\tech-studio-projects\financial-industry\regulatory-reporting\security-exchange-commission-sec\ASPNetBlazorWebAppCSharp\GAAPCalcPro\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\usb_drive_sandisk\progress\exploratory-tech-studio\tech-studio-projects\financial-industry\regulatory-reporting\security-exchange-commission-sec\ASPNetBlazorWebAppCSharp\GAAPCalcPro
+build_property.MSBuildProjectDirectory = C:\Users\chris\Desktop\exploratory-tech-studio\tech-studio-projects\financial-industry\regulatory-reporting\security-exchange-commission-sec\ASPNetBlazorWebAppCSharp\GAAPCalcPro
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/ARO.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/ARO.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQVJPLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/BusinessCombinations.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/BusinessCombinations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzaW5lc3NDb21iaW5hdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/DeferredRevenue.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/DeferredRevenue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVmZXJyZWRSZXZlbnVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/EPS.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/EPS.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRVBTLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Error.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/HedgeAccounting.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/HedgeAccounting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVkZ2VBY2NvdW50aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Index.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/InventoryValuation.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/InventoryValuation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3J5VmFsdWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/LeaseClassification.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/LeaseClassification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhc2VDbGFzc2lmaWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Privacy.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/RevenueRecognition.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/RevenueRecognition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2ZW51ZVJlY29nbml0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/StockCompensation.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/StockCompensation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvY2tDb21wZW5zYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/_ViewImports.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/_ViewStart.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/usb_drive_sandisk/progress/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Shared/_Layout.cshtml]
+[C:/Users/chris/Desktop/exploratory-tech-studio/tech-studio-projects/financial-industry/regulatory-reporting/security-exchange-commission-sec/ASPNetBlazorWebAppCSharp/GAAPCalcPro/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pex24rc7a2

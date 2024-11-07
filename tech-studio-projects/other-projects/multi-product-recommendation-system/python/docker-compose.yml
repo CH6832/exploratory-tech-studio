@@ -1,0 +1,60 @@
+version: '3.8'
+
+# ─────────────────────────────────────────────────────────────────────
+# Docker Compose configuration to orchestrate services in a microservices architecture.
+# This configuration defines multiple services (API Gateway, Product Catalog, Recommendation Engine, etc.)
+# ─────────────────────────────────────────────────────────────────────
+
+services:
+  # API Gateway Service (handles routing, rate limiting)
+  api_gateway:
+    container_name: api_gateway
+    build:
+      context: ./api_gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+    depends_on:
+      - product_catalog
+      - recommendation_engine
+      - user_profile
+    networks:
+      - backend_network
+
+  # Product Catalog Service (FastAPI)
+  product_catalog:
+    container_name: product_catalog
+    build:
+      context: ./product_catalog_service
+    ports:
+      - "8001:8001"
+    environment:
+      - ENVIRONMENT=development
+    networks:
+      - backend_network
+
+  # Recommendation Engine Service (Django)
+  recommendation_engine:
+    container_name: recommendation_engine
+    build:
+      context: ./recommendation_engine_service
+    ports:
+      - "8002:8002"
+    environment:
+      - ENVIRONMENT=development
+    depends_on:
+      - product_catalog
+    networks:
+      - backend_network
+
+  # User Profile Service (Flask)
+  user_profile:
+    container_name: user_profile
+    build:
+      context: ./user_profile_service
+    ports:
+      - "8003:8003"
+    environment:
+      - ENVIRONMENT=development
+  
