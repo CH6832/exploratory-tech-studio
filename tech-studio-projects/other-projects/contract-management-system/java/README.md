@@ -1,139 +1,167 @@
-### Project: Contract Management Platform using Spring and Spring Boot
+# Spring Boot Microservices with Monitoring, Auditing, and Reporting
 
-**Description:**
+This project demonstrates the setup of multiple Spring Boot microservices with monitoring using **Prometheus** and **Grafana**, along with **Audit** and **Report Generation** functionality. The services expose metrics that Prometheus scrapes, and Grafana visualizes the collected data in dashboards. The project also includes audit logging to track actions performed by users and a report generation service for exporting data.
 
-The project is a contract management platform designed to securely manage contracts, change orders, and payments between stakeholders in construction projects. Built using Spring and Spring Boot for a microservices architecture, the platform ensures data integrity and transparency, providing a robust and secure system for contract management.
+## Services in This Project:
+- **contract-service**: Manages contracts and provides endpoints for contract-related operations.
+- **payment-service**: Handles payment-related operations and processing.
+- **inventory-service**: Manages inventory and stock data.
+- **user-service**: Handles user registration, login, and management.
+- **audit-service**: Logs and tracks actions performed across services for auditing purposes.
+- **report-service**: Generates reports and exports data from services like `contract-service`, `payment-service`, and others.
+- **Prometheus**: Collects metrics from the microservices.
+- **Grafana**: Visualizes the collected metrics from Prometheus.
 
----
+## Prerequisites
+Make sure you have the following installed:
+- Docker
+- Docker Compose
+- Java (JDK 11 or later) for running Spring Boot microservices
+- Maven or Gradle for building the services
 
-### **Key Features:**
+## Setup
 
-#### 1. **Contract Automation**
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/your-project.git
+   cd your-project
+   ```
 
-   Automate contract execution, payment release, and validation based on predefined milestones.
+2. **Update the Spring Boot Applications**:
+   Each Spring Boot application should expose Prometheus metrics at `/actuator/prometheus`. Ensure that the following properties are added to `application.properties` for each service:
+   ```properties
+   management.endpoints.web.exposure.include=health,info,prometheus
+   management.endpoint.prometheus.enabled=true
+   ```
 
-   **Implementation:**
+3. **Dockerize the Microservices**:
+   Each microservice (e.g., `contract-service`, `payment-service`, `audit-service`, etc.) should have its own `Dockerfile`. Ensure you have a `Dockerfile` in each of these directories.
+
+   Example `Dockerfile` for a Spring Boot service:
+   ```dockerfile
+   FROM openjdk:21-jdk-slim
+   COPY target/your-app.jar /usr/app/
+   WORKDIR /usr/app
+   RUN sh -c 'touch your-app.jar'
+   ENTRYPOINT ["java", "-jar", "your-app.jar"]
+   ```
+
+4. **Configure Prometheus**:
+   Ensure your `prometheus.yml` is properly set up to scrape the metrics from your Spring Boot applications. Below is an example of the configuration:
+   ```yaml
+   scrape_configs:
+     - job_name: 'contract-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['contract-service:8080']
    
-   - **Smart Contract API**: Spring Boot microservices expose REST APIs for creating, managing, and interacting with contracts. Milestones and payment triggers are pre-configured in the contract.
+     - job_name: 'payment-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['payment-service:8080']
    
-   - **Event Listeners**: Spring listeners to monitor contract events (e.g., milestone completion) and trigger payment release or contract updates.
+     - job_name: 'inventory-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['inventory-service:8080']
+   
+     - job_name: 'user-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['user-service:8080']
+   
+     - job_name: 'audit-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['audit-service:8081']
+   
+     - job_name: 'report-service'
+       metrics_path: '/actuator/prometheus'
+       scrape_interval: 5s
+       static_configs:
+         - targets: ['report-service:8082']
+   ```
 
-#### 2. **Secure Record Keeping**
+5. **Start the Services with Docker Compose**:
+   From the project root, run:
+   ```bash
+   docker-compose up --build
+   ```
 
-   Maintain a secure, tamper-proof record of all contract changes, approvals, and payments for auditability and transparency.
+6. **Access the Services**:
+   - Prometheus: [http://localhost:9090](http://localhost:9090)
+   - Grafana: [http://localhost:3000](http://localhost:3000)
+     - Login with the default username `admin` and password `admin`.
 
-   **Implementation:**
-   
-   - **Transaction Service**: Spring Data with a relational database (e.g., PostgreSQL) for fast querying and storage of contract interactions (modifications, approvals, payments).
-   
-   - **Database-Linked Hashing**: Each record in the database is linked to a verifiable hash to provide a secure audit trail.
-   
-   - **Message Queue**: RabbitMQ for communication between services for event processing.
+7. **Configure Grafana to Connect to Prometheus**:
+   - In the Grafana UI, go to **Configuration → Data Sources → Add data source**.
+   - Choose **Prometheus** and set the URL to `http://prometheus:9090`.
+   - Save and test the connection.
 
-#### 3. **Stakeholder Access**
+8. **Import Dashboards**:
+   You can import pre-configured dashboards for Spring Boot or create your own to visualize the metrics from Prometheus.
 
-   Provide secure, role-based access for stakeholders such as contractors, suppliers, and clients to view and approve contract terms and changes.
+   Example dashboard ID for Spring Boot metrics:
+   - [Spring Boot Monitoring Dashboard (ID: 4350)](https://grafana.com/grafana/dashboards/4350)
 
-   **Implementation:**
-   
-   - **OAuth2/JWT Security**: Spring Security with OAuth2 and JWT tokens to authenticate and authorize users based on roles.
-   
-   - **Role-Based Access Control**: Define granular access permissions for stakeholders. For instance, contractors can propose changes, suppliers can update costs, and clients can approve.
-   
-   - **Angular Front-End**: A front-end (or mobile app) built in Angular allows stakeholders to log in, view contracts, and approve changes through the exposed REST APIs.
-   
-   - **Secure Contract Management API**: APIs are provided for stakeholders to view contract status, upload documents, and approve changes.
+## Services Overview
 
-#### 4. **Cost & Time Tracking**
+### 1. **Audit Service**:
+   The `audit-service` tracks and logs actions performed in the system. This service provides audit logs that can be used for auditing purposes, keeping track of actions like creating, updating, or deleting records.
 
-   Automatically track project costs, time spent, and compare them with contract conditions to detect overages or delays.
+   The service exposes endpoints like:
+   - `POST /api/audit/log` - Logs an action with the user performing it.
 
-   **Implementation:**
-   
-   - **Tracking Microservices**: Spring Boot microservices to handle cost tracking and time logging, with data stored in a distributed database (e.g., MongoDB).
-   
-   - **Threshold Notifications**: Trigger notifications when certain thresholds are reached (e.g., costs exceed agreed amounts).
-   
-   - **Distributed Tracing**: Spring Sleuth and Zipkin for distributed tracing to ensure that cost and time-tracking events are consistently logged across microservices.
-   
-   - **Cost Reporting Dashboard**: Real-time dashboards displaying the current project status, cost overruns, and time spent using Spring Data and Spring MVC.
+   **Audit Logging**: Each action (e.g., creating a contract, updating a payment) is logged for traceability. You can integrate the `AuditService` into other services to log actions.
 
-#### 5. **Audit Trails**
+   Example usage in `ContractController`:
+   ```java
+   @Autowired
+   private final AuditService auditService;
 
-   Generate detailed audit trails for all contract-related activities to ensure legal compliance and provide a full history of the contract lifecycle.
+   @PostMapping
+   public ResponseEntity<Contract> createContract(@RequestBody Contract contract) {
+       auditService.logAction("Create contract", "user123");
+       Contract createdContract = contractService.createContract(contract);
+       return new ResponseEntity<>(createdContract, HttpStatus.CREATED);
+   }
+   ```
 
-   **Implementation:**
-   
-   - **Log Service**: A microservice built using Spring Boot logs all changes to contracts and payments, storing them immutably in the database.
-   
-   - **Audit API**: Provide REST APIs to retrieve a full history of a contract, including who made changes, approvals, and any payments.
-   
-   - **Compliance Reports**: Generate downloadable audit reports (PDF/Excel) that include all contract events for compliance purposes, integrated into the admin dashboard.
-   
-   - **Spring Boot Scheduler**: A scheduled job that automatically generates audit reports for regulatory bodies and stores them securely.
+### 2. **Report Service**:
+   The `report-service` generates reports based on the data from other services like `contract-service`, `payment-service`, etc. This service can generate various types of reports, such as contract summaries or payment history.
 
-#### 6. **Search Service**
+   Example of how to generate a report:
+   ```java
+   @GetMapping("/generate")
+   public ResponseEntity<String> generateReport() {
+       try {
+           String report = reportService.generateContractReport();
+           auditService.logAction("Generate report", "admin");
+           return ResponseEntity.ok(report);
+       } catch (Exception e) {
+           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error generating report");
+       }
+   }
+   ```
 
-   Enable efficient searching of contracts by title and description.
+## Docker Commands
 
-   **Implementation:**
-   
-   - **Elasticsearch Integration**: Utilize Elasticsearch for indexing contracts and providing fast search capabilities.
-   
-   - **Search API**: Expose REST APIs for searching contracts, which leverage Elasticsearch's powerful querying capabilities.
-   
-   - **Microservices Architecture**: The Search Service operates independently within the microservices ecosystem, facilitating loose coupling and easier scalability.
+- **Start services in detached mode**:
+  ```bash
+  docker-compose up -d
+  ```
 
----
+- **Stop services**:
+  ```bash
+  docker-compose down
+  ```
 
-### **Technical Stack:**
-
-#### **Backend Technologies:**
-   
-   - **Java** (Core platform)
-   
-   - **Spring Boot** (Microservices framework)
-   
-   - **Spring Security** (Authentication and authorization)
-   
-   - **Spring Data JPA** (Data persistence)
-   
-   - **Message Broker**: Kafka or RabbitMQ (for handling events and inter-service communication)
-   
-   - **Search Service**: Elasticsearch for contract indexing and querying.
-   
-   - **Database**: PostgreSQL (for relational data), MongoDB (for distributed storage)
-
-#### **Frontend Technologies:**
-
-   - **REST API** (Exposed via Spring Boot for front-end interactions)
-
-#### **Cloud & DevOps:**
-   
-   - **AWS** (for microservices hosting and management)
-   
-   - **Docker** (for containerization and orchestration of microservices)
-   
-   - **CI/CD Tools**: Jenkins, GitLab CI, or CircleCI for continuous deployment
-
-#### **IDE**
-   
-   - **Eclipse IDE**: Solid and free alternative solutions
-
----
-
-### **System Architecture:**
-
-   **Microservices**:
-   
-   - A set of Spring Boot microservices managing different aspects of contract management, cost tracking, and audit logging.
-   
-   - Microservices communicate via REST APIs and use message brokers (Kafka/RabbitMQ) for event-driven communication.
-
-   **API Gateway**:
-
-   - Spring Boot API Gateway to expose services securely to external users (stakeholders). It handles rate limiting, security, and service routing.
-
-   **Event Processing**:
-
-   - RabbitMQ handles events (e.g., payment milestones reached), allowing the microservices to react and trigger additional actions like notifications or approvals.
+- **Rebuild the services**:
+  ```bash
+  docker-compose up --build
+  ```

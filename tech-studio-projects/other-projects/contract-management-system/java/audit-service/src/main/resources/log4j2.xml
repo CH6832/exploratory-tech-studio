@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- Define appender to log to a file -->
+    <Appenders>
+        <File name="FileAppender" fileName="src/main/resources/audit.log">
+            <!-- Optional: If log file is too big, create a new one -->
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c{1} - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <!-- Root logger configuration: This logs messages of level 'info' and higher (info, warn, error) -->
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+
+        <!-- Add specific loggers with different levels for more control -->
+        <!-- Debug level logger (can be used for specific classes that need detailed logging) -->
+        <Logger name="com.cms.audit" level="debug" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Warn level logger (this logs only warnings and errors for this logger) -->
+        <Logger name="com.cms.audit" level="warn" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Error level logger (this logs only errors for this logger) -->
+        <Logger name="com.cms.audit" level="error" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

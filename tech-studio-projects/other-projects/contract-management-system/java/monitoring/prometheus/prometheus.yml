@@ -1,0 +1,59 @@
+# prometheus.yml
+# 
+# C:\Program Files\Prometheus\prometheus.exe --config.file="prometheus.yml"
+
+# Global settings that apply to all scrape jobs
+global:
+  scrape_interval: 15s           # How often Prometheus scrapes metrics
+  evaluation_interval: 15s       # How often rules are evaluated
+
+# Alertmanager configuration (if you have an Alertmanager instance running)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets:
+#           - localhost:9093    # Replace with Alertmanager address if used
+
+# Rule files for alerting and recording rules
+# rule_files:
+#   - "alert_rules.yml"
+
+# Scrape configuration
+scrape_configs:
+  # Configuration for scraping Prometheus's own metrics
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Configuration for scraping your Spring Boot application
+  - job_name: 'contract-service'
+    metrics_path: '/actuator/prometheus' # Path to Spring Boot Prometheus metrics
+    scrape_interval: 5s                  # Optional: Override global scrape interval
+
+    static_configs:
+      - targets: ['localhost:8050']      # Address where your Spring Boot app runs
+
+  # Additional scrape job examples can go here if monitoring other services
+  
+  # Scraping payment-service
+  #- job_name: 'payment-service'
+  #  metrics_path: '/actuator/prometheus'  # Spring Boot Prometheus endpoint
+  #  scrape_interval: 5s  # Optional: Override global scrape interval
+  #  static_configs:
+  #    - targets: ['localhost:8051']  # Address of payment-service instance
+
+  # Scraping inventory-service
+  # - job_name: 'inventory-service'
+  #  metrics_path: '/actuator/prometheus'  # Spring Boot Prometheus endpoint
+  #  scrape_interval: 5s  # Optional: Override global scrape interval
+  #  static_configs:
+  #    - targets: ['localhost:8052']  # Address of inventory-service instance
+
+  # Scraping user-service
+  #- job_name: 'user-service'
+  #  metrics_path: '/actuator/prometheus'  # Spring Boot Prometheus endpoint
+  #  scrape_interval: 5s  # Optional: Override global scrape interval
+  #  static_configs:
+  #    - targets: ['localhost:8053']  # Address of user-service instance
+
+

@@ -1,37 +1,69 @@
-version: '3.8'
-services:
-  user-service:
-    build:
-      context: ./user-service
-    ports:
-      - "8081:8080"
-    depends_on:
-      - discovery-server
+version: '3.7'
 
+services:
+  # Spring Boot microservice 1 - contract-service
   contract-service:
     build:
-      context: ./contract-service
+      context: ./contract-service  # Path to your contract-service Dockerfile directory
     ports:
-      - "8082:8080"
+      - "8050:8050"  # Exposing contract-service on port 8050
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker  # Optional: set environment variables for your Spring Boot app
+    networks:
+      - monitoring-network
+
+  # Spring Boot microservice 2 - audit-service (for logging actions)
+  audit-service:
+    build:
+      context: ./audit-service  # Path to your audit-service Dockerfile directory
+    ports:
+      - "8081:8081"  # Exposing audit-service on port 8081
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker  # Optional: set environment variables for your Spring Boot app
+    networks:
+      - monitoring-network
+
+  # Spring Boot microservice 3 - report-service (for generating reports)
+  report-service:
+    build:
+      context: ./report-service  # Path to your report-service Dockerfile directory
+    ports:
+      - "8082:8082"  # Exposing report-service on port 8082
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker  # Optional: set environment variables for your Spring Boot app
+    networks:
+      - monitoring-network
+
+  # Prometheus - Scraping metrics from Spring Boot microservices
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"  # Prometheus web UI
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml  # Mount your Prometheus config
+    networks:
+      - monitoring-network
+
+  # Grafana - Visualizing Prometheus data
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"  # Grafana web UI
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Set the default admin password
+    volumes:
+      - grafana-data:/var/lib/grafana  # Persist Grafana data
+    networks:
+      - monitoring-network
     depends_on:
-      - discovery-server
+      - prometheus  # Grafana should wait for Prometheus to be up before starting
 
-  notification-service:
-    build:
-      context: ./notification-service
-    ports:
-      - "8083:8080"
-    depends_on:
-      - discovery-server
+networks:
+  monitoring-network:
+    driver: bridge  # Network for connecting all services
 
-  discovery-server:
-    build:
-      context: ./eureka-server
-    ports:
-      - "8761:8761"
-
-  config-server:
-    build:
-      context: ./config-server
-    ports:
-      - "8888:8888"
+volumes:
+  grafana-data:
+    driver: local  # Persist Grafana data

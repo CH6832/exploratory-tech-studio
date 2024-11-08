@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-  monitoring-service:
-    image: monitoring-service:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8081:8081"
