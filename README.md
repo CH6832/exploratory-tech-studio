@@ -70,7 +70,6 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [high-frequency-trading-system-simulation](/tech-studio-projects/financial-industry/high-frequency-trading-system-simulation/)
     * [online-banking-system-simulation](/tech-studio-projects/financial-industry/online-banking-system-simulation/)
     * [quantum-portfolio-optimizer](/tech-studio-projects/financial-industry/quantum-portfolio-optimizer/)
-    * [raft-consensus-algorithm](/tech-studio-projects/financial-industry/raft-consensus-algorithm/)
     * [regulatory-reporting](/tech-studio-projects/financial-industry/regulatory-reporting/)
     * [stock-price-ticker](/tech-studio-projects/financial-industry/stock-price-ticker/)
     * [stock-price-visualization](/tech-studio-projects/financial-industry/stock-price-visualization/)
