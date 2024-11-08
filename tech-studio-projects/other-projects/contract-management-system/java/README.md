@@ -21,20 +21,14 @@ Make sure you have the following installed:
 
 ## Setup
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-repo/your-project.git
-   cd your-project
-   ```
-
-2. **Update the Spring Boot Applications**:
+**Update the Spring Boot Applications**:
    Each Spring Boot application should expose Prometheus metrics at `/actuator/prometheus`. Ensure that the following properties are added to `application.properties` for each service:
    ```properties
    management.endpoints.web.exposure.include=health,info,prometheus
    management.endpoint.prometheus.enabled=true
    ```
 
-3. **Dockerize the Microservices**:
+**Dockerize the Microservices**:
    Each microservice (e.g., `contract-service`, `payment-service`, `audit-service`, etc.) should have its own `Dockerfile`. Ensure you have a `Dockerfile` in each of these directories.
 
    Example `Dockerfile` for a Spring Boot service:
@@ -46,7 +40,7 @@ Make sure you have the following installed:
    ENTRYPOINT ["java", "-jar", "your-app.jar"]
    ```
 
-4. **Configure Prometheus**:
+**Configure Prometheus**:
    Ensure your `prometheus.yml` is properly set up to scrape the metrics from your Spring Boot applications. Below is an example of the configuration:
    ```yaml
    scrape_configs:
@@ -87,23 +81,23 @@ Make sure you have the following installed:
          - targets: ['report-service:8082']
    ```
 
-5. **Start the Services with Docker Compose**:
+**Start the Services with Docker Compose**:
    From the project root, run:
    ```bash
    docker-compose up --build
    ```
 
-6. **Access the Services**:
+**Access the Services**:
    - Prometheus: [http://localhost:9090](http://localhost:9090)
    - Grafana: [http://localhost:3000](http://localhost:3000)
      - Login with the default username `admin` and password `admin`.
 
-7. **Configure Grafana to Connect to Prometheus**:
+**Configure Grafana to Connect to Prometheus**:
    - In the Grafana UI, go to **Configuration → Data Sources → Add data source**.
    - Choose **Prometheus** and set the URL to `http://prometheus:9090`.
    - Save and test the connection.
 
-8. **Import Dashboards**:
+**Import Dashboards**:
    You can import pre-configured dashboards for Spring Boot or create your own to visualize the metrics from Prometheus.
 
    Example dashboard ID for Spring Boot metrics:
@@ -111,7 +105,7 @@ Make sure you have the following installed:
 
 ## Services Overview
 
-### 1. **Audit Service**:
+### **Audit Service**:
    The `audit-service` tracks and logs actions performed in the system. This service provides audit logs that can be used for auditing purposes, keeping track of actions like creating, updating, or deleting records.
 
    The service exposes endpoints like:
@@ -132,7 +126,7 @@ Make sure you have the following installed:
    }
    ```
 
-### 2. **Report Service**:
+### **Report Service**:
    The `report-service` generates reports based on the data from other services like `contract-service`, `payment-service`, etc. This service can generate various types of reports, such as contract summaries or payment history.
 
    Example of how to generate a report:
