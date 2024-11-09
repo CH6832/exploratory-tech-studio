@@ -17,17 +17,31 @@
         <!-- Defines Java source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Sets the JUnit version for testing dependencies -->
-        <junit.version>5.10.0</junit.version>
+        <junit.version>5.9.3</junit.version>
     </properties>
 
     <dependencies>
         <!-- Dependencies required for the project, defining libraries that the application relies on -->
 
+        <!-- Jackson Core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+
+        <!-- Jackson Databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+
         <!-- Core JMeter dependency for performance testing and analysis -->
         <dependency>
             <groupId>org.apache.jmeter</groupId>
             <artifactId>ApacheJMeter_core</artifactId>
-            <version>5.5</version>
+            <version>5.6</version>
         </dependency>
 
         <!-- jProfiler dependency for profiling and performance monitoring -->
@@ -37,7 +51,7 @@
             <version>14.0</version>
             <scope>system</scope>
             <!-- System path for jProfiler JAR; adjust path as necessary for your environment -->
-            <systemPath>C:/Program Files/Java/jprofiler_windows-x64_14_0_4/jprofiler14.0.4/bin/jprofiler.jar</systemPath>
+            <systemPath>C:/Program Files/Java/jprofiler14.0.5/bin/jprofiler.jar</systemPath>
         </dependency>
 
         <!-- Log4j Core dependency for logging functionality -->
@@ -53,7 +67,6 @@
             <version>2.20.0</version>
         </dependency>
 
-        <!-- JavaFX dependencies for building a GUI-based web browser application -->
         <!-- JavaFX Controls for essential GUI components -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -159,7 +172,6 @@
             </exclusions>
         </dependency>
 
-        <!-- JUnit and TestNG dependencies for testing -->
         <!-- JUnit 5 engine and API dependencies for unit testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -201,11 +213,11 @@
                 </configuration>
             </plugin>
 
-            <!-- JMeter Maven Plugin for running JMeter tests directly from Maven -->
+            <!-- JMeter Maven Plugin -->
             <plugin>
-                <groupId>org.apache.jmeter</groupId>
+                <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>jmeter-tests</id>
@@ -214,6 +226,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <testFilesDirectory>${basedir}/src/test/jmeter</testFilesDirectory>
+                    <resultsDirectory>${project.build.directory}/jmeter/results</resultsDirectory>
+                </configuration>
             </plugin>
 
             <!-- JavaFX Maven Plugin for packaging JavaFX applications -->
@@ -226,7 +242,7 @@
                         <!-- Default configuration for running the JavaFX application -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.browser.webbrowserinjava/com.christoph.webbrowserinjava.BrowserApplication
+                            <mainClass>com.browser.webbrowserinjava/com.system.browser.BrowserApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

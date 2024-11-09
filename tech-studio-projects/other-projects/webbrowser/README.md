@@ -26,15 +26,9 @@ This project is a simple yet powerful web browser application built using JavaFX
 
 ## Getting Started
 
-1. Clone this repository to your local machine.
+0. Open the project in your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
 
-```sh
-git clone https://github.com/CH6832/webbrowser-in-java.git
-```
-
-2. Open the project in your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
-
-3. Run the `BrowserApplication` class to start the application:
+1. Run the `BrowserApplication` class to start the application:
 
 <img src="src/main/resources/img/java-webbrowser.png" alt="Java Web Browser" width="1000" height="600">
 
@@ -46,23 +40,49 @@ git clone https://github.com/CH6832/webbrowser-in-java.git
 4) Use the navigation buttons (Back, Forward, Refresh) to control navigation.
 5) Close a tab by clicking the close button (X) on the tab.
 
-## :books: Resources used to create this project
+## Profiling
+
+The application includes **performance profiling** through the `AppProfiler` class. This allows developers to track the time taken by specific operations such as:
+
+- **Search Operations**: The time taken for searches within a page is logged.
+- **Page Load Time**: The time it takes for a page to load is measured and logged.
+- **Page Refresh**: Refresh actions are profiled to analyze their responsiveness.
+
+Profiling results are logged to help identify performance bottlenecks and areas for optimization.
+
+### Example:
+
+```java
+profiler.start("Search text in page");
+// Perform search in the page
+profiler.stop();
+profiler.logProfilingResult("Search text in page");
+```
+
+## Code Quality Analysis with Qodana
+
+The project uses **Qodana** for static code analysis, which helps identify potential issues in the codebase, improve code quality, and ensure maintainability. Qodana analyzes various aspects of the code, including:
+
+- **Code Style**: Ensures that the code adheres to best practices and conventions.
+- **Possible Bugs**: Detects potential issues, such as unused variables, exceptions that are never thrown, etc.
+- **Complexity**: Flags overly complex methods that may need refactoring.
+
+<img src="src/main/resources/img/qodana-quality-check.png" alt="Qodana Quality Check" width="800" height="800">
+
+## Resources used to create this project
 
 * Java
     * [Java Platform Standard Edition 22 Documentation](https://docs.oracle.com/en/java/javase/)
     * [JavaFX 17](https://openjfx.io/)
+    * [Qodana](https://www.jetbrains.com/help/qodana/getting-started.html)
+* Editor
+  * [IntelliJ IDEA Ultimate Edition](https://www.jetbrains.com/idea/download/?section=windows)
 * Markdwon
     * [Basic syntax](https://www.markdownguide.org/basic-syntax/)
     * [Complete list of github markdown emofis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
     * [Awesome template](http://github.com/Human-Activity-Recognition/blob/main/README.md)
     * [.gitignore file](https://git-scm.com/docs/gitignore)
-* Editor
-    * [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows)
 
-## :bookmark: License
+## License
 
 This project is licensed under the terms of the [MIT License](LICENSE).
-
-## :copyright: Copyright
-
-See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.

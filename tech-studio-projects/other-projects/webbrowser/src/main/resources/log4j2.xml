@@ -15,5 +15,20 @@
         <Root level="info">
             <AppenderRef ref="AppLogger"/>
         </Root>
+
+        <!-- Define a logger specifically for error level -->
+        <Logger name="com.system" level="error" additivity="false">
+            <AppenderRef ref="AppLogger"/>
+        </Logger>
+
+        <!-- Define a logger for warning level -->
+        <Logger name="com.system" level="warn" additivity="false">
+            <AppenderRef ref="AppLogger"/>
+        </Logger>
+
+        <!-- Define a logger for debug level -->
+        <Logger name="com.system" level="debug" additivity="false">
+            <AppenderRef ref="AppLogger"/>
+        </Logger>
     </Loggers>
 </Configuration>

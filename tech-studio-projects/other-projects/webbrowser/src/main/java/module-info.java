@@ -15,6 +15,6 @@ module com.browser.webbrowserinjava {
     requires org.apache.logging.log4j;
     requires ApacheJMeter.core;
 
-    opens com.christoph.webbrowserinjava to javafx.fxml;
-    exports com.christoph.webbrowserinjava;
+    opens com.system.browser to javafx.fxml;
+    exports com.system.browser;
 }

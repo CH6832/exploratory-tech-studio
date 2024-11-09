@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.browser.BrowserController">
+    <center>
+        <BorderPane>
+            <top>
+                <ToolBar>
+                    <!-- Navigation buttons -->
+                    <Button text="&#9664;" onAction="#navigateBack" styleClass="buttonForwardBackward"/>
+                    <Button text="&#9654;" onAction="#navigateForward" styleClass="buttonForwardBackward"/>
+                    <Button text="&#x21BB;" onAction="#refreshPage" styleClass="buttonRefresh"/>
+
+                    <!-- Address bar -->
+                    <TextField fx:id="addressBar" promptText="Enter URL here..." styleClass="txtAddressBar"/>
+                    <!-- Search bar -->
+                    <TextField fx:id="searchField" promptText="Search in page..." styleClass="txtSearchBar" onAction="#searchInPage"/>
+                    <!-- Tab management -->
+                    <Button text="+" onAction="#addNewTabWithDefaultUrl" styleClass="btnAddTab"/>
+                    <Button text="Open in Firefox" onAction="#openInFirefox" styleClass="btnOpenFirefox"/>
+                    <!-- Other toolbar buttons -->
+                </ToolBar>
+            </top>
+            <center>
+                <TabPane fx:id="tabPane">
+                    <!-- Tabs will be dynamically added here -->
+                </TabPane>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>
