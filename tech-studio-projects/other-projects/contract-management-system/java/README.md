@@ -5,8 +5,7 @@ This project demonstrates the setup of multiple Spring Boot microservices with m
 ## Services in This Project:
 - **contract-service**: Manages contracts and provides endpoints for contract-related operations.
 - **payment-service**: Handles payment-related operations and processing.
-- **inventory-service**: Manages inventory and stock data.
-- **user-service**: Handles user registration, login, and management.
+- **logging-service**: A new service that handles logging messages from other services.
 - **audit-service**: Logs and tracks actions performed across services for auditing purposes.
 - **report-service**: Generates reports and exports data from services like `contract-service`, `payment-service`, and others.
 - **Prometheus**: Collects metrics from the microservices.
@@ -48,37 +47,37 @@ Make sure you have the following installed:
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['contract-service:8080']
+         - targets: ['contract-service:8051']
    
      - job_name: 'payment-service'
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['payment-service:8080']
+         - targets: ['payment-service:8052']
    
      - job_name: 'inventory-service'
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['inventory-service:8080']
+         - targets: ['inventory-service:8053']
    
      - job_name: 'user-service'
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['user-service:8080']
+         - targets: ['user-service:8054']
    
      - job_name: 'audit-service'
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['audit-service:8081']
+         - targets: ['audit-service:8055']
    
      - job_name: 'report-service'
        metrics_path: '/actuator/prometheus'
        scrape_interval: 5s
        static_configs:
-         - targets: ['report-service:8082']
+         - targets: ['report-service:8056']
    ```
 
 **Start the Services with Docker Compose**:
@@ -105,13 +104,24 @@ Make sure you have the following installed:
 
 ## Services Overview
 
+### **Logging Service**:
+   The `logging-service` is responsible for managing and handling logs across the microservices. It exposes an endpoint for other services to send log messages. Logs are stored locally in the service, and it listens for log events to log them in a file.
+
+   Example usage in `ContractLoggingClient` (in the `contract-service`):
+   ```java
+   @Autowired
+   private ContractLoggingClient contractLoggingClient;
+
+   public void logContractAction(String level, String message) {
+       contractLoggingClient.log(level, message);  // Logs to the logging-service
+   }
+   ```
+
 ### **Audit Service**:
    The `audit-service` tracks and logs actions performed in the system. This service provides audit logs that can be used for auditing purposes, keeping track of actions like creating, updating, or deleting records.
 
    The service exposes endpoints like:
    - `POST /api/audit/log` - Logs an action with the user performing it.
-
-   **Audit Logging**: Each action (e.g., creating a contract, updating a payment) is logged for traceability. You can integrate the `AuditService` into other services to log actions.
 
    Example usage in `ContractController`:
    ```java
@@ -143,6 +153,20 @@ Make sure you have the following installed:
    }
    ```
 
+### **Logging Example**:
+   The `contract-service` sends log events to the `logging-service` via RabbitMQ. This is done asynchronously, ensuring that logging does not impact the performance of the primary service.
+
+   Example of using `ContractLoggingClient` to log events:
+   ```java
+   @Autowired
+   private ContractLoggingClient contractLoggingClient;
+
+   public void createContract(Contract contract) {
+       contractLoggingClient.log("info", "Creating contract for " + contract.getName());
+       // Contract creation logic
+   }
+   ```
+
 ## Docker Commands
 
 - **Start services in detached mode**:
@@ -159,3 +183,4 @@ Make sure you have the following installed:
   ```bash
   docker-compose up --build
   ```
+```

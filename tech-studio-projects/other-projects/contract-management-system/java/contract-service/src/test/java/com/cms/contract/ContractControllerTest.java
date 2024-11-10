@@ -1,5 +1,6 @@
 package com.cms.contract;
 
+import com.cms.contract.datamodel.Contract;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

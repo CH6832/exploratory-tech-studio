@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import com.cms.contract.datamodel.Contract;
+
 /**
  * ContractRepository interface extends MongoRepository and provides methods 
  * for performing CRUD (Create, Read, Update, Delete) operations on Contract documents 

@@ -17,7 +17,7 @@ services:
     build:
       context: ./audit-service  # Path to your audit-service Dockerfile directory
     ports:
-      - "8081:8081"  # Exposing audit-service on port 8081
+      - "8081:8052"  # Exposing audit-service on port 8081
     environment:
       - SPRING_PROFILES_ACTIVE=docker  # Optional: set environment variables for your Spring Boot app
     networks:
@@ -28,7 +28,7 @@ services:
     build:
       context: ./report-service  # Path to your report-service Dockerfile directory
     ports:
-      - "8082:8082"  # Exposing report-service on port 8082
+      - "8082:8053"  # Exposing report-service on port 8082
     environment:
       - SPRING_PROFILES_ACTIVE=docker  # Optional: set environment variables for your Spring Boot app
     networks:

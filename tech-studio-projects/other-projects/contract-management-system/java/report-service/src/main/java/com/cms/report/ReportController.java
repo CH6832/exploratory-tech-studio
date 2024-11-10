@@ -1,3 +1,41 @@
+/*
+
+- http://localhost:8080/reports/generate?reportType=Sales%20Report
+{
+  "reportType": "Sales Report",
+  "generatedDate": "2024-11-10T10:00:00Z",
+  "data": [
+    {
+      "salesPerson": "John Doe",
+      "totalSales": 120000,
+      "region": "North"
+    },
+    {
+      "salesPerson": "Jane Smith",
+      "totalSales": 150000,
+      "region": "South"
+    }
+  ]
+}
+
+
+- http://localhost:8080/reports/generate?reportType=Invalid%20Report
+{
+  "error": "Report type 'Invalid Report' not found"
+}
+
+
+- http://localhost:8080/reports/generate?reportType=Contract%20Report
+{
+  "error": "Error generating the report"
+}
+
+- http://localhost:8080/reports/generate?reportType=Sales%20Report
+
+- http://localhost:8080/reports/generate?reportType=Contract%20Report
+
+*/
+
 package com.cms.report;
 
 import org.springframework.http.HttpStatus;
@@ -9,7 +47,7 @@ import org.springframework.web.bind.annotation.*;
  * It handles HTTP requests related to generating reports.
  */
 @RestController
-@RequestMapping("/api/reports")
+@RequestMapping("/reports")
 public class ReportController {
 
     private final ReportService reportService;

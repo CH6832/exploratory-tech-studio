@@ -6,6 +6,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.cms.contract.datamodel.Contract;
+
 import java.time.LocalDate;
 import java.util.Optional;
 

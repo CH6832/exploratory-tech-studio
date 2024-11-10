@@ -1,5 +1,5 @@
 package com.cms.search;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -11,7 +11,6 @@ public class SearchService {
 
     private final SearchIndexRepository searchIndexRepository;
 
-    @Autowired
     public SearchService(SearchIndexRepository searchIndexRepository) {
         this.searchIndexRepository = searchIndexRepository;
     }

@@ -1,8 +1,12 @@
 package com.cms.contract;
 
-import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.stereotype.Service;
+
+import com.cms.contract.datamodel.Contract;
 
 /**
  * The ContractService class contains the business logic related to managing contracts.
@@ -18,19 +22,23 @@ public class ContractService {
     // The repository for interacting with the Contract collection in MongoDB
     private final ContractRepository contractRepository;
 
-
+    // EventPublisher for publishing contract-related events
+    private final ApplicationEventPublisher eventPublisher;
+    
     // Method to find contract by title
     public Contract getContractByTitle(String title) {
         return contractRepository.findByTitle(title);
     }
     
     /**
-     * Constructor to inject the ContractRepository dependency.
+     * Constructor to inject the ContractRepository and ApplicationEventPublisher dependencies.
      * 
      * @param contractRepository The repository to interact with MongoDB for contract data
+     * @param eventPublisher The event publisher to send events to listeners
      */
-    public ContractService(ContractRepository contractRepository) {
+    public ContractService(ContractRepository contractRepository, ApplicationEventPublisher eventPublisher) {
         this.contractRepository = contractRepository;
+        this.eventPublisher = eventPublisher;
     }
 
     /**
@@ -40,7 +48,10 @@ public class ContractService {
      * @return The created contract, with an ID and any other properties set by the database
      */
     public Contract createContract(Contract contract) {
-        return contractRepository.save(contract);
+        Contract savedContract = contractRepository.save(contract);
+        // Publish a contract event for auditing
+        eventPublisher.publishEvent(new ContractAuditEvent(this, savedContract, "CREATE"));
+        return savedContract;
     }
 
     /**
@@ -74,14 +85,14 @@ public class ContractService {
      * @return The updated contract, or null if no contract was found with the given ID
      */
     public Contract updateContract(String id, Contract contract) {
-        // Find the existing contract by ID
         Optional<Contract> existingContract = contractRepository.findById(id);
         
-        // If the contract exists, update it with the new data
         if (existingContract.isPresent()) {
             contract.setId(id); // Set the ID of the existing contract to the updated contract
-            // contract.setUpdatedDate(contract.getUpdatedDate()); // Set the updated date to ensure the contract is updated
-            return contractRepository.save(contract); // Save the updated contract
+            Contract updatedContract = contractRepository.save(contract);
+            // Publish a contract event for auditing
+            eventPublisher.publishEvent(new ContractAuditEvent(this, updatedContract, "UPDATE"));
+            return updatedContract;
         } else {
             return null; // Return null if the contract was not found
         }
@@ -91,8 +102,11 @@ public class ContractService {
      * Delete a contract by its unique ID.
      * 
      * @param id The ID of the contract to delete
+     * @return 
      */
-    public void deleteContract(String id) {
-        contractRepository.deleteById(id); // Call the repository to delete the contract by ID
+    public boolean deleteContract(String id) {
+        contractRepository.deleteById(id);
+        // Publish a contract event for auditing
+        eventPublisher.publishEvent(new ContractAuditEvent(this, null, "DELETE"));
     }
 }

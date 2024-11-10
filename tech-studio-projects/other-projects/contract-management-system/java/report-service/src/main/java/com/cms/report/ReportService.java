@@ -1,9 +1,8 @@
 package com.cms.report;
 
-import com.cms.audit.AuditService;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -16,9 +15,13 @@ public class ReportService {
 
     private static final Logger logger = LogManager.getLogger(ReportService.class);
 
-    @Autowired
-    private AuditService auditService;  // For logging actions
+    // Event publisher to publish events instead of directly calling audit service
+    private final ApplicationEventPublisher eventPublisher;
 
+    public ReportService(ApplicationEventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
+    }
+    
     /**
      * Generates a report for the provided report type.
      *
@@ -28,8 +31,8 @@ public class ReportService {
      */
     public Report generateReport(String reportType) throws ReportNotFoundException {
         try {
-            // Log the action of report generation
-            auditService.logAction("Generating " + reportType);
+            // Publish an audit event for report generation action
+            eventPublisher.publishEvent(new ReportAuditEvent(this, "Generating report of type: " + reportType));
 
             // Placeholder logic for report generation
             if (reportType.equalsIgnoreCase("Sales Report")) {

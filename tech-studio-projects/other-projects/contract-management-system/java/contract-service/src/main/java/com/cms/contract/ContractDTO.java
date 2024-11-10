@@ -1,164 +1,168 @@
 package com.cms.contract;
 
-import java.time.LocalDate;
+import java.util.List;
+import java.util.Date;
 
 /**
- * The ContractDTO (Data Transfer Object) class is used to transfer contract data between the layers of the application.
- * It is typically used to represent a contract in a simplified manner without the persistence logic (like MongoDB annotations).
+ * ContractDTO represents a simplified view of the Contract entity 
+ * for transferring contract data over the network, especially in 
+ * API responses.
+ * <p>
+ * This Data Transfer Object (DTO) is designed to provide a subset of the 
+ * data from the original Contract entity, focusing on the relevant 
+ * details needed by the client and avoiding the complexity of internal 
+ * data structures.
+ * </p>
  */
 public class ContractDTO {
-
+    
+    // Unique identifier of the contract (mapped from the database entity)
     private String id;
+    
+    // Title of the contract
     private String title;
-    private String partyA;
-    private String partyB;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    
+    // Description of the contract, providing details about the contract
+    private String description;
+    
+    // Current status of the contract (e.g., active, expired, etc.)
     private String status;
+    
+    // List of party names involved in the contract (simplified view from original `Party` objects)
+    private List<String> partyNames;
+    
+    // Date when the contract was created
+    private Date createdDate;
+
+    // Default constructor
+    public ContractDTO() {}
 
     /**
-     * Constructor to create a new ContractDTO object.
-     * This constructor is used for initializing a contract with its core properties.
+     * Constructor to create a ContractDTO with specified values.
      * 
-     * @param title The title of the contract
-     * @param partyA The name of the first party involved in the contract
-     * @param partyB The name of the second party involved in the contract
-     * @param startDate The start date of the contract
-     * @param endDate The end date of the contract
-     * @param status The status of the contract (e.g., "draft", "active", "expired")
+     * @param id The unique identifier of the contract.
+     * @param title The title of the contract.
+     * @param description The description of the contract.
+     * @param status The current status of the contract.
+     * @param partyNames The list of party names involved in the contract.
+     * @param createdDate The date when the contract was created.
      */
-    public ContractDTO(String title, String partyA, String partyB, LocalDate startDate, LocalDate endDate, String status) {
-        this.setTitle(title);
-        this.setPartyA(partyA);
-        this.setPartyB(partyB);
-        this.setStartDate(startDate);
-        this.setEndDate(endDate);
-        this.setStatus(status);
+    public ContractDTO(String id, String title, String description, String status, List<String> partyNames, Date createdDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.partyNames = partyNames;
+        this.createdDate = createdDate;
     }
 
+    // Getters and Setters
+
     /**
-     * Get the contract ID.
+     * Gets the unique identifier of the contract.
      * 
-     * @return The ID of the contract
+     * @return The contract's ID.
      */
     public String getId() {
         return id;
     }
 
     /**
-     * Set the contract ID.
+     * Sets the unique identifier of the contract.
      * 
-     * @param id The ID to set for the contract
+     * @param id The contract's ID.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * Get the title of the contract.
+     * Gets the title of the contract.
      * 
-     * @return The title of the contract
+     * @return The contract's title.
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * Set the title of the contract.
+     * Sets the title of the contract.
      * 
-     * @param title The title to set for the contract
+     * @param title The contract's title.
      */
     public void setTitle(String title) {
         this.title = title;
     }
 
     /**
-     * Get the name of the first party involved in the contract.
+     * Gets the description of the contract.
      * 
-     * @return The name of the first party (party A)
+     * @return The contract's description.
      */
-    public String getPartyA() {
-        return partyA;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * Set the name of the first party involved in the contract.
+     * Sets the description of the contract.
      * 
-     * @param partyA The name of the first party to set
+     * @param description The contract's description.
      */
-    public void setPartyA(String partyA) {
-        this.partyA = partyA;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
-     * Get the name of the second party involved in the contract.
+     * Gets the current status of the contract.
      * 
-     * @return The name of the second party (party B)
-     */
-    public String getPartyB() {
-        return partyB;
-    }
-
-    /**
-     * Set the name of the second party involved in the contract.
-     * 
-     * @param partyB The name of the second party to set
-     */
-    public void setPartyB(String partyB) {
-        this.partyB = partyB;
-    }
-
-    /**
-     * Get the start date of the contract.
-     * 
-     * @return The start date of the contract
-     */
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    /**
-     * Set the start date of the contract.
-     * 
-     * @param startDate The start date to set for the contract
-     */
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    /**
-     * Get the end date of the contract.
-     * 
-     * @return The end date of the contract
-     */
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    /**
-     * Set the end date of the contract.
-     * 
-     * @param endDate The end date to set for the contract
-     */
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    /**
-     * Get the status of the contract (e.g., "draft", "active", "expired").
-     * 
-     * @return The current status of the contract
+     * @return The contract's status.
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * Set the status of the contract.
+     * Sets the current status of the contract.
      * 
-     * @param status The status to set for the contract
+     * @param status The contract's status.
      */
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * Gets the list of party names involved in the contract.
+     * 
+     * @return A list of party names.
+     */
+    public List<String> getPartyNames() {
+        return partyNames;
+    }
+
+    /**
+     * Sets the list of party names involved in the contract.
+     * 
+     * @param partyNames A list of party names.
+     */
+    public void setPartyNames(List<String> partyNames) {
+        this.partyNames = partyNames;
+    }
+
+    /**
+     * Gets the date when the contract was created.
+     * 
+     * @return The creation date of the contract.
+     */
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    /**
+     * Sets the date when the contract was created.
+     * 
+     * @param createdDate The creation date of the contract.
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }

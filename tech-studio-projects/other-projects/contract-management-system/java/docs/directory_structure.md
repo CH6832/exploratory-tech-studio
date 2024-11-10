@@ -2,95 +2,46 @@
 
 ```
 
-   contract-management-system/
-   ├── docs/                          # Documentation folder for project-related docs
-   │   ├── requirements.md
-   │   ├── api-specifications.md      # API endpoint specifications
-   │   ├── architecture-overview.md   # High-level architecture and design docs
-   │   └── README.md                  # Project overview and general information
-   │
-   ├── docker/                        # Docker-related files for each microservice
-   │   ├── docker-compose.yml         # Docker Compose for running all services
-   │   └── prometheus.yml             # Prometheus configuration for monitoring
-   │
-   ├── monitoring/                    # Monitoring and logging setup (e.g., Prometheus, Grafana)
-   │   ├── grafana/                   # Grafana dashboards
-   │   └── logging/                   # Centralized logging config (e.g., ELK Stack)
-   │
-   └── services/                      # Maven multi-module container for all microservices
-      ├── pom.xml                    # Maven parent POM
-      │
-      ├── api-gateway/               # API Gateway for routing and load balancing
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # API Gateway specific POM
-      │   └── application.yml
-      │
-      ├── auth-service/              # Authentication and Authorization service
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Auth Service specific POM
-      │   └── application.yml
-      │
-      ├── contract-service/          # Core service for managing contracts
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Contract Service specific POM
-      │   └── application.yml
-      │
-      ├── approval-service/          # Service for managing contract approvals
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Approval Service specific POM
-      │   └── application.yml
-      │
-      ├── document-service/          # Service for document storage and versioning
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Document Service specific POM
-      │   └── application.yml
-      │
-      ├── notification-service/      # Service for notifications and reminders
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Notification Service specific POM
-      │   └── application.yml
-      │
-      ├── search-service/            # Service for advanced search functionality
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Search Service specific POM
-      │   └── application.yml
-      │
-      ├── audit-service/             # Service for tracking and logging actions (audit trail)
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Audit Service specific POM
-      │   └── application.yml
-      │
-      ├── report-service/            # Service for generating reports and exporting data
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Report Service specific POM
-      │   └── application.yml
-      │
-      ├── config-service/            # Centralized configuration service (e.g., Spring Cloud Config)
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Config Service specific POM
-      │   └── application.yml
-      │
-      ├── discovery-service/         # Service registry and discovery (e.g., Eureka)
-      │   ├── src/
-      │   ├── Dockerfile
-      │   ├── pom.xml                # Discovery Service specific POM
-      │   └── application.yml
-      │
-      └── gateway-service/           # API Gateway for routing and load balancing
-          ├── src/
-          ├── Dockerfile
-          ├── pom.xml                # API Gateway specific POM
-          └── application.yml
+	  contract-management-system/
+	  ├── docs/                          # Documentation folder for project-related docs
+	  │   ├── requirements.md
+	  │   ├── api-specifications.md      # API endpoint specifications
+	  │   ├── architecture-overview.md   # High-level architecture and design docs
+	  │   └── README.md                  # Project overview and general information
+	  │
+	  ├── monitoring/                    # Monitoring and logging setup (e.g., Prometheus, Grafana)
+	  │   ├── grafana/                   # Grafana dashboards
+	  │   └── logging/                   # Centralized logging config (e.g., ELK Stack)
+	  │
+	  ├── contract-service/          # Core service for managing contracts
+	  │   ├── com.cms.contract/
+	  │   ├── pom.xml                # Contract Service specific POM
+	  │   └── application.properties
+	  │
+	  ├── search-service/            # Service for advanced search functionality
+	  │   ├── com.cms.service/
+	  │   ├── pom.xml                # Search Service specific POM
+	  │   └── application.properties
+	  │
+	  ├── logging-service/             # Service for tracking and logging actions (audit trail)
+	  │   ├── com.cms.logging/
+	  │   ├── pom.xml                # Audit Service specific POM
+	  │   └── application.properties
+	  │
+	  ├── report-service/            # Service for generating reports and exporting data
+	  │   ├── com.cms.report/
+	  │   ├── pom.xml                # Report Service specific POM
+	  │   └── application.yml
+	  │
+	  ├── config-service/            # Centralized configuration service (e.g., Spring Cloud Config)
+	  │   ├── com.cms.config/
+	  │   ├── pom.xml                # Config Service specific POM
+	  │   └── application.properties
+	  │
+	  └── payment-service/         # Service registry and discovery (e.g., Eureka)
+	      ├── com.cms.payment/
+	      ├── pom.xml                # Discovery Service specific POM
+	      └── application.properties
 
 ```
 

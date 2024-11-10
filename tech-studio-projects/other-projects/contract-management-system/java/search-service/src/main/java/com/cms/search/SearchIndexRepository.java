@@ -1,6 +1,5 @@
 package com.cms.search;
 
-import com.cms.search.SearchIndex;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 

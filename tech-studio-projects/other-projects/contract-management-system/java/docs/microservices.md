@@ -154,9 +154,7 @@ MongoDB is a NoSQL database, so we will **not** have foreign key constraints. Ho
     "partyA": "Company X",
     "partyB": "Company Z",
     "startDate": "2024-01-01",
-    "endDate": "
-
-2025-01-01",
+    "endDate": "2025-01-01",
     "status": "active"
   }
   ```

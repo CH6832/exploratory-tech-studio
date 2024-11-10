@@ -1,5 +1,7 @@
 package com.cms.report;
 
+import java.util.function.IntPredicate;
+
 /**
  * The Report class is a simple representation of a report.
  * It contains the name and the content of the report.
@@ -36,4 +38,9 @@ public class Report {
     public void setContent(String content) {
         this.content = content;
     }
+
+	public IntPredicate getTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
