@@ -72,13 +72,11 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [quantum-portfolio-optimizer](/tech-studio-projects/financial-industry/quantum-portfolio-optimizer/)
     * [regulatory-reporting](/tech-studio-projects/financial-industry/regulatory-reporting/)
     * [stock-price-ticker](/tech-studio-projects/financial-industry/stock-price-ticker/)
-    * [stock-price-visualization](/tech-studio-projects/financial-industry/stock-price-visualization/)
 
   * [leetcode](/tech-studio-projects/leetcode/)
 
   * [machine-learning](/tech-studio-projects/machine-learning/)
     * [autoencoder-for-anomaly-detection](/tech-studio-projects/machine-learning/autoencoder-for-anomaly-detection)
-    * [breast-cancer-classification](/tech-studio-projects/machine-learning/breast-cancer-classification/)
     * [credit-card-fraud-detection-simulation](/tech-studio-projects/machine-learning/credit-card-fraud-detection-simulation/)
     * [horse-or-human](/tech-studio-projects/machine-learning/horse-or-human)
     * [image-classification](/tech-studio-projects/machine-learning/image-classification)
