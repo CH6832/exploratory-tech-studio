@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: core-system-ingress
+spec:
+  rules:
+    - host: hft-system.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: core-system-service
+                port:
+                  number: 80

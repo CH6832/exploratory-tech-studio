@@ -1,0 +1,35 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java build files
+target/
+*.class
+
+# Maven files
+*.log
+.mvn/
+target/
+dependency-reduced-pom.xml
+release.properties
+pom.xml.releaseBackup
+
+# IDE-specific files
+.idea/
+*.iml
+.vscode/
+
+# Docker
+*.env
+docker-compose.override.yml
+.docker
+
+# Logs and temp files
+logs/
+*.log
+temp/
+
+# Configurations
+*.properties
+*.yml
+settings.xml

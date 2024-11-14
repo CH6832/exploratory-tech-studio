@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: core-system
+  template:
+    metadata:
+      labels:
+        app: core-system
+    spec:
+      containers:
+        - name: core-system
+          image: hft/core-system:latest
+          ports:
+            - containerPort: 8080
