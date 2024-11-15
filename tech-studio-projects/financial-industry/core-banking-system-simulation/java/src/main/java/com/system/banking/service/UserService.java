@@ -1,122 +1,121 @@
 package com.system.banking.service;
 
 import com.system.banking.model.User;
+import com.system.banking.repository.UserRepository;
+import com.system.banking.utils.Logging;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.system.banking.repository.UserRepository;
-
-import java.io.*;
-import java.lang.reflect.Type;
-import java.util.logging.Logger;
-
+/**
+ * Service class for user-related operations in the banking system.
+ * This class provides methods for user registration, login, fetching all users,
+ * and finding a user by email.
+ */
 public class UserService {
-    private static final String FILE_NAME = "users.json";
-    private List<User> userDatabase;
+    private UserRepository userRepository;
 
-    // Constructor: Load users from file (if exists)
+    /**
+     * Constructor for UserService.
+     * Initializes the user repository to load users from storage, if available.
+     *
+     * @param userRepository The repository to manage user data.
+     */
     public UserService(UserRepository userRepository) {
-        this.userDatabase = loadUsersFromFile();
+        this.userRepository = userRepository;
     }
 
-    // Method to save a user to the list and persist to file
-    public void saveUser(User user) {
-        // Check if user already exists
-        if (userExists(user.getEmailAddress())) {
-            System.out.println("User with this email already exists.");
-        } else {
-            userDatabase.add(user);
-            saveUsersToFile();
-            System.out.println("User saved successfully.");
-        }
-    }
-
-    // Method to check if user exists by email
-    private boolean userExists(String email) {
-        return userDatabase.stream()
-                .anyMatch(existingUser -> existingUser.getEmailAddress().equals(email));
-    }
-
-    // Load users from file
-    private List<User> loadUsersFromFile() {
-        try (Reader reader = new FileReader(FILE_NAME)) {
-            Gson gson = new Gson();
-            Type userListType = new TypeToken<List<User>>() {}.getType();
-            return gson.fromJson(reader, userListType);
-        } catch (IOException e) {
-            // If file doesn't exist or is empty, return an empty list
-            return new ArrayList<>();
-        }
-    }
-
-    // Save users list to file
-    private void saveUsersToFile() {
-        try (Writer writer = new FileWriter(FILE_NAME)) {
-            Gson gson = new Gson();
-            gson.toJson(userDatabase, writer);
-        } catch (IOException e) {
-            System.out.println("Error saving user data to file.");
-        }
-    }
-
-    // Method to get a user by email
-    public User getUserByEmail(String email) {
-        return userDatabase.stream()
-                .filter(user -> user.getEmailAddress().equals(email))
-                .findFirst()
-                .orElse(null);
-    }
-
-    // Optional: print users for testing purposes
-    public void printUsers() {
-        userDatabase.forEach(System.out::println);
-    }
-
-    public User getUserById(String number) {
-        return userDatabase.stream()
-                .filter(user -> user.getEmailAddress().equals(number))
-                .findFirst()
-                .orElse(null);
-    }
-
+    /**
+     * Registers a new user with the provided name, email, and password.
+     * Validates input fields to ensure they are not empty, then creates a new user
+     * and saves them to the user repository.
+     *
+     * @param name     The name of the new user.
+     * @param email    The email address of the new user.
+     * @param password The password for the new user.
+     * @throws IOException If an error occurs while writing the user to the file.
+     */
     public void registerUser(String name, String email, String password) throws IOException {
-        // Initialize the UserRepository
-        UserRepository userRepository = new UserRepository();
+        // Check if name is provided
+        if (name == null || name.trim().isEmpty()) {
+            System.err.println("Error: The 'name' field is required and cannot be empty.");
+            System.exit(1);  // Exit the program with an error code
+        }
 
-        // Create a new user from the provided details
+        // Check if email is provided
+        if (email == null || email.trim().isEmpty()) {
+            System.err.println("Error: The 'email' field is required and cannot be empty.");
+            System.exit(1);  // Exit the program with an error code
+        }
+
+        // Check if password is provided
+        if (password == null || password.trim().isEmpty()) {
+            System.err.println("Error: The 'password' field is required and cannot be empty.");
+            System.exit(1);  // Exit the program with an error code
+        }
+
+        // Create a new user with generated ID and provided details
         User user = new User();
+        user.setUserId(userRepository.generateNextUserId());
         user.setFullName(name);
         user.setEmailAddress(email);
         user.setPassword(password); // In production, consider hashing the password for security
 
-        // Read existing users from the repository
+        // Add the new user to the list of existing users
         List<User> users = userRepository.readUsers();
-
-        // Add the new user to the list
         users.add(user);
 
-        // Save the updated list of users back to the repository
+        // Save the updated list of users to the repository
         userRepository.writeUsers(users);
 
         System.out.println("User registered successfully.");
     }
 
+    /**
+     * Logs in a user by verifying the provided email and password.
+     *
+     * @param email    The email address of the user.
+     * @param password The password of the user.
+     * @return True if login is successful; otherwise, false.
+     */
     public boolean loginUser(String email, String password) {
-        // Retrieve the user by email (from in-memory or a repository)
+        // Retrieve user by email from the repository
         User user = findUserByEmail(email);
 
-        // Compare the entered password with the stored plain-text password
+        // Compare entered password with the stored password
         if (user != null && user.getPassword().equals(password)) {
             return true;  // Login successful
         }
         return false;  // Invalid credentials
     }
 
-    private User findUserByEmail(String email) {
-        Logger logger = null;
+    /**
+     * Helper method to find a user by their email address in the repository.
+     *
+     * @param email The email address of the user to find.
+     * @return The user if found; otherwise, null.
+     */
+    private User getUserFromRepository(String email) {
+        // Fetch all users from the repository
+        List<User> usersList = userRepository.readUsers();
+
+        // Search for the user by email
+        for (User user : usersList) {
+            if (user.getEmailAddress().equalsIgnoreCase(email)) {
+                return user;  // Return user if found
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Finds a user by their email address, validating the email format and logging the process.
+     *
+     * @param email The email address to search for.
+     * @return The user if found; otherwise, null.
+     */
+    public User findUserByEmail(String email) {
+        Logging logger = new Logging();
         try {
             // Validate email format
             if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
@@ -124,50 +123,33 @@ public class UserService {
                 throw new IllegalArgumentException("Invalid email format");
             }
 
-            // Fetch the user by email from your repository or in-memory data structure
-            // Simulate reading from a repository (e.g., database or JSON file)
+            // Attempt to retrieve the user by email
             User user = getUserFromRepository(email);
 
-            // If no user is found, log and return null or throw an exception
+            // Log if the user is not found
             if (user == null) {
                 logger.warning("User not found with email: " + email);
-                return null;  // Return null or throw an exception
+                return null;
             }
 
-            return user;  // Return the found user
+            System.out.print("User found: " + user);
+            return user;
         } catch (IllegalArgumentException e) {
-            // Handle specific error if email is invalid
             logger.severe("Error: " + e.getMessage());
             return null;
         } catch (Exception e) {
-            // Handle any unexpected errors, such as repository issues
             logger.severe("Unexpected error while finding user by email: " + e.getMessage());
             return null;
         }
     }
 
-    private User getUserFromRepository(String email) {
-        // Simulating data retrieval from an in-memory list or file
-        // This should ideally be your database or JSON reading logic
-        List<User> usersList = fetchAllUsers();
-        for (User user : usersList) {  // usersList is a list of users fetched from the repository
-            if (user.getEmailAddress().equalsIgnoreCase(email)) {
-                return user;
-            }
-        }
-        return null;  // User not found
-    }
-
-    // Method to fetch all users and store them in usersList
+    /**
+     * Fetches all registered users from the repository.
+     *
+     * @return A list of all users in the system.
+     */
     public List<User> fetchAllUsers() {
-        // Fetch the list of all users from the UserRepository
-        UserRepository userRepository = null;
-        List<User> usersList = userRepository.readUsers();
-
-        // Return the list of users
-        return usersList;
+        // Retrieve all users from the repository
+        return userRepository.readUsers();
     }
-
 }
-
-

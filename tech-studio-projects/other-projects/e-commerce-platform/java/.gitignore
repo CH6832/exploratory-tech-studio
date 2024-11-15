@@ -1,0 +1,42 @@
+# Ignore IntelliJ IDEA project files
+.idea/
+
+# Ignore Eclipse project files
+.classpath
+.project
+.settings/
+
+# Ignore NetBeans project files
+.nb-gradle/
+
+# Ignore build output and dependencies
+/target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Ignore logs
+*.log
+
+# Ignore Maven dependencies (if not using local repository)
+lib/
+
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Ignore compiled Java files
+*.class
+
+# Ignore Tomcat and other application server runtime files
+/.metadata/
+/.m2/
+.tomcat/
+
+# Ignore IDE specific configurations
+/.vscode/
+
+# Ignore temporary files and folders created by IDEs
+/.idea/
+/*.iml

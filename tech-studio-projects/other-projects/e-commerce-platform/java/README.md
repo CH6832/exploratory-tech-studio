@@ -1,204 +1,143 @@
-# DIY Store Web Application
+# Java E-Commerce Platform
 
-This is a simple web-based application for a DIY store. It allows users to browse products, add items to their cart, and proceed with a simulated payment. The project demonstrates the use of Java Servlets and JSP (JavaServer Pages) for building a dynamic web application.
-
-## Table of Contents
-
-- [DIY Store Web Application](#diy-store-web-application)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Features](#features)
-  - [Technologies Used](#technologies-used)
-  - [Project Structure](#project-structure)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-    - [Clone the Repository](#clone-the-repository)
-    - [Configure Tomcat (Optional)](#configure-tomcat-optional)
-    - [Configure Maven](#configure-maven)
-  - [Running the Server](#running-the-server)
-  - [Accessing the Application](#accessing-the-application)
-  - [Sample URLs](#sample-urls)
-  - [Further Improvements](#further-improvements)
-  - [License](#license)
-
-## Project Overview
-
-This project implements a shopping experience where users can:
-- Browse a list of DIY products (such as tools).
-- Add products to a shopping cart.
-- View, update, or remove items from the cart.
-- Simulate a payment process.
-
-It uses servlets to manage the server-side logic and JSP for rendering the UI.
+This is a simple, yet functional e-commerce platform built using Java EE (Jakarta EE), JSP, Servlets, and JDBC. The platform allows users to browse products, manage their shopping cart, and process payments. It serves as an excellent example of how to build a small e-commerce application using Java technologies.
 
 ## Features
 
-- Product catalog listing
-- Add products to the shopping cart
-- View the cart and update product quantities
-- Simulated payment flow
-- Dynamic page rendering using JSP
-
+- **User Authentication**: Secure login system with session management.
+- **Product Browsing**: List and view products available for purchase.
+- **Shopping Cart Management**: Add, remove, and update product quantities in the shopping cart.
+- **Payment Processing**: Simulated payment processing with success and failure redirection.
+- **Session Management**: The shopping cart and user sessions are stored and handled using Java Servlet sessions.
+- **Database Integration**: Product details and transaction records are stored in a relational database (e.g., MySQL).
+- **User-friendly Interface**: Simple UI built using JSP, HTML, and CSS.
+  
 ## Technologies Used
 
-- **Java 8+**: For writing servlets and the backend logic.
-- **Servlets and JSP**: For handling requests and generating dynamic web pages.
-- **Tomcat Server**: To host the Java-based web application.
-- **HTML/CSS**: For the frontend UI.
-- **Maven**: For managing dependencies and building the project.
+- **Java 8** (or higher)
+- **Servlets** and **JSP** for the backend and frontend
+- **JDBC** for database connectivity
+- **Apache Tomcat** for running the web application
+- **MySQL** or any relational database for product and transaction data storage
 
-## Project Structure
+## Key Components
 
-```
-diy-store
-├── src
-│   ├── controller
-│   │   └── AddToCartServlet.java
-│   │   └── RemoveFromCartServlet.java
-│   │   └── UpdateCartServlet.java
-│   │   └── PaymentServlet.java
-│   ├── model
-│   │   └── ShoppingCart.java
-│   │   └── Product.java
-│   ├── view
-│   │   └── cart.jsp
-│   │   └── shop.jsp
-├── WebContent
-│   ├── css
-│   │   └── shop.css
-│   ├── WEB-INF
-│   │   └── web.xml
-│   └── index.jsp
-└── pom.xml
-```
+### Backend:
+1. **LoginController.java**: Handles user login, session creation, and redirection based on authentication.
+2. **ShoppingCart.java**: Manages the shopping cart, including adding/removing items and calculating the total price.
+3. **PaymentProcessing.java**: Processes payment details (simulated payment), clears the cart upon success, and redirects to a success or error page.
+4. **RemoveFromCart.java**: Handles the removal of products from the cart.
+5. **UpdateCart.java**: Allows users to update the quantity of products in their cart.
+6. **DBConnection.java**: Establishes a connection with the database and handles queries for product details and transaction records.
 
-- **`src/controller`**: Contains the servlets for handling different actions such as adding, removing, and updating items in the cart.
-- **`src/model`**: Contains the model classes (Product, ShoppingCart) that represent the business logic.
-- **`src/view`**: Contains the JSP pages (cart.jsp, shop.jsp) for the frontend.
-- **`WebContent`**: Contains static resources such as CSS files and the `web.xml` configuration for the servlet mappings.
+### Frontend:
+1. **index.jsp**: Displays the home page with a welcome message and basic navigation.
+2. **shop.jsp**: Displays a list of products available for purchase.
+3. **cart.jsp**: Shows the contents of the shopping cart and allows users to update or remove products.
+4. **paymentsuccess.jsp**: Displays a success message after a successful payment.
+5. **paymenterror.jsp**: Displays an error message when payment fails.
 
-## Installation
+### Database:
+- **Products Table**: Stores product information such as ID, name, price, and description.
+- **Transactions Table**: Stores transaction details including user information and payment status.
+
+## How It Works
+
+0. **Login**:
+   - Users can login or create and account.
+
+![Login section](./docs/images/login.png)
+
+1. **Product Browsing**:
+   - Users can browse products listed on the homepage (`index.jsp`) or product listing page (`shop.jsp`).
+   - Products can be added to the shopping cart, which is stored in the session.
+
+![Shopping cart](./docs/images/cart.png)
+
+2. **Shopping Cart**: 
+   - Users can view their cart on `cart.jsp`, modify quantities, or remove products.
+   - The cart updates are reflected in real-time, and the total price is calculated dynamically.
+
+![Payment](./docs/images/payment.png)
+
+3. **Checkout**: 
+   - Users can proceed to checkout and enter their payment information (name, card number, expiry date, CVV) on the payment page.
+   - Payment is processed by the `PaymentProcessing.java` servlet. On success, the cart is cleared, and the user is redirected to `paymentsuccess.jsp`. On failure, the user is redirected to `paymenterror.jsp`.
+
+## Setup and Installation
 
 ### Prerequisites
+1. **Java 21** or higher
+2. **Apache Tomcat** (or any servlet container)
+3. **MySQL** or compatible database for product and transaction data storage
 
-Make sure you have the following installed:
+### Steps to Run the Application
 
-1. **Java 8+**: Ensure you have a JDK installed. You can check your Java version using `java -version`.
-2. **Apache Tomcat (v9 or above)**: [Download and install Tomcat](https://tomcat.apache.org/download-90.cgi).
-3. **Maven**: You can install Maven from [here](https://maven.apache.org/install.html).
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/diy-store.git
-cd diy-store
-```
-
-### Configure Tomcat (Optional)
-
-If you haven't already installed Tomcat, follow these steps:
-
-1. Download and extract Tomcat.
-2. Set up an environment variable `CATALINA_HOME` pointing to the Tomcat installation directory.
-3. Copy the compiled `.war` file from the target folder to the `webapps` folder in Tomcat.
-
-### Configure Maven
-
-Make sure you have the `pom.xml` file correctly configured for Maven:
-
-```xml
-<dependencies>
-    <!-- Servlet API -->
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version>
-        <scope>provided</scope>
-    </dependency>
-
-    <!-- JSP API -->
-    <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
-        <version>2.3.3</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-```
-
-## Running the Server
-
-1. **Build the project with Maven:**
-
-   Inside the project folder, run the following command to build the project:
-
+1. **Clone the Repository**:
    ```bash
-   mvn clean install
+   git clone https://github.com/yourusername/e-commerce-platform.git
    ```
 
-   This will generate a `.war` file in the `target` folder.
+2. **Configure the Database**:
+   - Create a database and import the necessary tables (products, transactions).
+   - Configure the database connection settings in the `DBConnection.java` class.
 
-2. **Deploy to Tomcat:**
+3. **Deploy to Apache Tomcat**:
+   - Build the project using your IDE or a build tool (e.g., Maven or Gradle).
+   - Deploy the `.war` file to the `webapps` directory in Apache Tomcat.
 
-   - Copy the generated `.war` file (for example, `diy-store-test.war`) to the `webapps` folder of your Tomcat installation.
-   - Start the Tomcat server:
+4. **Start Tomcat**:
+   - Run the Tomcat server and access the application via `http://localhost:8080/platform` (or your configured URL).
 
-     ```bash
-     $CATALINA_HOME/bin/startup.sh    # on Linux/Mac
-     $CATALINA_HOME\bin\startup.bat   # on Windows
-     ```
+5. **Access the Application**:
+   - Open your browser and navigate to `http://localhost:8080/platform` to begin using the platform.
 
-   - Alternatively, run Tomcat from within your IDE if configured (e.g., Eclipse or IntelliJ IDEA).
+## File Structure
 
-3. **Verify Deployment:**
+```
+/e-commerce-platform
+│
+├── /WEB-INF
+│   ├── web.xml - Servlet configurations and mappings
+│   └── /classes
+│       ├── controller - Controllers like PaymentProcessing, LoginController
+│       ├── model - Models like ShoppingCart, DBConnection
+│       └── /lib  - Libraries and dependencies
+│
+├── /css
+│   └── shop.css - Styles for the website
+│
+├── /images      - Image assets
+│
+├── /jsp
+│   ├── index.jsp - Home page
+│   ├── shop.jsp - Product listing page
+│   ├── cart.jsp - Shopping cart page
+│   ├── paymentsuccess.jsp - Payment success page
+│   └── paymenterror.jsp - Payment error page
+│
+└── /src
+    ├── controller
+    │   ├── PaymentProcessing.java
+    │   ├── LoginController.java
+    │   └── RemoveFromCart.java
+    ├── model
+    │   ├── ShoppingCart.java
+    │   ├── DBConnection.java
+    │   └── Product.java (optional, for model representation)
+    └── /utils
+        └── UtilityClasses.java (optional for helper functions)
+```
 
-   Visit the following URL to check if the application is deployed correctly:
+## Future Improvements
 
-   ```
-   http://localhost:8080/diy-store-test/
-   ```
-
-## Accessing the Application
-
-Once Tomcat is running and the application is deployed:
-
-1. **Home Page:**
-
-   The home page (with the product catalog) can be accessed at:
-
-   ```
-   http://localhost:8080/diy-store-test/shop.jsp
-   ```
-
-2. **Cart Page:**
-
-   You can view the shopping cart by clicking "View Cart" in the UI or by directly visiting:
-
-   ```
-   http://localhost:8080/diy-store-test/cart.jsp
-   ```
-
-3. **Simulated Payment:**
-
-   After adding items to the cart, you can proceed to the payment section by visiting:
-
-   ```
-   http://localhost:8080/diy-store-test/payment.jsp
-   ```
-
-## Sample URLs
-
-- **Product Catalog:** `/shop.jsp`
-- **Shopping Cart:** `/cart.jsp`
-- **Simulated Payment:** `/payment.jsp`
-
-## Further Improvements
-
-- **Database Integration:** Connect the application to a database to persist product data and cart information.
-- **Enhanced UI:** Improve the look and feel using modern CSS frameworks like Bootstrap or Materialize.
-- **Security Features:** Implement user authentication and HTTPS for secure payments.
-- **Real Payment Integration:** Use a payment gateway API (e.g., Stripe, PayPal) for actual payment processing.
+- **Payment Gateway Integration**: Integrate a real payment gateway such as Stripe, PayPal, or Razorpay for actual transactions.
+- **User Registration**: Implement a full user registration system with password encryption.
+- **Product Search and Filtering**: Add the ability to search for products by name, category, or price range.
+- **Admin Panel**: Add an admin interface for managing products, viewing transactions, and processing orders.
+- **Mobile Optimization**: Make the UI responsive for mobile devices.
+- **Security Enhancements**: Implement HTTPS, input validation, and CSRF protection.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
