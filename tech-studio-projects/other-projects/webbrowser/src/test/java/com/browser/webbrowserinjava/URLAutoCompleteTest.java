@@ -1,5 +1,6 @@
-package com.christoph.webbrowserinjava;
+package com.browser.webbrowserinjava;
 
+import com.system.browser.URLAutoComplete;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

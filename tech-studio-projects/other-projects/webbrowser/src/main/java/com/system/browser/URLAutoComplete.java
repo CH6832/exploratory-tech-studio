@@ -60,7 +60,7 @@ public class URLAutoComplete {
      * @param url The URL to which "www." may be added.
      * @return The URL with "www." prefix added.
      */
-    static String addWwwPrefix(String url) {
+    public static String addWwwPrefix(String url) {
         // Split the URL into protocol and the rest of the URL
         int protocolEndIndex = url.indexOf("://") + 3;
         String protocol = url.substring(0, protocolEndIndex);

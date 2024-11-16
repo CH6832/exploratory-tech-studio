@@ -1,0 +1,104 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+' Define the package for context
+package "com.system.browser" {
+
+    ' Define the BrowserController class
+    class BrowserController {
+        -EXTERNAL_BROWSER_URLS : List<String>
+        -searchField : TextField
+        +tabPane : TabPane
+        -addressBar : TextField
+        -profiler : AppProfiler
+        --
+        -handleKeyPressed(event : KeyEvent) : void
+        +searchInPage() : void
+        -shouldOpenInExternalBrowser(url : String) : boolean
+        +openInExternalBrowser(url : String) : boolean
+        +addNewTab(url : String) : void
+        +openInFirefox() : void
+        +initialize() : void
+        -showErrorDialog(title : String, message : String) : void
+        -addNewTabWithDefaultUrl() : void
+        -extractWebsiteName(url : String) : String
+        -openUrlInNewTab(url : String) : void
+        -navigateBack() : void
+        -navigateForward() : void
+        -refreshPage() : void
+    }
+
+    ' Imported utility classes and key dependencies
+    class AppLogger {
+        +info(message : String, ...args)
+        +error(message : String, ...args)
+    }
+    class AppProfiler {
+        +start(label : String) : void
+        +stop() : void
+        +logProfilingResult(label : String) : void
+    }
+
+    ' Define key JavaFX classes and their methods
+    class TextField {
+        +setText(text : String) : void
+        +getText() : String
+        +setVisible(visible : boolean) : void
+        +requestFocus() : void
+    }
+
+    class TabPane {
+        +getSelectionModel() : SelectionModel
+        +getTabs() : ObservableList<Tab>
+        +addEventFilter(eventType : EventType, handler : EventHandler) : void
+    }
+
+    class Tab {
+        +setContent(content : Node) : void
+        +getText() : String
+        +setText(text : String) : void
+    }
+
+    class WebView {
+        +getEngine() : WebEngine
+    }
+
+    class WebEngine {
+        +load(url : String) : void
+        +getLoadWorker() : Worker
+        +executeScript(script : String) : Object
+    }
+
+    ' JavaFX input classes and dependencies
+    class KeyEvent {
+        +isControlDown() : boolean
+        +getCode() : KeyCode
+    }
+
+    class KeyCode {
+        F
+        W
+    }
+
+    class Alert {
+        +setTitle(title : String) : void
+        +setHeaderText(header : String) : void
+        +setContentText(content : String) : void
+        +showAndWait() : void
+    }
+
+    ' Relationships between classes
+    BrowserController ..> AppLogger : uses
+    BrowserController ..> AppProfiler : uses
+    BrowserController ..> TextField : "searchField, addressBar"
+    BrowserController ..> TabPane : "tabPane"
+    BrowserController ..> Tab : "manages tabs"
+    BrowserController ..> WebView : "displays web pages"
+    BrowserController ..> WebEngine : "loads content"
+    BrowserController ..> KeyEvent : "handles key events"
+    BrowserController ..> KeyCode : "checks key codes"
+    BrowserController ..> Alert : "shows error dialogs"
+
+}
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+' Define the package
+package "com.system.browser" {
+
+    ' Define the BrowserApplication class
+    class BrowserApplication {
+        +start(Stage primaryStage) : void
+    }
+
+    ' Add note to explain the purpose of the start method
+    note right of BrowserApplication::start
+        The entry point for the JavaFX application.
+        Sets up the scene and loads the layout from FXML.
+    end note
+
+    ' Define imported classes with key roles in the application
+    class Application {
+        +launch(args : String[]) : void
+    }
+
+    class FXMLLoader {
+        +load(url : URL) : Parent
+    }
+
+    class Parent {
+    }
+
+    class Scene {
+        +Scene(root : Parent, width : double, height : double)
+        +getStylesheets() : ObservableList<String>
+    }
+
+    class Stage {
+        +setTitle(title : String) : void
+        +setScene(scene : Scene) : void
+        +show() : void
+    }
+
+    class Objects {
+        +requireNonNull(obj : T) : T
+    }
+
+    ' Specify relationships between classes
+    BrowserApplication --|> Application : extends
+    BrowserApplication ..> Stage : uses
+    BrowserApplication ..> Scene : creates
+    BrowserApplication ..> Parent : loads
+    BrowserApplication ..> FXMLLoader : uses
+    BrowserApplication ..> Objects : for null checks
+
+}
+
+@enduml

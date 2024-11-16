@@ -102,7 +102,7 @@ public class BrowserController {
      * @param url The URL to open.
      * @return true if the URL was successfully opened, false otherwise.
      */
-    boolean openInExternalBrowser(String url) {
+    public boolean openInExternalBrowser(String url) {
         String osName = System.getProperty("os.name").toLowerCase();
         String[] command;
 
