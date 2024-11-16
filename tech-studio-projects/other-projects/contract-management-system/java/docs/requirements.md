@@ -20,7 +20,7 @@ The CMS centralizes contract storage and management, promoting transparency, acc
 
 ## Functional Requirements
 
-### 1. Contract Management
+### Contract Management
    - **Create, edit, and delete contracts** with detailed fields.
    - Support for multiple **contract types** (e.g., Service Agreement, NDA).
    - Include **multiple parties** per contract with roles (e.g., Client, Provider).
@@ -31,38 +31,38 @@ The CMS centralizes contract storage and management, promoting transparency, acc
      - Important Dates (Start Date, End Date, Renewal Date)
      - Terms (Scope, Pricing, Payment Terms, Termination Conditions)
 
-### 2. Document Storage and Versioning
+### Document Storage and Versioning
    - **Upload** contract documents in PDF or Word formats.
    - Maintain **version history** of documents for each contract.
    - **Retrieve and view** specific document versions as needed.
 
-### 3. Approval Workflow
+### Approval Workflow
    - Multi-step **approval workflow** with custom roles.
    - Status tracking of approvals (Pending, Approved, Rejected).
    - Option to **reassign approvals** if necessary.
 
-### 4. Notifications and Reminders
+### Notifications and Reminders
    - Automated **reminders** for contract renewals, expirations, and approvals.
    - Customizable **notification preferences** per contract.
    - **Notification channels**: Email, in-app alerts.
 
-### 5. Audit Trail and Logging
+### Audit Trail and Logging
    - **Detailed audit log** of actions taken on each contract, including:
      - User actions (creation, approval, editing)
      - Date and time of each action
      - Changes made to the contract
    - **Log export options** for compliance and auditing.
 
-### 6. Search and Filter Capabilities
+### Search and Filter Capabilities
    - **Advanced search** by attributes like contract title, party name, status, or date range.
    - Filters for specific criteria, such as expiring soon, pending approvals, or active contracts.
    - **Full-text search** across contract contents and terms.
 
-### 7. Role-Based Access Control (RBAC)
+### Role-Based Access Control (RBAC)
    - Define **permissions** based on roles (e.g., create, view-only, approve).
    - Administrative controls for **managing users and access rights**.
 
-### 8. Dashboard and Reporting
+### Dashboard and Reporting
    - A user-friendly **dashboard** with a summary of:
      - Total active contracts
      - Contracts expiring soon
@@ -70,7 +70,7 @@ The CMS centralizes contract storage and management, promoting transparency, acc
    - **Reports** on contract statuses, renewal timelines, and audit logs.
    - **Export options** for reports (e.g., CSV, PDF) for further analysis.
 
-### 9. API for External Integrations
+### API for External Integrations
    - REST API for integration with external systems (e.g., ERP, CRM).
    - Authentication for API access with tokens or OAuth2.
    - Expose endpoints for:
@@ -80,24 +80,24 @@ The CMS centralizes contract storage and management, promoting transparency, acc
 
 ## Non-Functional Requirements
 
-### 1. Performance
+### Performance
    - The system should handle **up to 10,000 contracts** efficiently.
    - **Fast response times**: Queries should return results within 2 seconds.
 
-### 2. Security
+### Security
    - **Data encryption** for sensitive fields.
    - Secure **authentication and authorization**.
    - **Audit trail** compliance with industry standards (GDPR, etc.).
 
-### 3. Scalability
+### Scalability
    - Support for **horizontal scaling** as the contract volume grows.
    - Cloud-compatible for deployment on services like AWS or Azure.
 
-### 4. Availability and Reliability
+### Availability and Reliability
    - Ensure **99.9% uptime** for high availability.
    - Regular **backups** of data and documents.
 
-### 5. Compliance
+### Compliance
    - Meet data protection regulations (e.g., GDPR).
    - **Data retention policies** and deletion requests.
 
@@ -217,6 +217,3 @@ Each document represents a single contract with nested structures for parties, a
    **File Storage**: Use AWS S3, Azure Blob Storage, or a similar service if deploying to the cloud, or keep it local in the development phase.
 
    **Notifications**: Leverage email services (like SMTP) and/or SMS for alert notifications. This could evolve to use in-app notifications, push notifications, etc.
-
-
-

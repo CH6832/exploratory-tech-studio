@@ -1,186 +1,90 @@
-# Spring Boot Microservices with Monitoring, Auditing, and Reporting
+# Contract Management System (CMS)
 
-This project demonstrates the setup of multiple Spring Boot microservices with monitoring using **Prometheus** and **Grafana**, along with **Audit** and **Report Generation** functionality. The services expose metrics that Prometheus scrapes, and Grafana visualizes the collected data in dashboards. The project also includes audit logging to track actions performed by users and a report generation service for exporting data.
+This **Contract Management System (CMS)** exemplifies a high-standard implementation of a scalable and modular microservices architecture, suited for environments that demand efficient contract lifecycle management, strict auditing, detailed reporting, and real-time monitoring. This project leverages containerized **Spring Boot** microservices and a comprehensive observability stack with **Prometheus** and **Grafana** for monitoring, making it ideal for businesses requiring transparency, reliability, and security in contract management.
 
-## Services in This Project:
-- **contract-service**: Manages contracts and provides endpoints for contract-related operations.
-- **payment-service**: Handles payment-related operations and processing.
-- **logging-service**: A new service that handles logging messages from other services.
-- **audit-service**: Logs and tracks actions performed across services for auditing purposes.
-- **report-service**: Generates reports and exports data from services like `contract-service`, `payment-service`, and others.
-- **Prometheus**: Collects metrics from the microservices.
-- **Grafana**: Visualizes the collected metrics from Prometheus.
+## Project Objective and Scope
 
-## Prerequisites
-Make sure you have the following installed:
-- Docker
-- Docker Compose
-- Java (JDK 11 or later) for running Spring Boot microservices
-- Maven or Gradle for building the services
+Developed to meet industry standards, this CMS is crafted to support complex contract workflows, secure handling of sensitive information, and extensive audit logging for traceability. With a focus on scalability, this project allows for independent scaling, modularity, and seamless inter-service communication, providing a model that promotes data transparency, accountability, and compliance with organizational requirements.
 
-## Setup
+## Key Features of the Contract Management System
 
-**Update the Spring Boot Applications**:
-   Each Spring Boot application should expose Prometheus metrics at `/actuator/prometheus`. Ensure that the following properties are added to `application.properties` for each service:
-   ```properties
-   management.endpoints.web.exposure.include=health,info,prometheus
-   management.endpoint.prometheus.enabled=true
-   ```
+### **Microservices Architecture**
 
-**Dockerize the Microservices**:
-   Each microservice (e.g., `contract-service`, `payment-service`, `audit-service`, etc.) should have its own `Dockerfile`. Ensure you have a `Dockerfile` in each of these directories.
+The CMS system is composed of independent microservices, each focused on a specific aspect of contract management, allowing for dedicated scaling, isolated deployments, and simplified maintenance. Key services include:
 
-   Example `Dockerfile` for a Spring Boot service:
-   ```dockerfile
-   FROM openjdk:21-jdk-slim
-   COPY target/your-app.jar /usr/app/
-   WORKDIR /usr/app
-   RUN sh -c 'touch your-app.jar'
-   ENTRYPOINT ["java", "-jar", "your-app.jar"]
-   ```
+- **Contract Service**: Manages contract lifecycles, offering endpoints for creating, reading, updating, and deleting contracts, which serve as the main interface for contract operations.
+- **Payment Service**: Manages contract-related financial transactions, enabling secure processing and documentation of payments.
+- **Audit Service**: Tracks actions and provides a detailed, timestamped audit trail for compliance, logging significant actions like updates and deletions.
+- **Report Service**: Generates detailed reports for administrators and stakeholders, covering contract summaries, financial overviews, and audit histories.
+- **Search Service**: Offers advanced search functionality within MongoDB, empowering users to locate specific contract information efficiently.
 
-**Configure Prometheus**:
-   Ensure your `prometheus.yml` is properly set up to scrape the metrics from your Spring Boot applications. Below is an example of the configuration:
-   ```yaml
-   scrape_configs:
-     - job_name: 'contract-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['contract-service:8051']
-   
-     - job_name: 'payment-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['payment-service:8052']
-   
-     - job_name: 'inventory-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['inventory-service:8053']
-   
-     - job_name: 'user-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['user-service:8054']
-   
-     - job_name: 'audit-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['audit-service:8055']
-   
-     - job_name: 'report-service'
-       metrics_path: '/actuator/prometheus'
-       scrape_interval: 5s
-       static_configs:
-         - targets: ['report-service:8056']
-   ```
+### **Monitoring and Visualization with Prometheus and Grafana**
 
-**Start the Services with Docker Compose**:
-   From the project root, run:
+The CMS incorporates Prometheus for data collection and Grafana for dashboard-based visualization. Together, they allow comprehensive performance tracking across services, including request latency, resource usage, and system health. Recommended dashboards such as the Spring Boot Monitoring Dashboard (ID: 4350) facilitate comprehensive insights into microservice performance.
+
+### **Detailed Auditing and Compliance Logging**
+
+The **Audit Service** logs all critical actions within the CMS, ensuring accountability, transparency, and traceability for compliance with internal and external regulatory requirements. Actions are logged with metadata such as user identity, action type, and timestamp, providing a complete history of all system interactions.
+
+### **Advanced Reporting Capabilities**
+
+The **Report Service** generates and exports data-driven reports, supporting key business insights across contract, audit, and payment services. Reports can be customized for specific business needs and are exportable for easy dissemination among stakeholders.
+
+### **Enhanced Contract Search**
+
+The **Search Service** enables powerful search functionality within MongoDB, offering advanced filtering capabilities to streamline the retrieval of contract information. By integrating search within the CMS, users can locate specific contracts and records promptly, even as data volumes grow.
+
+### **Centralized Logging System**
+
+Through the **Logging Service**, all CMS services log actions and errors centrally, facilitating effective debugging and monitoring. This service collects logs asynchronously, ensuring the logging process does not impact the main application workflow.
+
+### **Security and Scalability**
+
+Each microservice is fully containerized, providing flexibility in deployment, scaling, and security management. Sensitive information, such as payment data and audit logs, is managed according to best practices, ensuring data confidentiality and integrity. The independent scalability of each service also allows for resource optimization according to demand.
+
+## Core Technologies and Frameworks
+
+- **Spring Boot**: Framework for microservice development, providing modular and lightweight architecture for each service.
+- **MongoDB**: NoSQL database with flexible schema design for storing contracts, audit logs, and search data.
+- **Prometheus and Grafana**: Integrated for metrics collection and dashboard visualization, offering a real-time view into service performance and health.
+- **RabbitMQ**: Message broker for asynchronous, reliable communication between services, enhancing data flow and performance.
+
+## Development, Testing, and Deployment
+
+The CMS is built with industry-standard practices for testing and deployment to ensure reliability and maintainability.
+
+### Testing Strategies
+
+- **Unit Testing**: Each microservice is unit-tested to verify individual functionalities.
+- **Integration Testing**: Tests are implemented to validate inter-service communication and data consistency.
+- **Load Testing**: Performance is monitored under high-traffic scenarios using metrics from Prometheus, validating system resilience.
+
+### Opening and Running a Single Microservice in Eclipse Java EE IDE
+
+To run an individual microservice, follow these steps:
+
+1. **Clone the Project Repository** and import the specific microservice (e.g., `contract-service`) into your Eclipse workspace.
+2. **Open Eclipse** and navigate to **File > Import**.
+3. Select **Maven > Existing Maven Projects** and locate the microservice directory.
+4. Once imported, right-click on the project, go to **Run As > Spring Boot App** to start the microservice.
+
+### Example: Configuring and Running the Contract Service
+
+1. **Import `contract-service` into Eclipse**: Ensure that you have all dependencies correctly resolved by updating the Maven project if needed.
+2. **Run the Application**:
    ```bash
-   docker-compose up --build
+   mvn spring-boot:run
    ```
+3. Access the Contract Service endpoints as specified in the API documentation.
 
-**Access the Services**:
-   - Prometheus: [http://localhost:9090](http://localhost:9090)
-   - Grafana: [http://localhost:3000](http://localhost:3000)
-     - Login with the default username `admin` and password `admin`.
+## Accessing the System
 
-**Configure Grafana to Connect to Prometheus**:
-   - In the Grafana UI, go to **Configuration → Data Sources → Add data source**.
-   - Choose **Prometheus** and set the URL to `http://prometheus:9090`.
-   - Save and test the connection.
+After deployment, the following interfaces will be accessible:
 
-**Import Dashboards**:
-   You can import pre-configured dashboards for Spring Boot or create your own to visualize the metrics from Prometheus.
+- **Prometheus**: Exposes system metrics, available for collection and analysis.
+- **Grafana**: Visualizes Prometheus metrics through secure dashboards.
+- **CMS REST API**: Provides endpoints across services, allowing integration and user interactions.
 
-   Example dashboard ID for Spring Boot metrics:
-   - [Spring Boot Monitoring Dashboard (ID: 4350)](https://grafana.com/grafana/dashboards/4350)
+## License
 
-## Services Overview
-
-### **Logging Service**:
-   The `logging-service` is responsible for managing and handling logs across the microservices. It exposes an endpoint for other services to send log messages. Logs are stored locally in the service, and it listens for log events to log them in a file.
-
-   Example usage in `ContractLoggingClient` (in the `contract-service`):
-   ```java
-   @Autowired
-   private ContractLoggingClient contractLoggingClient;
-
-   public void logContractAction(String level, String message) {
-       contractLoggingClient.log(level, message);  // Logs to the logging-service
-   }
-   ```
-
-### **Audit Service**:
-   The `audit-service` tracks and logs actions performed in the system. This service provides audit logs that can be used for auditing purposes, keeping track of actions like creating, updating, or deleting records.
-
-   The service exposes endpoints like:
-   - `POST /api/audit/log` - Logs an action with the user performing it.
-
-   Example usage in `ContractController`:
-   ```java
-   @Autowired
-   private final AuditService auditService;
-
-   @PostMapping
-   public ResponseEntity<Contract> createContract(@RequestBody Contract contract) {
-       auditService.logAction("Create contract", "user123");
-       Contract createdContract = contractService.createContract(contract);
-       return new ResponseEntity<>(createdContract, HttpStatus.CREATED);
-   }
-   ```
-
-### **Report Service**:
-   The `report-service` generates reports based on the data from other services like `contract-service`, `payment-service`, etc. This service can generate various types of reports, such as contract summaries or payment history.
-
-   Example of how to generate a report:
-   ```java
-   @GetMapping("/generate")
-   public ResponseEntity<String> generateReport() {
-       try {
-           String report = reportService.generateContractReport();
-           auditService.logAction("Generate report", "admin");
-           return ResponseEntity.ok(report);
-       } catch (Exception e) {
-           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error generating report");
-       }
-   }
-   ```
-
-### **Logging Example**:
-   The `contract-service` sends log events to the `logging-service` via RabbitMQ. This is done asynchronously, ensuring that logging does not impact the performance of the primary service.
-
-   Example of using `ContractLoggingClient` to log events:
-   ```java
-   @Autowired
-   private ContractLoggingClient contractLoggingClient;
-
-   public void createContract(Contract contract) {
-       contractLoggingClient.log("info", "Creating contract for " + contract.getName());
-       // Contract creation logic
-   }
-   ```
-
-## Docker Commands
-
-- **Start services in detached mode**:
-  ```bash
-  docker-compose up -d
-  ```
-
-- **Stop services**:
-  ```bash
-  docker-compose down
-  ```
-
-- **Rebuild the services**:
-  ```bash
-  docker-compose up --build
-  ```
-```
+This project is released under the MIT License, allowing for free use, modification, and distribution with attribution. The complete license text can be found in the [LICENSE](LICENSE) file.

@@ -47,7 +47,7 @@
 
 ---
 
-### Explanation of the Updated Structure
+### Explanation of the Structure
 
 1. **Top-Level Directories**:
    - **`docs/`**: Contains all documentation files (requirements, API specifications, and architecture).

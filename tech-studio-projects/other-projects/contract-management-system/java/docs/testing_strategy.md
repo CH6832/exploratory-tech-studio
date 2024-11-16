@@ -8,7 +8,7 @@ Testing will be done at multiple levels: **Unit Testing**, **Integration Testing
 
 ## Types of Testing
 
-### 1. **Unit Testing**
+### **Unit Testing**
 
 Unit tests are essential for testing the individual components or methods of the system. These tests verify that each unit of the code behaves as expected in isolation.
 
@@ -22,31 +22,7 @@ Unit tests are essential for testing the individual components or methods of the
 - **Mockito**: For mocking external dependencies and objects in unit tests.
 - **AssertJ**: For fluent assertions in unit tests, providing better readability.
 
-#### Example:
-```java
-@RunWith(MockitoJUnitRunner.class)
-public class ContractServiceTest {
-
-    @Mock
-    private ContractRepository contractRepository;
-
-    @InjectMocks
-    private ContractService contractService;
-
-    @Test
-    public void testCreateContract() {
-        Contract contract = new Contract("Contract A", "Company X", "Company Y", LocalDate.now(), LocalDate.now().plusYears(1));
-        when(contractRepository.save(any(Contract.class))).thenReturn(contract);
-
-        Contract createdContract = contractService.createContract(contract);
-        
-        assertNotNull(createdContract);
-        assertEquals("Contract A", createdContract.getTitle());
-    }
-}
-```
-
-### 2. **Integration Testing**
+### **Integration Testing**
 
 Integration tests verify the interaction between different components and services. These tests are used to check if multiple parts of the system work together as expected.
 
@@ -61,30 +37,7 @@ Integration tests verify the interaction between different components and servic
 - **RestAssured**: For testing RESTful APIs, sending requests, and validating responses.
 - **WireMock**: For mocking external services or APIs during testing.
 
-#### Example:
-```java
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-public class ContractControllerIntegrationTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-    public void testCreateContract() throws Exception {
-        String contractJson = "{ \"title\": \"Contract A\", \"partyA\": \"Company X\", \"partyB\": \"Company Y\", \"startDate\": \"2024-01-01\", \"endDate\": \"2025-01-01\", \"status\": \"draft\" }";
-
-        mockMvc.perform(post("/contracts")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(contractJson))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.title").value("Contract A"));
-    }
-}
-```
-
-### 3. **End-to-End Testing**
+### **End-to-End Testing**
 
 End-to-end (E2E) tests ensure that the system works as a whole. These tests simulate real user interactions with the system and check if all components function together as expected.
 
@@ -98,17 +51,7 @@ End-to-end (E2E) tests ensure that the system works as a whole. These tests simu
 - **Selenium**: For automating browser-based end-to-end testing, especially for testing web interfaces.
 - **TestCafe**: An alternative to Selenium for front-end testing.
 
-#### Example:
-```gherkin
-Feature: Create and View Contract
-
-  Scenario: A user creates a new contract
-    Given I am logged in as a user
-    When I create a new contract with the title "Contract A"
-    Then I should see the contract with the title "Contract A" on my dashboard
-```
-
-### 4. **Performance Testing**
+### **Performance Testing**
 
 Performance testing ensures that the system can handle the expected load and scale effectively. This type of testing will verify the system's response times, resource usage, and capacity.
 
@@ -126,7 +69,7 @@ Performance testing ensures that the system can handle the expected load and sca
 1. Using **JMeter** for load testing your contract creation API by sending multiple requests and measuring response times, throughput, and error rates.
 2. Using **Grafana** for visualizing metrics like CPU usage, memory usage, and request latency.
 
-### 5. **Security Testing**
+### **Security Testing**
 
 Security testing ensures that the system is protected against common vulnerabilities and attacks such as SQL injection, cross-site scripting (XSS), and unauthorized access.
 
@@ -144,8 +87,6 @@ Security testing ensures that the system is protected against common vulnerabili
 1. Using **OWASP ZAP** to scan your APIs and look for vulnerabilities.
 2. Testing JWT token expiration and ensuring it’s being properly handled across the system.
 
----
-
 ## Testing Pipeline
 
 ### Continuous Integration (CI)
@@ -161,15 +102,6 @@ Security testing ensures that the system is protected against common vulnerabili
 - After deployment, a set of smoke tests (basic functional tests) will be run in the production environment to ensure critical services are up and running.
 
 ## Test Coverage
-
 - The target for **unit test coverage** is **90%+**, ensuring that critical business logic is covered by tests.
 - **Integration tests** should cover key business processes like creating, updating, and deleting contracts.
 - **End-to-end tests** should cover the most common user workflows and edge cases.
-
----
-
-## Conclusion
-
-By implementing a comprehensive **testing strategy**, we can ensure that the Contract Management System is robust, reliable, and performs well under various conditions. Regular and automated testing will help catch bugs early, improve code quality, and provide confidence that the system will behave as expected in production. 
-
-This strategy will help ensure that all system components function correctly, both in isolation and when integrated, and will provide sufficient coverage to safeguard the system’s performance and security.
