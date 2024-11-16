@@ -1,104 +1,155 @@
-# Algo Trading System
+# Algorithmic Trading System
 
 ## Overview
 
-The Trading System Project is a robust and scalable solution designed for real-time order processing and trading operations. It encompasses various components including a trading engine, order book management, and a user interface to facilitate trading activities. The system is engineered to handle high volumes of trades efficiently while maintaining performance and reliability.
+This project is an **Algorithmic Trading System** designed for executing trading strategies in financial markets. It includes a simulation of key components such as market data processing, order execution, risk management, and trading strategy evaluation. The system is designed with **performance**, **low-latency**, and **scalability** in mind, making it suitable for real-time trading environments. 
 
-## How the Project Works
+The **core system** has been implemented so far, with the following major components:
 
-The Trading System is structured into several core components:
+- **Market Data Processor**
+- **Trading Engine**
+- **Order Execution**
+- **Risk Management**
+- **Market Feed Handler**
+- **Trading Strategy**
 
-1. **Trading Engine Server**: The heart of the system, responsible for executing trading operations and managing the order book.
-2. **Order Book**: Maintains and manages active orders, ensuring they are correctly matched and processed.
-3. **User Interface**: Provides users with a way to interact with the system, submit orders, and view order statuses.
-4. **Data Storage**: Stores historical data, user information, and logs for the system.
-5. **Logging and Monitoring**: Handles system logging and performance monitoring to ensure smooth operations and facilitate debugging.
+The system is designed to simulate the process of receiving market data, evaluating trading strategies, executing orders, and managing risk.
 
-### Key Processes:
-- **Order Submission**: Users submit orders through the User Interface, which are then processed by the Trading Engine and recorded in the Order Book.
-- **Order Matching**: The Trading Engine matches buy and sell orders from the Order Book, executing trades as needed.
-- **Logging**: All activities are logged for monitoring and troubleshooting purposes.
+## Key Components
 
-## Directory Overview
+### 1. **Market Data Processor**
+- Responsible for processing incoming market data.
+- Uses low-latency techniques to ensure fast processing and minimal delays.
+- Logs every step of data processing for traceability.
 
-- `src/` - Contains the source code for the project.
-  - `com/fintech/algotrading/`
-    - `orderbook/` - Classes related to order book management.
-    - `tradingserverengine/` - Classes for the trading engine and server management.
-    - `orders/` - Classes for order definitions and operations.
-    - `logging/` - Classes for logging and monitoring.
-- `tests/` - Contains test cases and test suites for the project.
-- `docs/` - Documentation related to the project, including architecture, requirements, and test plans.
+### 2. **Trading Engine**
+- The core engine that coordinates trading activities.
+- It integrates the **Trading Strategy** and **Order Execution** components.
+- It evaluates the strategy and executes orders based on the decisions made by the strategy.
+- It is built to handle multiple trading cycles and ensure smooth operation in a low-latency environment.
 
-## How to Build and Run the Project
+### 3. **Order Execution**
+- Simulates the execution of trade orders.
+- Ensures orders are executed promptly, logging both successes and failures.
+- Handles simple buy orders and can be extended to handle different order types.
 
-### Prerequisites
+### 4. **Risk Management**
+- Assesses the risk involved in executing a particular trade.
+- Determines if a trade should be executed based on its risk profile.
+- Ensures that no risky trades are executed based on pre-configured risk thresholds.
 
-- Java 17 or higher
-- Maven (for dependency management and building the project)
-- Eclipse IDE for Java Developers (or any other preferred Java IDE)
+### 5. **Market Feed Handler**
+- Simulates the ingestion of market data.
+- Works in conjunction with the **Market Data Processor** to handle incoming market information.
+- Processes market data to help make informed decisions based on the trading strategy.
 
-### Building the Project
+### 6. **Trading Strategy**
+- Contains the logic for decision-making in trading.
+- Evaluates the current market data and outputs a trade decision.
+- Currently, it simulates a basic buy decision, but it can be extended to more sophisticated strategies.
 
-1. **Clone the Repository**:
-   ```sh
-   git clone https://github.com/yourusername/trading-system.git
-   cd trading-system
-   ```
+## Current Implementation
 
-2. **Build with Maven**:
-   ```sh
-   mvn clean install
-   ```
+The core system has been implemented with basic components working in conjunction. The system flow is as follows:
 
-### Running the Project
+1. **Market Feed Handler** receives market data.
+2. The **Market Data Processor** processes the market data.
+3. The **Trading Engine** evaluates a trade decision based on the **Trading Strategy**.
+4. The **Risk Management** module assesses whether the trade is acceptable.
+5. If the trade is deemed acceptable, the **Order Execution** component executes the trade.
+6. The trading engine logs every step of this cycle for debugging and performance tracking.
 
-1. **Start the Trading Engine Server**:
-   ```sh
-   java -cp target/trading-system.jar com.fintech.algotrading.tradingserverengine.TradingEngineServer
-   ```
+### Performance and Low Latency Focus
 
-2. **Launch the User Interface**:
-   (Instructions for launching the UI will depend on how it's implemented. For a web-based UI, you might need to start a web server or open a web browser.)
+- **Logging and Profiling**: Every step is logged for debugging and analysis, ensuring traceability.
+- **Jitter Avoidance**: The system handles market data with minimal jitter, making it suitable for real-time trading environments.
+- **GC Optimization**: Efforts are made to minimize garbage collection overhead to ensure consistent low-latency performance.
+- **Error Handling**: Exception handling is incorporated throughout to ensure robustness in various scenarios.
 
-## How to Run the Tests
+### Future Enhancements
 
-### Unit Tests
+- **Advanced Trading Strategies**: The basic "buy" strategy can be replaced with more complex algorithms, such as **mean reversion**, **momentum-based strategies**, and **market-making** strategies.
+- **Backtesting Framework**: A framework for backtesting strategies using historical market data will be implemented to assess strategy performance before live deployment.
+- **Integration with Real Market Data Feeds**: The system can be extended to integrate with live market data providers for actual trading.
+- **Risk Management Enhancements**: More advanced risk assessment tools, such as stop-loss limits, risk/reward ratios, and portfolio diversification, can be added.
 
-1. **Run Unit Tests with Maven**:
-   ```sh
-   mvn test
-   ```
+## Project Structure
 
-### Integration Tests
+```
+├── core-monolith/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── yourcompany/
+│   │   │   │           ├── data/
+│   │   │   │           │   └── MarketDataProcessor.java
+│   │   │   │           ├── engine/
+│   │   │   │           │   └── TradingEngine.java
+│   │   │   │           ├── execution/
+│   │   │   │           │   └── OrderExecution.java
+│   │   │   │           ├── market/
+│   │   │   │           │   └── MarketFeedHandler.java
+│   │   │   │           ├── risk/
+│   │   │   │           │   └── RiskManagement.java
+│   │   │   │           └── strategy/
+│   │   │   │               └── TradingStrategy.java
+│   │   │   └── resources/
+│   │   │       ├── application.yaml
+│   │   │       └── logback.xml
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── yourcompany/
+│                   ├── data/
+│                   ├── engine/
+│                   ├── execution/
+│                   ├── market/
+│                   ├── risk/
+│                   └── strategy/
+```
 
-1. **Run Integration Tests with Maven**:
-   ```sh
-   mvn verify
-   ```
+### `src/main/java/com/yourcompany/`
 
-### Performance and Security Tests
+- **MarketDataProcessor**: Handles the processing of incoming market data.
+- **TradingEngine**: Coordinates the trading logic, integrating the trading strategy with order execution.
+- **OrderExecution**: Handles the logic of executing trade orders.
+- **MarketFeedHandler**: Simulates the receipt of market data.
+- **RiskManagement**: Evaluates the risk of executing trades.
+- **TradingStrategy**: Implements basic strategy logic to decide on trades.
 
-- **Performance Tests**: Execute performance test scripts located in the `tests/performance` directory.
-- **Security Tests**: Conduct security assessments using tools integrated with the CI/CD pipeline.
+### `src/test/java/com/yourcompany/`
 
-## Overview of Documentation
+- Contains test classes for each component, ensuring that each part of the system works correctly and independently.
 
-The documentation directory (`docs/`) includes the following:
+## How to Run
 
-- **Architecture**: Detailed architecture diagrams and descriptions.
-- **Requirements**: Functional and non-functional requirements, user requirements, and system requirements.
-- **Documentation**: Source code documentation, test plans, and deployment documentation.
-- **Test Cases**: Comprehensive test cases for unit tests, integration tests, system tests, and acceptance tests.
+1. Clone the repository to your local machine.
+2. Ensure that **Java 17+** is installed.
+3. Navigate to the project directory and build the project:
+    ```bash
+    mvn clean install
+    ```
+4. Run the system (simulating a trading cycle):
+    ```bash
+    java -cp target/your-artifact-name.jar com.system.algotrading.Main
+    ```
+5. The trading cycle will execute, logging the decisions made by each component.
 
-## Resources Used
+## Running Tests
 
-- **Java 17**: Programming language used for development.
-- **JUnit 5**: Testing framework used for unit and integration testing.
-- **Maven**: Build automation tool used for managing dependencies and building the project.
-- **Eclipse IDE for Java Developers**: Integrated development environment used for coding and debugging.
-- **Git**: Version control system for managing source code.
+To run the unit tests (using **JUnit 5**):
+
+```bash
+mvn test
+```
+
+This will run all tests, verifying the integrity and behavior of each component of the system.
+
+## Contribution
+
+Contributions are welcome! If you would like to contribute to this project, please fork the repository, make your changes, and create a pull request with a description of your improvements.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.

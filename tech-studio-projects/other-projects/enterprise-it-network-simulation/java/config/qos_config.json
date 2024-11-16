@@ -1,9 +1,0 @@
-{
-  "qos": {
-      "priority": {
-          "video": "high",
-          "voice": "medium",
-          "data": "low"
-      }
-  }
-}

@@ -10,10 +10,17 @@ public class ConfigLoader {
     private Properties config;
 
     public ConfigLoader() {
-        loadConfig();
+        loadConfig("invalidConfig.properties");
     }
 
-    private void loadConfig() {
+    public void loadConfig(String s) {
         // Load properties from file and handle caching for optimized access.
+    }
+
+    public String getConfigValue(String someKey) {
+        return someKey;
+    }
+
+    public void loadConfigFromSource(String url) {
     }
 }

@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: INFO
+    com.system: DEBUG
+app:
+  environment: development

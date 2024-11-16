@@ -1,0 +1,51 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+.env/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# Log files
+*.log
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.cache/
+
+# mypy
+.mypy_cache/
+
+# Coverage directory for pytest
+.coverage/
+
+# .env files for sensitive data (API keys, credentials, etc.)
+.env
+
+# PyCharm specific files
+.idea/
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# Backup files
+*~
+
+# SQLite database file (if used)
+*.sqlite3

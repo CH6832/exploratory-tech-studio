@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GAAPCalcPro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a979217fe1e2cb8bb6dab7638a604f31cef6ab6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+906c904dc8a27e01d9feec1824fbdaaa57203ce2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GAAPCalcPro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GAAPCalcPro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

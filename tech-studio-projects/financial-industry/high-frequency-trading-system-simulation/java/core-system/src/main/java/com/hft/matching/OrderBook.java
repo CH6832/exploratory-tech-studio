@@ -1,5 +1,6 @@
 package com.hft.matching;
 
+import java.util.Collection;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
@@ -33,6 +34,13 @@ public class OrderBook {
             return true;
         }
         return false;
+    }
+
+    public Collection<Object> getOrders() {
+        return java.util.List.of();
+    }
+
+    public void removeOrder(Order order) {
     }
 }
 

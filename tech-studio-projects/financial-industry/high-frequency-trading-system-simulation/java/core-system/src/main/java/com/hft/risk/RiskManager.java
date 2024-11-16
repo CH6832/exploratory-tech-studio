@@ -17,4 +17,8 @@ public class RiskManager {
         }
         return isValid;
     }
+
+    public String validateOrder(int i) {
+        return "";
+    }
 }

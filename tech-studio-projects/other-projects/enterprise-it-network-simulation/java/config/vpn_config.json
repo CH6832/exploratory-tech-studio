@@ -1,6 +1,0 @@
-{
-  "vpn": {
-      "type": "site-to-site",
-      "encryption": "AES-256"
-  }
-}

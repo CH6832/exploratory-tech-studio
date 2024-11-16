@@ -1,0 +1,7 @@
+{
+  "allowedIPs": ["192.168.1.2", "10.0.0.3"],
+  "blockedIPs": ["192.168.1.10"],
+  "allowedProtocols": ["TCP", "UDP"],
+  "allowedPorts": [22, 80, 443],
+  "blockedPorts": [23, 25]
+}

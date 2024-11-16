@@ -17,6 +17,20 @@ public class Order {
         this.isBuyOrder = isBuyOrder;
     }
 
+    public Order(String validOrderId, String buyOrderType, int validQuantity, double validPrice, String orderId, double quantity, double price, boolean isBuyOrder) {
+        this.orderId = orderId;
+        this.quantity = quantity;
+        this.price = price;
+        this.isBuyOrder = isBuyOrder;
+    }
+
+    public Order(String validOrderId, String buyOrderType, int validQuantity, double validPrice, String orderId, double quantity, double price, boolean isBuyOrder) {
+        this.orderId = orderId;
+        this.quantity = quantity;
+        this.price = price;
+        this.isBuyOrder = isBuyOrder;
+    }
+
     // Getters
     public String getOrderId() { return orderId; }
     public double getQuantity() { return quantity; }
