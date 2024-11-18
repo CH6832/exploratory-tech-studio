@@ -109,7 +109,7 @@ The core system has been implemented with basic components working in conjunctio
 │                   └── strategy/
 ```
 
-### `src/main/java/com/yourcompany/`
+### `src/main/java/com/system/`
 
 - **MarketDataProcessor**: Handles the processing of incoming market data.
 - **TradingEngine**: Coordinates the trading logic, integrating the trading strategy with order execution.
@@ -118,7 +118,7 @@ The core system has been implemented with basic components working in conjunctio
 - **RiskManagement**: Evaluates the risk of executing trades.
 - **TradingStrategy**: Implements basic strategy logic to decide on trades.
 
-### `src/test/java/com/yourcompany/`
+### `src/test/java/com/system/`
 
 - Contains test classes for each component, ensuring that each part of the system works correctly and independently.
 
@@ -145,10 +145,6 @@ mvn test
 ```
 
 This will run all tests, verifying the integrity and behavior of each component of the system.
-
-## Contribution
-
-Contributions are welcome! If you would like to contribute to this project, please fork the repository, make your changes, and create a pull request with a description of your improvements.
 
 ## License
 
