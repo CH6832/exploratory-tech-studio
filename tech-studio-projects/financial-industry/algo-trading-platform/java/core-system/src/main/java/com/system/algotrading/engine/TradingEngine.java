@@ -2,60 +2,47 @@ package com.system.algotrading.engine;
 
 import com.system.algotrading.execution.OrderExecution;
 import com.system.algotrading.strategy.TradingStrategy;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.system.algotrading.strategy.TradingStrategyFactory;
 
-/**
- * The TradingEngine class is responsible for managing the core trading loop.
- * It evaluates a trading strategy and executes orders based on strategy decisions.
- *
- * This class integrates with the TradingStrategy and OrderExecution components
- * to handle strategy evaluation and trade execution with a focus on reliability
- * and real-time performance.
- */
 public class TradingEngine {
 
-    // Logger instance to log operational information and errors
-    private static final Logger logger = LoggerFactory.getLogger(TradingEngine.class);
+    private OrderExecution orderExecution;
+    private TradingStrategy strategy;
 
-    // OrderExecution handles order placement logic
-    private final OrderExecution orderExecution;
+    // Constructor that initializes strategy using the TradingStrategyFactory
+    public TradingEngine(String strategyType, OrderExecution orderExecution) {
+        this.orderExecution = orderExecution;
+        this.strategy = (TradingStrategy) TradingStrategyFactory.getTradingStrategy(strategyType);
+    }
 
-    // TradingStrategy provides decision-making logic for trades
-    private final TradingStrategy strategy;
-
-    /**
-     * Constructs a TradingEngine with specified order execution and trading strategy.
-     *
-     * @param orderExecution The component responsible for executing trade orders.
-     * @param strategy The strategy component responsible for generating trading decisions.
-     */
+    // Constructor that accepts both a custom OrderExecution and a Strategy
     public TradingEngine(OrderExecution orderExecution, TradingStrategy strategy) {
         this.orderExecution = orderExecution;
         this.strategy = strategy;
     }
 
     /**
-     * Starts the trading engine cycle, evaluating the strategy and executing orders.
-     * This method captures and logs any errors during execution to ensure stability.
+     * Run the trading engine logic, evaluate strategy and decide on actions.
      */
-    public void start() {
-        try {
-            // Log the start of the trading engine for tracking
-            logger.info("Starting trading engine");
-
-            // Apply the trading strategy's logic to evaluate market conditions
-            String decision = strategy.evaluateStrategy();
-
-            // Execute an order based on the strategy's decision
-            orderExecution.executeOrder(decision);
-
-            // Log successful completion of one trading engine cycle
-            logger.debug("Trading engine cycle completed");
-
-        } catch (Exception e) {
-            // Catch and log any exceptions that occur during execution
-            logger.error("Error in trading engine", e);
+    public void runTradingCycle() {
+        // Make sure the strategy is not null
+        if (strategy == null) {
+            System.out.println("Error: No valid strategy provided.");
+            return;
         }
+
+        // Run the selected strategy
+        System.out.println("Running strategy: " + strategy.getClass().getSimpleName());
+        strategy.executeStrategy(orderExecution);
+    }
+
+    public static void main(String[] args) {
+        // Example using the TradingStrategyFactory to set a strategy and OrderExecution
+        OrderExecution orderExecution = new OrderExecution();  // Assuming this is a valid class
+        TradingEngine engine = new TradingEngine("trendFollowing", orderExecution);
+        engine.runTradingCycle();
+    }
+
+    public void start() {
     }
 }

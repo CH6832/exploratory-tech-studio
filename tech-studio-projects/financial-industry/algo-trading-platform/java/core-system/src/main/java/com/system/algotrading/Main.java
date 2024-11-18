@@ -31,7 +31,17 @@ public class Main {
         MarketDataProcessor marketDataProcessor = new MarketDataProcessor();
         MarketFeedHandler marketFeedHandler = new MarketFeedHandler(marketDataProcessor);
         OrderExecution orderExecution = new OrderExecution();
-        TradingStrategy tradingStrategy = new TradingStrategy();
+        TradingStrategy tradingStrategy = new TradingStrategy() {
+            @Override
+            public void executeStrategy(OrderExecution orderExecution) {
+
+            }
+
+            @Override
+            public String evaluateStrategy() {
+                return "";
+            }
+        };
         RiskManagement riskManagement = new RiskManagement();
 
         // Initialize the trading engine with its dependencies
