@@ -24,4 +24,3 @@ The solutions are primarily written in:
 
 - Python
 - Java
-- C++
