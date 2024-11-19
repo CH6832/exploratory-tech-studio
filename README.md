@@ -74,7 +74,7 @@ This project is an interdisciplinary repository for collaborative projects spann
     * [regulatory-reporting](/tech-studio-projects/financial-industry/regulatory-reporting/)
     * [stock-price-ticker](/tech-studio-projects/financial-industry/stock-price-ticker/)
 
-  * [leetcode](/tech-studio-projects/leetcode/)
+  * [challanges](/tech-studio-projects/challanges/)
 
   * [machine-learning](/tech-studio-projects/machine-learning/)
     * [autoencoder-for-anomaly-detection](/tech-studio-projects/machine-learning/autoencoder-for-anomaly-detection)
