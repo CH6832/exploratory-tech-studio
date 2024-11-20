@@ -1,1 +1,1 @@
-Data Science related challanges: https://www.kaggle.com/
+The repository is under construction. Data Science related challanges will be solved and documented in here: https://www.kaggle.com/.
