@@ -1,1 +1,1 @@
-All sorts of math related problems are going to be solved here.
+The repository is work in progress. All sorts of math related problems are going to be solved here.
