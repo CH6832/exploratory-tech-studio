@@ -1,0 +1,40 @@
+<!-- src/app/app.component.html -->
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fs-3 fw-bold" href="#">Crypto Trading Simulator</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-white" routerLink="/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 text-white" routerLink="/profile">Profile</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section: Large header section with a call-to-action -->
+<header class="bg-dark text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">Welcome to Crypto Trading Simulator</h1>
+    <p class="lead mb-4">Simulate your cryptocurrency trades and enhance your investment strategies in real-time with our cutting-edge platform.</p>
+    <a href="/profile" class="btn btn-light btn-lg">Get Started</a>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container mt-5">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <p class="mb-0">© 2024 Crypto Trading Simulator. All Rights Reserved.</p>
+</footer>

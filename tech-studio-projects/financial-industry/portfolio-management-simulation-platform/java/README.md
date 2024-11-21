@@ -1,145 +1,155 @@
-# Quantum Optimization for Financial Portfolio Management
+# Algorithmic Trading System
 
 ## Overview
 
-This project aims to develop a quantum optimization solution for financial portfolio management using quantum algorithms, specifically **Quantum Approximate Optimization Algorithm (QAOA)** and **Grover's search**. The objective is to optimize a financial portfolio by balancing risk and expected returns, leveraging quantum computing's potential to outperform classical algorithms.
+This project is an **Algorithmic Trading System** designed for executing trading strategies in financial markets. It includes a simulation of key components such as market data processing, order execution, risk management, and trading strategy evaluation. The system is designed with **performance**, **low-latency**, and **scalability** in mind, making it suitable for real-time trading environments. 
 
----
+The **core system** has been implemented so far, with the following major components:
 
-## Table of Contents
+- **Market Data Processor**
+- **Trading Engine**
+- **Order Execution**
+- **Risk Management**
+- **Market Feed Handler**
+- **Trading Strategy**
 
-- [Quantum Optimization for Financial Portfolio Management](#quantum-optimization-for-financial-portfolio-management)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
-  - [Project Goals](#project-goals)
-  - [Project Phases](#project-phases)
-    - [Phase 1: Research and Background Study](#phase-1-research-and-background-study)
-    - [Phase 2: Algorithm Selection and Formulation](#phase-2-algorithm-selection-and-formulation)
-    - [Phase 3: Set Up the Development Environment](#phase-3-set-up-the-development-environment)
-    - [Phase 4: Implementation](#phase-4-implementation)
-  - [Testing and Validation](#testing-and-validation)
-  - [Analysis and Results](#analysis-and-results)
-  - [Deliverables](#deliverables)
-  - [Future Work and Extensions](#future-work-and-extensions)
-  - [Tools and Libraries to Explore](#tools-and-libraries-to-explore)
-  - [Getting Started](#getting-started)
+The system is designed to simulate the process of receiving market data, evaluating trading strategies, executing orders, and managing risk.
 
----
+## Key Components
 
-## Project Goals
+### 1. **Market Data Processor**
+- Responsible for processing incoming market data.
+- Uses low-latency techniques to ensure fast processing and minimal delays.
+- Logs every step of data processing for traceability.
 
-- **Objective**: Optimize a financial portfolio by balancing risk (variance) and expected return, using quantum algorithms to manage complexity more effectively than classical algorithms.
-- **Optimization Goal**: Maximize returns while minimizing risk for a given set of financial assets.
-- **Classical Benchmark**: Compare against the Markowitz Mean-Variance Optimization approach.
+### 2. **Trading Engine**
+- The core engine that coordinates trading activities.
+- It integrates the **Trading Strategy** and **Order Execution** components.
+- It evaluates the strategy and executes orders based on the decisions made by the strategy.
+- It is built to handle multiple trading cycles and ensure smooth operation in a low-latency environment.
 
----
+### 3. **Order Execution**
+- Simulates the execution of trade orders.
+- Ensures orders are executed promptly, logging both successes and failures.
+- Handles simple buy orders and can be extended to handle different order types.
 
-## Project Phases
+### 4. **Risk Management**
+- Assesses the risk involved in executing a particular trade.
+- Determines if a trade should be executed based on its risk profile.
+- Ensures that no risky trades are executed based on pre-configured risk thresholds.
 
-### Phase 1: Research and Background Study
+### 5. **Market Feed Handler**
+- Simulates the ingestion of market data.
+- Works in conjunction with the **Market Data Processor** to handle incoming market information.
+- Processes market data to help make informed decisions based on the trading strategy.
 
-- **Portfolio Optimization**:
-  - Understand portfolio optimization problems (e.g., maximizing expected returns for a given risk).
-  - Explore constraints such as investment limits, asset liquidity, and risk tolerance.
-  - Study classical optimization approaches, including:
-    - Mean-Variance Optimization (Markowitz Model)
-    - Linear Programming for Risk Minimization
+### 6. **Trading Strategy**
+- Contains the logic for decision-making in trading.
+- Evaluates the current market data and outputs a trade decision.
+- Currently, it simulates a basic buy decision, but it can be extended to more sophisticated strategies.
 
-- **Quantum Algorithms**:
-  - **QAOA**: A quantum-classical hybrid algorithm suitable for combinatorial optimization, adaptable to portfolio optimization by formulating it as a Quadratic Unconstrained Binary Optimization (QUBO) problem.
-  - **Grover’s Search**: Enhances search-based optimization by reducing time complexity, useful for exploring possible portfolio configurations.
+## Current Implementation
 
-### Phase 2: Algorithm Selection and Formulation
+The core system has been implemented with basic components working in conjunction. The system flow is as follows:
 
-- **QAOA Implementation**:
-  - Formulate the portfolio optimization as a QUBO problem.
-  - Use QAOA to approximate optimal portfolio allocations.
-  - Assess trade-offs between accuracy and complexity at different QAOA levels (depth).
-  
-- **Grover’s Search**:
-  - Map the search problem to Grover's algorithm.
-  - Implement Grover's oracle to reflect financial constraints.
+1. **Market Feed Handler** receives market data.
+2. The **Market Data Processor** processes the market data.
+3. The **Trading Engine** evaluates a trade decision based on the **Trading Strategy**.
+4. The **Risk Management** module assesses whether the trade is acceptable.
+5. If the trade is deemed acceptable, the **Order Execution** component executes the trade.
+6. The trading engine logs every step of this cycle for debugging and performance tracking.
 
-### Phase 3: Set Up the Development Environment
+### Performance and Low Latency Focus
 
-- **Tools and Libraries**:
-  - **Qiskit (Python)**: Use Qiskit for quantum algorithms, integrating it into a C++ project via wrappers like `pybind11`.
-  - **C++ Development Environment**: CLion or Visual Studio for algorithm and financial data handling.
-  - **CMake**: For project management and compilation.
-  - **QUBO Solvers**: Integrate or develop a QUBO solver.
+- **Logging and Profiling**: Every step is logged for debugging and analysis, ensuring traceability.
+- **Jitter Avoidance**: The system handles market data with minimal jitter, making it suitable for real-time trading environments.
+- **GC Optimization**: Efforts are made to minimize garbage collection overhead to ensure consistent low-latency performance.
+- **Error Handling**: Exception handling is incorporated throughout to ensure robustness in various scenarios.
 
-### Phase 4: Implementation
+### Future Enhancements
 
-- **Data Handling**:
-  - Load financial data from CSV files.
-  - Preprocess data to calculate covariance and expected returns.
+- **Advanced Trading Strategies**: The basic "buy" strategy can be replaced with more complex algorithms, such as **mean reversion**, **momentum-based strategies**, and **market-making** strategies.
+- **Backtesting Framework**: A framework for backtesting strategies using historical market data will be implemented to assess strategy performance before live deployment.
+- **Integration with Real Market Data Feeds**: The system can be extended to integrate with live market data providers for actual trading.
+- **Risk Management Enhancements**: More advanced risk assessment tools, such as stop-loss limits, risk/reward ratios, and portfolio diversification, can be added.
 
-- **QUBO Formulation**:
-  - Define binary decision variables for asset inclusion and formulate the cost function.
-  - Incorporate constraints, such as total budget.
+## Project Structure
 
-- **Quantum Algorithm Implementation**:
-  - Implement QAOA and Grover's search algorithms.
-  
-- **Classical Algorithm**:
-  - Implement a classical optimizer for baseline comparisons.
+```
+├── core-monolith/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── yourcompany/
+│   │   │   │           ├── data/
+│   │   │   │           │   └── MarketDataProcessor.java
+│   │   │   │           ├── engine/
+│   │   │   │           │   └── TradingEngine.java
+│   │   │   │           ├── execution/
+│   │   │   │           │   └── OrderExecution.java
+│   │   │   │           ├── market/
+│   │   │   │           │   └── MarketFeedHandler.java
+│   │   │   │           ├── risk/
+│   │   │   │           │   └── RiskManagement.java
+│   │   │   │           └── strategy/
+│   │   │   │               └── TradingStrategy.java
+│   │   │   └── resources/
+│   │   │       ├── application.yaml
+│   │   │       └── logback.xml
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── yourcompany/
+│                   ├── data/
+│                   ├── engine/
+│                   ├── execution/
+│                   ├── market/
+│                   ├── risk/
+│                   └── strategy/
+```
 
----
+### `src/main/java/com/yourcompany/`
 
-## Testing and Validation
+- **MarketDataProcessor**: Handles the processing of incoming market data.
+- **TradingEngine**: Coordinates the trading logic, integrating the trading strategy with order execution.
+- **OrderExecution**: Handles the logic of executing trade orders.
+- **MarketFeedHandler**: Simulates the receipt of market data.
+- **RiskManagement**: Evaluates the risk of executing trades.
+- **TradingStrategy**: Implements basic strategy logic to decide on trades.
 
-- **Unit Testing**:
-  - Use Google Test (or similar) to validate modules for quantum simulators, classical optimization, and data processing.
-  
-- **Benchmarking**:
-  - Compare performance of different algorithms based on execution time and accuracy.
+### `src/test/java/com/yourcompany/`
 
----
+- Contains test classes for each component, ensuring that each part of the system works correctly and independently.
 
-## Analysis and Results
+## How to Run
 
-- **Performance Metrics**:
-  - Record optimization performance for QAOA, Grover’s Search, and classical optimizers.
-  - Compare computation time and portfolio quality.
+1. Clone the repository to your local machine.
+2. Ensure that **Java 17+** is installed.
+3. Navigate to the project directory and build the project:
+    ```bash
+    mvn clean install
+    ```
+4. Run the system (simulating a trading cycle):
+    ```bash
+    java -cp target/your-artifact-name.jar com.system.algotrading.Main
+    ```
+5. The trading cycle will execute, logging the decisions made by each component.
 
-- **Visualization**:
-  - Plot risk-return tradeoff curves and time-to-solution charts for different methods.
+## Running Tests
 
----
+To run the unit tests (using **JUnit 5**):
 
-## Deliverables
+```bash
+mvn test
+```
 
-- **Code**: A complete C++ implementation of portfolio optimization using quantum algorithms.
-- **Documentation**: Well-documented code and explanations of quantum algorithms.
-- **Research Paper**: A report showcasing results and advantages of quantum computing in portfolio optimization.
+This will run all tests, verifying the integrity and behavior of each component of the system.
 
----
+## Contribution
 
-## Future Work and Extensions
+Contributions are welcome! If you would like to contribute to this project, please fork the repository, make your changes, and create a pull request with a description of your improvements.
 
-- **Hybrid Algorithms**: Combine classical optimizers with quantum approaches.
-- **Real Quantum Hardware**: Test algorithms on actual quantum systems (IBM Q, Rigetti).
-- **Advanced Risk Models**: Extend to include more complex risk measures.
+## License
 
----
-
-## Tools and Libraries to Explore
-
-- **Qiskit (Python)**: Explore quantum algorithms and integrate with C++.
-- **IBM Quantum Experience**: Use their API for testing algorithms on quantum hardware.
-- **D-Wave Ocean SDK**: Focus on Quantum Annealing for optimization problems.
-
----
-
-## Getting Started
-
-To start the project, follow these steps:
-
-1. Clone the repository.
-2. Set up your development environment.
-3. Install required dependencies.
-4. Follow the project structure to implement your algorithms and optimizations.
-
----
-
-This comprehensive roadmap will guide the development of a fully-fledged C++ project for Quantum Optimization in Financial Portfolio Management. If you're ready, let’s begin with **Phase 1: Research and Background Study**!
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
