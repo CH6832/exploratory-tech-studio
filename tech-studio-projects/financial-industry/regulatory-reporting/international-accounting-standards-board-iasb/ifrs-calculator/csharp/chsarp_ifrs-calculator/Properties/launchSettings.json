@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "chsarp_ifrs-calculator": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
