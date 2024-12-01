@@ -44,5 +44,9 @@ public class TradingEngine {
     }
 
     public void start() {
+
+    }
+
+    public boolean processOrder(org.junit.jupiter.api.Order order1) {
     }
 }

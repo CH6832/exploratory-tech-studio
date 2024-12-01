@@ -49,4 +49,7 @@ public class MarketDataProcessor {
         // Return the processed data (may return a transformed or parsed format in real implementation)
         return data;
     }
+
+    public void updateMarketData(String aapl, double v) {
+    }
 }
