@@ -65,6 +65,7 @@ This project is an interdisciplinary repository for collaborative projects spann
 
   * [financial-industry](/tech-studio-projects/financial-industry/)
     * [algo-trading-platform](/tech-studio-projects/financial-industry/algo-trading-platform/)
+    * [carbon-intensity-prediction](/tech-studio-projects/financial-industry/carbon-intensity-prediction/)
     * [core-banking-system-simulation](/tech-studio-projects/financial-industry/core-banking-system-simulation/)
     * [cryptocurrency-trading-simulation](/tech-studio-projects/financial-industry/cryptocurrency-trading-simulation/)
     * [financial-management-app](/tech-studio-projects/financial-industry/financial-management-app/)
