@@ -1,0 +1,87 @@
+/* header.component.scss */
+
+/* General Header Layout */
+header {
+  background-color: #4caf50; /* Green background color */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures header stays on top */
+  width: 100%;
+}
+
+/* Branding Logo */
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: #45a049; /* Slightly darker green for hover */
+}
+
+/* Mobile/Tablet Navigation - Dropdown Menu */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  header nav {
+    display: none; /* Hide menu items on small screens */
+  }
+
+  /* Hamburger Icon for mobile */
+  header .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  /* When the hamburger menu is clicked, show the menu */
+  header.active nav {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  header nav a {
+    padding: 12px;
+    text-align: center;
+  }
+}
+
+/* When header is sticky, add some space on the body */
+body.sticky-header {
+  padding-top: 60px;
+}

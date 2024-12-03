@@ -1,0 +1,83 @@
+/* sidebar.component.scss */
+
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Default sidebar width */
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar content */
+.sidebar .sidebar-content {
+  padding: 10px;
+}
+
+/* Sidebar navigation links */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav a {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar nav a:hover {
+  background-color: #4caf50; /* Highlighted green on hover */
+  color: white;
+}
+
+/* When sidebar is collapsed */
+.sidebar.collapsed {
+  width: 60px; /* Smaller width for collapsed state */
+}
+
+.sidebar.collapsed nav a {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.sidebar.collapsed nav a span.label {
+  display: none; /* Hide labels when sidebar is collapsed */
+}
+
+.sidebar .menu-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  display: none; /* Default is hidden */
+}
+
+/* Show hamburger icon when sidebar is collapsed */
+.sidebar.collapsed .menu-icon {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Small width for mobile devices */
+  }
+
+  .sidebar.collapsed {
+    width: 60px; /* Same width for collapsed sidebar on mobile */
+  }
+
+  .sidebar nav a {
+    font-size: 1rem;
+  }
+}

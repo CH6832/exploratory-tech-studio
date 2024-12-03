@@ -1,0 +1,69 @@
+/* Home component styles */
+
+/* General home container styling */
+.home-container {
+  text-align: left; /* Align all text and content to the left */
+  margin: 20px; /* Add some padding from the edges of the viewport */
+  padding: 10px;
+  line-height: 1.6; /* Improve readability with consistent spacing between lines */
+  font-family: Arial, sans-serif; /* Apply a clean font for better legibility */
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333; /* Slightly darker shade for better contrast */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #555; /* Subheading contrast color */
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666; /* Body text color */
+  }
+
+  ul {
+    margin-left: 20px; /* Add indentation to the list items */
+    li {
+      margin-bottom: 10px; /* Add space between list items */
+      font-size: 1rem;
+      color: #444; /* Slightly darker text for list items */
+    }
+  }
+}
+
+
+/* Title styling */
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Message paragraph styling */
+.home-container p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Button styling */
+.home-container button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-container button:hover {
+  background-color: #45a049;
+}

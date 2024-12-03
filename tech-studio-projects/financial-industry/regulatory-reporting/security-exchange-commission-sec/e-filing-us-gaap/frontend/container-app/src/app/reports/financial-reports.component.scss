@@ -1,0 +1,168 @@
+/* General layout */
+.financial-reports-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fafc; /* Soft background for better readability */
+  padding: 20px;
+  font-family: 'Roboto', sans-serif; /* Modern font for better readability */
+}
+
+/* Header styles */
+.financial-reports-header {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2937; /* Dark color for contrast */
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+/* Filters and actions */
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+
+  .filter-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .filter-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #45a049;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+/* Financial reports table */
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  th {
+    background-color: #1d4ed8; /* Professional blue */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  td {
+    background-color: #f9fafb;
+    color: #374151;
+    font-size: 0.95rem;
+
+    &.status-approved {
+      color: #4caf50;
+      font-weight: 600;
+    }
+
+    &.status-rejected {
+      color: #f44336;
+      font-weight: 600;
+    }
+
+    &.status-pending {
+      color: #ff9800;
+      font-weight: 600;
+    }
+  }
+
+  tr:hover {
+    background-color: #e5e7eb; /* Hover effect for rows */
+  }
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .page-button {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #1d4ed8;
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    }
+  }
+}
+
+/* Empty state message */
+.empty-state {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #9ca3af;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+
+    .filter-input {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .reports-table th,
+  .reports-table td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .pagination .page-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

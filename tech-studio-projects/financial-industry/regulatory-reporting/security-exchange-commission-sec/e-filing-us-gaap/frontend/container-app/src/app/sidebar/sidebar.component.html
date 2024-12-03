@@ -1,0 +1,30 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-content">
+    <!-- Button to toggle the sidebar (hamburger menu) -->
+    <div class="menu-icon" (click)="toggleSidebar()">&#9776;</div>
+
+    <!-- Sidebar navigation menu -->
+    <nav>
+      <a href="./home" class="nav-link">
+        <span class="icon"></span>
+        <span class="label" *ngIf="!isCollapsed">Home</span>
+      </a>
+      <a href="./dashboard" class="nav-link">
+        <span class="icon"></span>
+        <span class="label" *ngIf="!isCollapsed">Dashboard</span>
+      </a>
+      <a href="/financial-reports" class="nav-link">
+        <span class="icon"></span>
+        <span class="label" *ngIf="!isCollapsed">Financial Reports</span>
+      </a>
+      <a href="/about" class="nav-link">
+        <span class="icon"></span>
+        <span class="label" *ngIf="!isCollapsed">About</span>
+      </a>
+      <a href="/contact" class="nav-link">
+        <span class="icon"></span>
+        <span class="label" *ngIf="!isCollapsed">Contact</span>
+      </a>
+    </nav>
+  </div>
+</aside>

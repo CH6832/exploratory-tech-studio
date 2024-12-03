@@ -1,0 +1,73 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+  <!-- Welcome Section -->
+  <h2>Welcome to the Dashboard</h2>
+  <p>Your one-stop overview of financial report management and analytics.</p>
+
+  <!-- Summary Cards Section -->
+  <div class="summary-cards">
+    <div class="card">
+      <h3>Total Reports</h3>
+      <p>50</p>
+    </div>
+    <div class="card">
+      <h3>Approved Reports</h3>
+      <p>30</p>
+    </div>
+    <div class="card">
+      <h3>Pending Reports</h3>
+      <p>15</p>
+    </div>
+    <div class="card">
+      <h3>Rejected Reports</h3>
+      <p>5</p>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="charts">
+    <h3>Reports Overview</h3>
+    <div class="chart" id="status-distribution-chart">
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div class="chart" id="monthly-trend-chart">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Recent Activity Section -->
+  <div class="recent-activity">
+    <h3>Recent Activity</h3>
+    <ul>
+      <li>Report <strong>"Q1 Financial Summary"</strong> approved on 2023-12-01.</li>
+      <li>New report <strong>"Q2 Financial Analysis"</strong> created on 2023-11-25.</li>
+      <li>Report <strong>"Annual Budget Overview"</strong> rejected on 2023-11-20.</li>
+      <li>Report <strong>"Monthly Sales Data"</strong> pending approval.</li>
+    </ul>
+  </div>
+
+  <!-- Notifications Section -->
+  <div class="notifications">
+    <h3>Notifications</h3>
+    <ul>
+      <li><strong>Reminder:</strong> Submit Q3 report by 2023-12-10.</li>
+      <li><strong>Alert:</strong> 5 reports pending for over 30 days.</li>
+    </ul>
+  </div>
+
+  <!-- Quick Links Section -->
+  <div class="quick-links">
+    <h3>Quick Links</h3>
+    <button onclick="location.href='/create-report'">+ Create New Report</button><p></p>
+    <button onclick="location.href='/financial-reports'">View All Reports</button>
+    <button onclick="location.href='/analytics'">View Analytics</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

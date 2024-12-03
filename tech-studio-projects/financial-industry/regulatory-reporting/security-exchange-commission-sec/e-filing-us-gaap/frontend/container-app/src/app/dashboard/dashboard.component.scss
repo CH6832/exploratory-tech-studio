@@ -1,0 +1,146 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+  padding: 20px;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .summary-cards {
+    display: flex;
+    gap: 20px;
+
+    .card {
+      flex: 1;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        font-size: 1.2rem;
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    .chart {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+  }
+
+  .recent-activity,
+  .notifications {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        color: #555;
+
+        strong {
+          color: #333;
+        }
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: #45a049;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .chart {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+
+}

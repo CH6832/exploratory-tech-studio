@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Custom Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  margin-top: 5px;
+}
+
+/*
+.navbar, .bg-dark {
+  background-color: #2d3436 !important;
+}
+*/
+
+/*
+.card-header {
+  background-color: #1e272e;
+}
+*/
