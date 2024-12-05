@@ -171,17 +171,15 @@ To run the entire project using **Docker**, you can use the provided **docker-co
 
 ## Impressions
 
-![Home](./docs/user/images/Homejpeg)
+![Home](./docs/user/images/home.jpg)
 
-![Home](./docs/user/images/Homejpeg)
+![Home](./docs/user/images/dashboard.jpg)
 
-![Home](./docs/user/images/Homejpeg)
+![Home](./docs/user/images/financial-reports.jpg)
 
-![Home](./docs/user/images/Homejpeg)
+![Home](./docs/user/images/contact.jpg)
 
-![Home](./docs/user/images/Homejpeg)
-
-![Home](./docs/user/images/Homejpeg)
+![Home](./docs/user/images/about.jpg)
 
 ---
 
