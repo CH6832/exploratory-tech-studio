@@ -24,6 +24,7 @@
     - [Frontend Setup](#frontend-setup)
     - [Backend Setup](#backend-setup)
     - [Running with Docker](#running-with-docker)
+  - [Impressions](#impressions)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Contributing](#contributing)
@@ -165,6 +166,22 @@ To run the entire project using **Docker**, you can use the provided **docker-co
    ```
 
    All services (frontend and backend) will be running locally in Docker containers.
+
+---
+
+## Impressions
+
+![Home](./docs/user/images/Homejpeg)
+
+![Home](./docs/user/images/Homejpeg)
+
+![Home](./docs/user/images/Homejpeg)
+
+![Home](./docs/user/images/Homejpeg)
+
+![Home](./docs/user/images/Homejpeg)
+
+![Home](./docs/user/images/Homejpeg)
 
 ---
 
