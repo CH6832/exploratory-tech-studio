@@ -66,9 +66,9 @@ The application is modular and scalable, built using the latest web technologies
 - **Main Container App (Angular)**: Acts as the central orchestrator for integrating all micro-frontends, providing routing, and shared UI components.
 - **Micro-Frontends**:
   - **User Profile (Angular)**: Handles user registration, login, and profile management.
-  - **Financial Reporting (React)**: Displays financial reports and generates charts for users.
-  - **Filing (Vue.js)**: Manages SEC filing forms for submission to the SEC.
-  - **Compliance Dashboard (Svelte)**: Displays compliance status, audit logs, and real-time filing status.
+  - **Financial Reporting (Angular)**: Displays financial reports and generates charts for users.
+  - **Filing (Angular)**: Manages SEC filing forms for submission to the SEC.
+  - **Compliance Dashboard (Angular)**: Displays compliance status, audit logs, and real-time filing status.
 
 ---
 
