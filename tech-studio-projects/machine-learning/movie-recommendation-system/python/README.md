@@ -77,8 +77,7 @@ Final results, including performance metrics and visualizations, are compiled in
 │   ├── feature_engineering.py - Feature engineering.
 │   ├── generate_test_data.py - Test data generation.
 │   ├── ml_model_training.py - Model training.
-│   ├── ml_model_validation.py - Model evaluation.
-│   └── utils.py - Utility functions.
+│   └── ml_model_validation.py - Model evaluation.
 ├── LICENSE - License file.
 └── README.md - Project documentation.
 ```
